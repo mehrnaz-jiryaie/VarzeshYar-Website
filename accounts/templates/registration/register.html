@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ثبت‌نام</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'regitration/register.css' %}" />
+  </head>
+
+  <body>
+    <header class="section-head">
+      <div class="container">
+        <h2 class="section-title">ورزش‌یار</h2>
+      </div>
+    </header>
+    <main class="menu">
+      <div class="box">
+        <form method="post" action="">
+          {% csrf_token %}
+          <h2>فرم ثبت نام</h2>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\user.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="name">نام کاربری</label>
+            <input
+              class="information-input"
+              type="text"
+              placeholder="gymadmin"
+              name="username"
+              id="name"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\sms.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="email">ایمیل</label>
+            <input
+              class="information-input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="ainaz@gmail.com"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\key.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="password">رمز عبور</label>
+            <input
+              class="information-input"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\key.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="confirm">تایید رمز عبور</label>
+            <input
+              class="information-input"
+              type="password"
+              name="confirm_password"
+              id="confirm_password"
+              required
+            />
+          </div>
+          <button><a href="{% url 'gym:index' %}">ثبت‌نام</a></button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

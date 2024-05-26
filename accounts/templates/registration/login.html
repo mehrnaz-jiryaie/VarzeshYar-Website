@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'regitration/login_style.css' %}" />
+  </head>
+
+  <body>
+    <header class="section-head">
+      <div>
+        <h2 class="section-title">ورزش‌یار</h2>
+      </div>
+    </header>
+    <main class="menu">
+      <div class="box">
+        <form method="post" action="">
+          {% csrf_token %}
+          <h2>فرم ورود ورزشکار</h2>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\user.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="name">نام کاربری</label>
+            <input
+              class="information-input"
+              type="text"
+              name="username"
+              id="username"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <img
+              src="{% static 'accounts\static\regitration\svg\key.svg' %}"
+              alt="user icon"
+            />
+            <label class="information" for="password">رمز عبور</label>
+            <input
+              class="information-input"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <div class="buttons">
+            <button><a href="{% url 'gym:index %}"'>ورود</a></button>
+            <button class="register-button">
+              <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

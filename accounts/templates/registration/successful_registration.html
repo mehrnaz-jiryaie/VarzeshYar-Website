@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Succesful Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'regitration/Succesful.css' %}" />
+  </head>
+  <body>
+    <div class="box">
+      <p class="text">ثبت نام با موفقیت انجام شد</p>
+      <img
+        class="icon"
+        src="{% static 'accounts\static\regitration\svg\check.svg' %}"
+        alt="check-icon"
+      />
+    </div>
+    <div class="button">
+      <form action="#">
+        <button class="btn" type="button">مشاهده پروفایل</button>
+        <a href="{% url 'gym:index' %}"></a>
+        <button class="btn1" type="button">مشاهده داشبورد</button>
+        <a href="{% url 'gym:index' %}"></a>
+      </form>
+    </div>
+  </body>
+</html>
