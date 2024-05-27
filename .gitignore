@@ -1,0 +1,11 @@
+# ignore virtual environment directory
+gym_env/
+
+# ignore database file
+db.sqlite3
+
+static/
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
