@@ -2,10 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from .forms import AccountCreationForm, LoginForm
 from django.contrib import messages
-
-# from rest_framework import viewsets, permissions
-# from .serializers import *
-# from rest_framework.response import Response
 from .models import *
 
 # class AccountViewset(viewsets.ViewSet):
@@ -51,7 +47,6 @@ def register(request):
     if request.method == 'POST':
         form = AccountCreationForm(request.POST)
         if form.is_valid():
-            # user = form.save()
             form.save()
             # login(request, user)
             # messages.success(request, 'Registration successful.')
@@ -76,4 +71,4 @@ def login(request):
 
 def successful_registration(request):
     """Successful registration page."""
-    return render(request, 'registration/Successful_registration.html')
+    return render(request, 'registration/succesful.html')

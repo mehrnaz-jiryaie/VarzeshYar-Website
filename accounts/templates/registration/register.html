@@ -18,6 +18,14 @@
       <div class="box">
         <form method="post" action="">
           {% csrf_token %}
+          <!-- Display general form errors -->
+          {% if form.non_field_errors %}
+            <div class="form-errors error">
+              {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
           <h2>فرم ثبت نام</h2>
           <div class="input-box">
             <img
@@ -28,7 +36,7 @@
             <input
               class="information-input"
               type="text"
-              placeholder="gymadmin"
+              placeholder="username"
               name="username"
               id="name"
               required
@@ -45,7 +53,7 @@
               type="email"
               name="email"
               id="email"
-              placeholder="ainaz@gmail.com"
+              placeholder="example@gmail.com"
               required
             />
           </div>
@@ -77,7 +85,9 @@
               required
             />
           </div>
-          <button><a href="{% url 'gym:index' %}">ثبت‌نام</a></button>
+          <button>
+            <a href="{% url 'accounts:Successful-registration' %}">ثبت‌نام</a>
+          </button>
         </form>
       </div>
     </main>
