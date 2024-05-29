@@ -16,16 +16,19 @@
     </header>
     <main class="menu">
       <div class="box">
+        {% if form.errors %}
+          <div class="errors">
+            <ul class="errorlist">
+              {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
         <form method="post" action="">
           {% csrf_token %}
-          <!-- Display general form errors -->
-          {% if form.non_field_errors %}
-            <div class="form-errors error">
-              {% for error in form.non_field_errors %}
-                <p>{{ error }}</p>
-              {% endfor %}
-            </div>
-          {% endif %}
           <h2>فرم ثبت نام</h2>
           <div class="input-box">
             <img
