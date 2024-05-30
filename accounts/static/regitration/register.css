@@ -90,10 +90,6 @@ form button:hover{
 form h2{
 	text-align: center;
 }
-.error{
-	color: red;
-	font-family: vazir-light;
-}
 .errors{
 	color: red;
 	font-family: vazir-light;
