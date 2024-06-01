@@ -18,7 +18,7 @@
       <div class="box">
         <form method="post" action="">
           {% csrf_token %}
-          <h2>فرم ورود ورزشکار</h2>
+          <h2>ورود</h2>
           <div class="input-box">
             <img
               src="{% static 'accounts\static\regitration\svg\user.svg' %}"
@@ -48,7 +48,7 @@
             />
           </div>
           <div class="buttons">
-            <button><a href="{% url 'gym:index %}"'>ورود</a></button>
+            <button><a href="{% url 'gym:index' %}">ورود</a></button>
             <button class="register-button">
               <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
             </button>
