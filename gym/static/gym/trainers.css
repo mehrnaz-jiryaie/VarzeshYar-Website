@@ -1,6 +1,6 @@
 @font-face {
 	font-family: vazir-light;
-	src: url(Vazir-Light.woff) format("woff");
+	src: url(fonts/Vazir-Light.woff) format("woff");
 }
 html {
 	font-family: vazir-light;	
