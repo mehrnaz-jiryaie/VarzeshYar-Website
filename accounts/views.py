@@ -50,7 +50,7 @@ def register(request):
             form.save()
             # login(request, user)
             # messages.success(request, 'Registration successful.')
-            return redirect('gym:index')
+            return redirect('accounts:successful_registration')
     else:
         form = AccountCreationForm()
         # context = {'form': form}

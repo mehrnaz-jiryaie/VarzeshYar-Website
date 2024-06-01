@@ -11,5 +11,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     # Successful registration
     path('register/successful-registration/',
-         views.successful_registration, name='Successful-registration'),
+         views.successful_registration, name='successful_registration'),
 ]
