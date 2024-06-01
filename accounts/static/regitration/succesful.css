@@ -84,5 +84,14 @@ body {
     background: transparent;
 }
     
-
+.btn, .btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: blue; /* Customize as needed */
+    border-radius: 4px;
+    cursor: pointer;
+}
     
