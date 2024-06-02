@@ -1,33 +1,29 @@
 @font-face {
 	font-family: vazir-light;
-	src: url(gym\static\gym\fonts\Vazir-Light.woff) format("woff");
+	src: url(Vazir-Light.woff) format("woff");
 }
 html {
 	font-family: vazir-light;	
-    /* overflow-x:scroll; */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* max-width: 100%; */
-    /* max-height: 100%; */
-    /* overflow-y:hidden; */
 }
 /* header styles */
 header{
-    background-color: #4C918E;
-    /* #357372; */
-    /* #f1356d */
-    /* #4C918E; */
+    background-color: #80DEEA;
     height: 6rem;
     width: 100vw;
     max-width: 100%;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     align-items: center;
     padding: 0rem 7rem;
     box-sizing: border-box;
-    color: #fff;
+    color: #01739d;
     font-size: 1.3rem;
+}
+.sticky {
+    position: fixed;
+    /* display: block; */
+    top: 0;
+    width: 100%
 }
 .header_links{
     display: flex;
@@ -39,37 +35,34 @@ header{
 }
 .profile{
     background-color: #fff;
-    color: #357372;
+    color: #01739d;
     padding: 0.5rem 2rem;
-    /* border: 1px solid rgb(79, 78, 78); */
     border-radius: 0.75rem;
-	box-shadow: 0px 0px 5px 1px #595c5b;
+	box-shadow: 0px 0px 5px 1px #45aebc;
 }
 .profile:hover{
     opacity: 0.9;
-    color: #357372;
-    /* background-color: #f1356d; */
+    color: #0097CF;
 }
 header a:hover{
     cursor: pointer;
-    color: #e9e7e7;
+    color: #fff;
 }
 /* body style */
 body{
     background-color: #FFFFFF;
 	display: flex;
 	flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    justify-content: center;
     width: 100vw;
-    /* height: 100%; */
     max-width: 100%;
-    /* max-height: 100%; */
-    /* overflow-y: hidden; */
-    /* overflow-x:auto; */
-    /* overflow-y:hidden; */
-
-    /* box-sizing: border-box; */
+    margin-top: 6rem;
+}
+svg{
+    display: block;
+    position: absolute;
+    z-index: -1;
 }
 .content{
     width: 80vw;
@@ -77,6 +70,27 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.gym-title{
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: center;
+    width: 100%;
+}
+.logo-design{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    align-items: center;
+}
+.gym-title img{
+    border: 1px solid #0097CF;
+    padding: 1rem;
+    max-width: 30rem;
+}
+.gym-title h1{
+    font-size: 4rem;
 }
 .article{
     display: flex;
@@ -90,13 +104,14 @@ body{
     border: 1px solid #99cdca;
     border-radius: 10px;
 	box-shadow: 0px 0px 2px 0px #c3c2c2;
+    text-align: justify;
+    text-justify: inter-word;
 
 }
 .article img{
     max-width: 15rem;
     margin: 0 2rem 0 1rem;
 	box-shadow: 0px 0px 5px 1px #727070;
-    /* border: 1px solid #595c5b; */
 }
 .article a{
     color: #EF3F3E;
@@ -105,23 +120,20 @@ body{
 }
 .article a:hover{
     color: #be1414;
-    /* font-weight: 4?00; */
 }
 .article-link{
     width: 100%;
     display: flex;
     justify-content: center;
-    /* background-color: ; */
-    /* margin: auto; */
 }
-
-
-
+hr{
+    margin: 1rem 0;
+} 
 /* footer */
 footer{
     height: 8rem;
     width: 100vw;
-    margin-top: 5rem;
+    margin-top: 10rem;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -129,4 +141,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
+    position: relative;
+    border-top-right-radius: 10% 7%;
+    border-top-left-radius: 10% 7%;
 }

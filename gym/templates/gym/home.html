@@ -5,14 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ورزش‌یار</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'gym\home.css' %}">
+  <link rel="icon" href="strength.png">
+  <link rel="stylesheet" href="home.css">
 </head>
 
-<header>
-  <div id="logo">
-    <h2>ورزش‌یار</h2>
-  </div>
+<header class="sticky">
+
   <div class="header_links">
     <div>
       <a class="header_nav" href="">صفحه اصلی</a>
@@ -26,10 +24,27 @@
 </header>
 
 <body>
+  <div class="gym-title curved">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#80DEEA" fill-opacity="1"
+        d="M0,96L60,80C120,64,240,32,360,53.3C480,75,600,149,720,202.7C840,256,960,288,1080,250.7C1200,213
+        ,1320,107,1380,53.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+      </path>
+    </svg>
+    <div class="logo-design">
+      <img src="work-out.png">
+      <div>
+
+        <h1>ورزشیار</h1>
+        <h5> شعار شعار لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</h5>
+      </div>
+    </div>
+  </div>
   <main class="content">
     <div class="article">
       <span>
-        <h2>ورزش‌یار</h2>
+        <h2>نقش بهداشت در سلامتی</h2>
+        <hr>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
           از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
@@ -41,16 +56,17 @@
           سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
         </p>
         <div class="article-link">
-          <a href="">ادامه مطلب</a>
+          <a href="varzeshyar/article1.html">ادامه مطلب</a>
         </div>
       </span>
       <span>
-        <img src="svg\gym.jpg">
+        <img src="gym.jpg">
       </span>
     </div>
     <div class="article">
       <span>
         <h2>نقش رژیم غذایی بر سلامتی</h2>
+        <hr>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
           از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
@@ -66,12 +82,13 @@
         </div>
       </span>
       <span>
-        <img src="svg\diet.png">
+        <img src="diet.png">
       </span>
     </div>
     <div class="article">
       <span>
         <h2>بهبود تاثیر حرکات ورزشی</h2>
+        <hr>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
           از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
@@ -87,7 +104,7 @@
         </div>
       </span>
       <span>
-        <img src="svg\work-out.png">
+        <img src="work-out.png">
       </span>
     </div>
   </main>
@@ -97,4 +114,5 @@
   <h4>پشتیبانی</h4>
   <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
 </footer>
+
 </html>
