@@ -17,11 +17,8 @@
       />
     </div>
     <div class="button">
-      <form method="post" action="">
-        {% csrf_token %}
-          <button class="btn" onclick="document.location='{% url 'gym:home' %}'">مشاهده پروفایل</button>
-          <button class="btn1" onclick="document.location='{% url 'gym:home' %}'">مشاهده داشبورد</button>
-      </form>
-     </div>
+      <a class="btn" href="#">مشاهده پروفایل</a>
+      <a class="btn1" href="{% url 'gym:home' %}">مشاهده داشبورد</a>
+    </div>
   </body>
 </html>

@@ -8,6 +8,7 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 /* header styles */
 .section-head {
@@ -33,11 +34,19 @@ body {
 	align-items: center;
 	background-color: #ffffff;
 	margin: 5rem auto;
-	width: 30vw;
-	height: 50vh;
+	width: 33rem;
+	height: 60vh;
 	padding: 2rem;
 	border-radius: 1rem;
 	box-shadow: 0 0 10px 0px #ccc;
+}
+.input-form {
+	width: 30rem;
+	/* color: red; */
+	height: 45vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .information-input {
 	border: 1px solid #ccc;
@@ -66,8 +75,10 @@ body {
 }
 .box form {
 	display: flex;
+	margin-top: 3rem;
 	flex-direction: column;
-	justify-content: space-between;
+	align-items: center;
+	/* justify-content: center; */
 	height: 100%;
 	width: 100%;
 }
@@ -91,6 +102,27 @@ form h2{
 	text-align: center;
 }
 .errors{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	color: red;
+	font-size: 1rem;
 	font-family: vazir-light;
 }
+@media only screen and (max-width: 1100px) {
+	.box{
+	width: 50vw;
+	}
+	.input-form {
+		width: 45vw;
+	}
+  }
+@media only screen and (max-width: 850px) {
+	.box{
+	width: 60vw;
+	}
+	.input-form {
+		width: 50vw;
+	}
+  }
