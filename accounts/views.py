@@ -1,45 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
 from .forms import AccountCreationForm, LoginForm
-from django.contrib import messages
 from .models import *
 
-# class AccountViewset(viewsets.ViewSet):
-    # permission_classes = [permissions.AllowAny]
-    # queryset = Account.objects.all()
-    # serializer_class = AccountSerializer
-
-    # def list(self, request):
-    #     queryset = Account.objects.all()
-    #     serializer = self.serializer_class(queryset, many=True)
-    #     return Response(serializer.data)
-
-    # def create(self, request):
-    #     serializer = self.serializer_class(data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data)
-    #     else:
-    #         return Response(serializer.errors, status=400)
-
-    # def retrieve(self, request, pk=None):
-    #     account = Account.objects.get(pk=pk)
-    #     serializer = self.serializer_class(account)
-    #     return Response(serializer.data)
-
-    # def update(self, request, pk=None):
-    #     account = Account.objects.get(pk=pk)
-    #     serializer = self.serializer_class(account, data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data)
-    #     else:
-    #         return Response(serializer.errors, status=400)
-
-    # def destroy(self, request, pk=None):
-    #     account = Account.objects.get(pk=pk)
-    #     account.delete()
-    #     return Response(status=204)
         
 
 def register(request):
@@ -62,11 +24,10 @@ def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('gym:index')
+            return redirect('gym:home')
     else:
         form = LoginForm()
-    return render(request, 'registration\login.html', {'form':'form'})
+    return render(request, 'registration\login.html', {'form': form})
 
 
 def successful_registration(request):

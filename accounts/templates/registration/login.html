@@ -53,6 +53,17 @@
               <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
             </button>
           </div>
+          {% if form.errors %}
+          <div class="errors">
+            <ul class="errorlist">
+              {% for field_errors in form.errors.values %}
+                {% for error in field_errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
         </form>
       </div>
     </main>

@@ -100,3 +100,12 @@ form h2{
 .register-button a{
 	color: black;
 }
+.errors{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: red;
+	font-size: 1rem;
+	font-family: vazir-light;
+}
