@@ -14,4 +14,6 @@ urlpatterns = [
          views.successful_registration, name='successful_registration'),
     # User profile
     path('profile/', views.profile, name='profile'),
+    # Physical information page.
+    path('profile/physical-information/', views.physical_information, name='physical-information'),
 ]

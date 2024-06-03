@@ -38,3 +38,8 @@ def successful_registration(request):
 def profile(request):
     """User profile page."""
     return render(request, 'registration/profile.html')
+
+
+def physical_information(request):
+    """Physical information page."""
+    return render(request, 'registration/physical_information.html')
