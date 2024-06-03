@@ -2,6 +2,12 @@
 	font-family: vazir-light;
 	src: url(fonts/Vazir-Light.woff) format("woff");
 }
+html {
+	font-family: vazir-light;	
+}
+html :hover{
+    cursor:default
+}
 /* header styles */
 header{
     background-color: #80DEEA;
