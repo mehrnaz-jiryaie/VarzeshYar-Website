@@ -33,3 +33,8 @@ def login(request):
 def successful_registration(request):
     """Successful registration page."""
     return render(request, 'registration/succesful.html')
+
+
+def profile(request):
+    """User profile page."""
+    return render(request, 'registration/profile.html')

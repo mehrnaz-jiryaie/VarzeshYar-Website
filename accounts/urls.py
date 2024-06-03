@@ -12,4 +12,6 @@ urlpatterns = [
     # Successful registration
     path('register/successful-registration/',
          views.successful_registration, name='successful_registration'),
+    # User profile
+    path('profile/', views.profile, name='profile'),
 ]
