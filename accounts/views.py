@@ -32,7 +32,7 @@ def login(request):
 
 def successful_registration(request):
     """Successful registration page."""
-    return render(request, 'registration/succesful.html')
+    return render(request, 'registration/successful.html')
 
 
 def profile(request):
