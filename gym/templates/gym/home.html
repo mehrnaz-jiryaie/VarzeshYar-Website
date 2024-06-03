@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ورزش‌یار</title>
+  {% load static %}
   <link rel="icon" href="strength.png">
   <link rel="stylesheet" href="../../static/gym/home.css">
 </head>
@@ -18,7 +19,7 @@
       <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
     </div>
     <div>
-      <a class="header_nav profile" href="">پروفایل</a>
+      <a class="header_nav profile" href="{% static 'accounts:profile' %}">پروفایل</a>
     </div>
   </div>
 </header>

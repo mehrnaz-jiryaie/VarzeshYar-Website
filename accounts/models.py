@@ -8,6 +8,7 @@ class Account(models.Model):
     email = models.EmailField(max_length=254)
     confirm_password = models.CharField(blank=False, max_length=128)
     
+    
     def __str__(self): 
         """A string that reperesent the account in Django admin."""   
         return self.username
