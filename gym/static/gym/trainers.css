@@ -69,6 +69,9 @@ body{
 }
 .trainers-informations{
     display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 .content{
     width: 80vw;
@@ -89,17 +92,21 @@ body{
 .title h2{
     font-size: 2rem;
 }
-.filter{
-    width: 30%;
+#filter{
+    display: flex;
+    /* flex-direction: column; */
+    /* width: 12rem; */
 }
-.filter div{
+#filter span{
+    display: flex;
+    /* flex-direction: co; */
+}
+.container{
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
-.trainers-list{
-    width: 100%;
-}
-.trainers-list img{
+.container img{
     max-width: 5rem;
     border-radius: 10rem;
     margin-left: 1rem;
@@ -116,6 +123,7 @@ body{
     box-sizing: border-box;
     border-radius: 1rem;
     background-color: #F6F8FC;
+    margin: 2rem 2rem;
     /* flex-direction: column; */
 }
 .trainer-name{
@@ -173,4 +181,28 @@ footer{
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
+}
+
+
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.btn {
+    width: 8rem;
+    font-size: 1rem;
+    /* font-weight: bold; */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 1rem;
+    border: none;
+    /* cursor: pointer;     */
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: #EF3F3E;
+    color: #fff;
 }

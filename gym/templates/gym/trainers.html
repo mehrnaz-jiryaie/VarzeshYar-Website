@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مربی‌ها</title>
   {% load static %}
-  <link rel="icon" href="strength.png">
-  <link rel="stylesheet" href="{% static 'gym\trainers.css' %}">
+  <link rel="icon" href="{% static 'gym/svg/strength.png' %}">
+  <link rel="stylesheet" href="{% static 'gym/trainers.css' %}">
+  <script src="{% static 'gym/myscripts.js' %}"></script>
 </head>
 
 <header class="sticky">
@@ -16,7 +17,7 @@
   </div>
   <div class="header_links">
     <div>
-      <a class="header_nav" href="../home.html">صفحه اصلی</a>
+      <a class="header_nav" href="home.html">صفحه اصلی</a>
       <a class="header_nav" href="">باشگاه ها</a>
       <a class="header_nav" href="">مربی ها</a>
     </div>
@@ -34,63 +35,148 @@
     </div>
     <hr>
     <section class="trainers-informations">
-      <div class="filter">
-        <!-- <h3>جنسیت</h3>
-        <div>
-          <input type="checkbox" id="sex1" name="sex1" value="male">
-          <label for="skill1">مرد</label>
-          <input type="checkbox" id="sex2" name="sex2" value="female">
-          <label for="skill2">زن</label>
-        </div> -->
-        <h3>رشته ورزشی</h3>
-        <div>
-          <input type="checkbox" id="skill1" name="skill1" value="Bike">
-          <label for="skill1">یوگا</label>
-          <input type="checkbox" id="skill2" name="skill2" value="Car">
-          <label for="skill2">بدنسازی</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">شنا</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">پیلاتس</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">TRX</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">رزمی</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">والبیال</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">بسکتبال</label>
-          <input type="checkbox" id="skill3" name="skill3" value="Boat">
-          <label for="skill3">ایروبیک</label>
-        </div>
+      <div id="filter">
+        <button class="btn" onclick="filterSelection('all')">همه</button>
+        <button class="btn" onclick="filterSelection('bodybuilding')">بدنسازی</button>
+        <button class="btn" onclick="filterSelection('martial')">رزمی</button>
+        <button class="btn" onclick="filterSelection('team')">گروهی</button>
+        <button class="btn" onclick="filterSelection('movement')">حرکتی</button>
       </div>
-      <div class="trainers-list">
 
-        <span class="trainer-description">
-          <div>
-            <div class="trainer-name">
-              <img src="profile2.png">
-              <h3 class="trainer-name">محدثه عبدی</h3>
+      <div class="container">
+        <div class="filterDiv movement">
+          <span class="trainer-description ">
+            <div>
+              <div class="trainer-name">
+                <img src="../../static/gym/svg/profile2.png">
+                <h3 class="trainer-name">محدثه عبدی</h3>
+              </div>
+              <div class="trainer-bio">
+                <span>
+                  <h4>رشته‌های ورزشی: </h4>
+                  <h4>یوگا</h4>
+                </span>
+                <span>
+                  <h4>استان: </h4>
+                  <h4>تهران</h4>
+                </span>
+                <span>
+                  <h4>توضیحات:</h4>
+                  <p>مربی بین‌المللی وینیاسایوگا، مربی یوگا، حرکات انعطافی و قدرتی</p>
+                </span>
+              </div>
             </div>
-            <div class="trainer-bio">
-              <span>
-                <h4>رشته‌های ورزشی: </h4>
-                <h4>یوگا</h4>
-              </span>
-              <span>
-                <h4>استان: </h4>
-                <h4>تهران</h4>
-              </span>
-              <span>
-                <h4>توضیحات:</h4>
-                <p>مربی بین‌المللی وینیاسایوگا، مربی یوگا، مربی تی ارایکس، حرکات انعطافی و قدرتی</p>
-              </span>
+            <div class="program">
+              <button>اطلاعات تماس</button>
             </div>
-          </div>
-          <div class="program">
-            <button>دریافت برنامه</button>
-          </div>
-        </span>
+          </span>
+        </div>
+        <div class="filterDiv bodybuilding">
+          <span class="trainer-description">
+            <div>
+              <div class="trainer-name">
+                <img src="../../static/gym/svg/profile1.png">
+                <h3 class="trainer-name">داود جلیل پور</h3>
+              </div>
+              <div class="trainer-bio">
+                <span>
+                  <h4>رشته‌های ورزشی: </h4>
+                  <h4>بدنسازی</h4>
+                </span>
+                <span>
+                  <h4>استان: </h4>
+                  <h4>تهران</h4>
+                </span>
+                <span>
+                  <h4>توضیحات:</h4>
+                  <p>مربی دوومیدانی و درجه 3 بدنسازی فوتبال در تهران</p>
+                </span>
+              </div>
+            </div>
+            <div class="program">
+              <button>اطلاعات تماس</button>
+            </div>
+          </span>
+          <span class="trainer-description">
+            <div>
+              <div class="trainer-name">
+                <img src="../../static/gym/svg/profile2.png">
+                <h3 class="trainer-name">آیسودا اسفندیاری</h3>
+              </div>
+              <div class="trainer-bio">
+                <span>
+                  <h4>رشته‌های ورزشی: </h4>
+                  <h4>بدنسازی، تی آرایکس، فیتنس، سی ایکس</h4>
+                </span>
+                <span>
+                  <h4>استان: </h4>
+                  <h4>اصفخان</h4>
+                </span>
+                <span>
+                  <h4>توضیحات:</h4>
+                  <p>دانشجوی ارشد تربیت بدنی در ایتالیا</p>
+                </span>
+              </div>
+            </div>
+            <div class="program">
+              <button>اطلاعات تماس</button>
+            </div>
+          </span>
+        </div>
+        <div class="filterDiv martial">
+          <span class="trainer-description">
+            <div>
+              <div class="trainer-name">
+                <img src="../../static/gym/svg/profile3.png">
+                <h3 class="trainer-name">حسین مشرفی</h3>
+              </div>
+              <div class="trainer-bio">
+                <span>
+                  <h4>رشته‌های ورزشی: </h4>
+                  <h4>کاراته</h4>
+                </span>
+                <span>
+                  <h4>استان: </h4>
+                  <h4>تهران</h4>
+                </span>
+                <span>
+                  <h4>توضیحات:</h4>
+                  <p>مدرک مربی‌گری درجه 3 کاراته</p>
+                </span>
+              </div>
+            </div>
+            <div class="program">
+              <button>اطلاعات تماس</button>
+            </div>
+          </span>
+        </div>
+        <div class="filterDiv team">
+          <span class="trainer-description">
+            <div>
+              <div class="trainer-name">
+                <img src="../../static/gym/svg/profile1.png">
+                <h3 class="trainer-name">احمد نعیمی</h3>
+              </div>
+              <div class="trainer-bio">
+                <span>
+                  <h4>رشته‌های ورزشی: </h4>
+                  <h4>والیبال</h4>
+                </span>
+                <span>
+                  <h4>استان: </h4>
+                  <h4>تهران</h4>
+                </span>
+                <span>
+                  <h4>توضیحات:</h4>
+                  <p>مدرک بین‌المللی سطح 2 والیبال<< /p>
+                </span>
+              </div>
+            </div>
+            <div class="program">
+              <button>اطلاعات تماس</button>
+            </div>
+          </span>
+        </div>
       </div>
     </section>
   </main>
