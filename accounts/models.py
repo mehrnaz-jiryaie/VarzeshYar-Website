@@ -31,7 +31,18 @@ class Account(models.Model):
     sex = models.BooleanField(choices=SEX_CHOICES, default=MALE)
     marital_status = models.BooleanField(
         choices=MARITAL_STATUS_CHOICES, default=SINGLE)
-    # weight = models.PositiveSmallIntegerField()
+    weight = models.PositiveSmallIntegerField(default=40)
+    height = models.FloatField(default=1.5)
+    waist = models.FloatField(default=20)
+    abdomen = models.FloatField(default=20)
+    chest = models.FloatField(default=20)
+    leg = models.FloatField(default=20)
+    arm = models.FloatField(default=20)
+    hip = models.FloatField(default=20)
+    thigh = models.FloatField(default=20)
+    shoulder = models.FloatField(default=20)
+    
+    
 
     def __str__(self):
         """A string that reperesent the account in Django admin."""

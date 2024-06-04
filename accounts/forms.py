@@ -64,3 +64,11 @@ class ProfileForm(forms.ModelForm):
         model = Account
         fields = ['first_name', 'last_name',
                   'birth_date', 'sex', 'marital_status', 'password', 'email']
+
+
+class PhysicalInformationForm(forms.ModelForm):
+
+    class Meta:
+        model = Account
+        fields = ['weight', 'height', 'waist', 'abdomen',
+                  'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder']
