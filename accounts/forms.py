@@ -37,7 +37,7 @@ class AccountCreationForm(forms.ModelForm):
 
 
 class LoginForm(forms.Form):
-    
+
     username = forms.CharField(max_length=255)
     password = forms.CharField(widget=forms.PasswordInput)
 
@@ -46,7 +46,7 @@ class LoginForm(forms.Form):
 
         username = cleaned_data.get('username')
         password = cleaned_data.get('password')
-        
+
         if username and password:
             if Account.objects.filter(username=username).exists():
                 account = Account.objects.get(username=username)
@@ -56,3 +56,11 @@ class LoginForm(forms.Form):
                 self.add_error('username', "نام کاربری نادرست است.")
 
         return cleaned_data
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = Account
+        fields = ['first_name', 'last_name',
+                  'birth_date', 'sex', 'marital_status', 'password', 'email']

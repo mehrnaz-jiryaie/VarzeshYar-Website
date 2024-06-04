@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پروفایل‌من</title>
-	{% load static %}
+    {% load static %}
     <link rel="stylesheet" href="{% static '/registration/profile.css' %}" />
   </head>
   <body>
@@ -22,7 +22,7 @@
       <div class="box">
         <h2>افزودن اطلاعات شخصی</h2>
         <form method="post" action="">
-			{% csrf_token %}
+          {% csrf_token %}
           <div class="input-box">
             <label for="firstname">نام:</label>
             <img
@@ -30,7 +30,7 @@
               src="{% static '..\static\regitration\svg\user.svg' %}"
               alt="user icon"
             />
-            <input type="text" id="firstname" />
+            <input type="text" name="first_name" id="firstname" />
           </div>
           <div class="input-box">
             <label for="lastname">نام خانوادگی:</label>
@@ -39,7 +39,7 @@
               src="{% static '..\static\regitration\svg\user.svg' %}"
               alt="user icon"
             />
-            <input type="text" id="lastname" />
+            <input type="text" name="last_name" id="lastname" />
           </div>
           <div class="input-box">
             <label for="phone-number">شماره تلفن:</label>
@@ -48,7 +48,7 @@
               src="{% static '..\static\regitration\svg\phone.svg' %}"
               alt="phone icon"
             />
-            <input type="tel" id="phone-number" />
+            <input type="tel" name="phone_number" id="phone-number" />
           </div>
           <div class="input-box">
             <label for="email">ایمیل:</label>
@@ -57,7 +57,7 @@
               src="{% static '..\static\regitration\svg\email.svg' %}"
               alt=""
             />
-            <input type="email" id="email" />
+            <input type="email" name="email" id="email" />
           </div>
           <div class="input-box">
             <label for="password">رمزعبور:</label>
@@ -66,11 +66,11 @@
               src="{% static '..\static\regitration\svg\password.svg' %}"
               alt=""
             />
-            <input type="password" id="password" />
+            <input type="password" name="password" id="password" />
           </div>
           <div class="input-box">
             <label for="birth-date">تاریخ تولد:</label>
-            <input type="date" id="birth-date" />
+            <input type="date" name="birth_date" id="birth-date" />
           </div>
           <div class="input-box">
             <label>جنسیت:</label>
@@ -90,15 +90,15 @@
             <div class="radio-options">
               <div class="radio-option">
                 <label for="single">مجرد</label>
-                <input type="radio" name="marriage" id="single" />
+                <input type="radio" name="marital_status" id="single" />
               </div>
               <div class="radio-option">
                 <label for="married">متاهل</label>
-                <input type="radio" name="marriage" id="married" />
+                <input type="radio" name="marital_status" id="married" />
               </div>
             </div>
           </div>
-          <button class="btn" type="button">مرحله‌بعد</button>
+          <a class="btn" href="{% url 'accounts:physical-information' %}">مرحله بعد</a>
         </form>
       </div>
     </main>
