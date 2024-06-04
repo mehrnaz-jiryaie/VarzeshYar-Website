@@ -12,13 +12,13 @@
       <p class="text">ثبت نام با موفقیت انجام شد</p>
       <img
         class="icon"
-        src="accounts\static\regitration\svg\check.svg"
+        src="{% static 'registration/svg/check.svg' %}"
         alt="check-icon"
       />
     </div>
     <div class="button">
-      <a class="btn" href="#">مشاهده پروفایل</a>
-      <a class="btn1" href="{% url 'gym:home' %}">مشاهده داشبورد</a>
+      <a class="profile-btn" href="#">مشاهده پروفایل</a>
+      <a class="dashboard-btn" href="{% url 'gym:home' %}">مشاهده داشبورد</a>
     </div>
   </body>
 </html>

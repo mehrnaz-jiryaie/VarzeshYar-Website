@@ -2,41 +2,33 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	height: 100%;
-	overflow: hidden;
-}
-
-*,
-*::after,
-*::before {
-	box-sizing: inherit;
-	margin: 0;
+	/* overflow: hidden; */
 }
 @font-face {
 	font-family: vazir-light;
 	src: url(fonts/Vazir-Light.woff) format("woff");
 }
 body {
-	background-color: white;
+	background-color: #F6F8FC;
 	font-family: vazir-light;
-	height: 100vh;
-}
-.container {
-	max-width: 1400px;
-	margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	/* height: 100vh; */
+    height: 100%;
 }
 .box{
     width: 50%;
-    height: 100px;
-    /* background-color: #80deea; */
+    /* height: 100px; */
+    height: 7rem;
     box-shadow: 0 0 14px 0px #ccc;
-    margin: 0 auto;
-    margin-top: 250px;
     display: flex;
-    gap: 2px;
+    border-radius: 0.5rem;
     align-items: center;
-   justify-content: center;
-   gap: 5px;
-   background-image: linear-gradient(to top , #03A9F4 , #0097A7);
+    justify-content: center;
+    gap: 5px;
+    background-image: linear-gradient(to top , #03A9F4 , #0097A7);
 }
 .text{
     font-size: x-large;
@@ -45,43 +37,42 @@ body {
     color: white;
 }
 .icon{
-    width: 24px;
-    height: 24px;   
+    max-width: 2rem;
+    max-height: 2rem;   
 }
 .button{
     display: flex;
     justify-content: center;
     /* gap: 5px; */
-    margin-top: 20px;
+    margin-top: 2rem;
     
 }
-.btn{
+.button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 170px;
     height: 50px;
     font-family: vazir-light;
-    border-radius: 15px;
-    background-color: #03A9F4;
-    border: none;
-    /* border: 1px solid #26C6DA; */
-    outline: none;
+    border-radius: 1rem;
     padding: 5px;
     cursor: pointer; 
-    color: white;
+    outline: none;
     font-weight: bold;
+    margin: 0 1rem;
+}
+.button a:hover{
+    opacity: 80%;
+}
+.profile-btn{
+    border: none;
+    background-color: #03A9F4;
+    color: white;
     background-image: linear-gradient(to top , #03A9F4 , #0097A7);
-    }
-.btn1{
-    width: 170px;
-    height: 50px;
-    font-family: vazir-light;
-    border-radius: 15px;
-    outline: none;
-    padding: 5px;
-    cursor: pointer; 
+}
+.dashboard-btn{
+    background-color: #FFFFFF;
     color: #0097A7;
     border: 1px solid #0097A7;
-    font-weight: bold;
     background: transparent;
 }
-
-    
