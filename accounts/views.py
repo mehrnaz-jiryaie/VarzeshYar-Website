@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import AccountCreationForm, LoginForm
+from .forms import AccountCreationForm, LoginForm, ProfileForm
 from .models import *
 
         
@@ -37,7 +37,13 @@ def successful_registration(request):
 
 def profile(request):
     """User profile page."""
-    return render(request, 'registration/profile.html')
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            return redirect('registration:physical_information')
+    else:
+        form = ProfileForm()
+    return render(request, 'registration/profile.html', {'form':form})
 
 
 def physical_information(request):
