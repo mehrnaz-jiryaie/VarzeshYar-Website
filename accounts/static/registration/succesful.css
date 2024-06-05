@@ -1,0 +1,93 @@
+html {
+	box-sizing: border-box;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+}
+@font-face {
+	font-family: vazir-light;
+	src: url(../successful2/vazir-light/Vazir-Light.ttf) format("truetype");
+}
+body {
+	background-color: white;
+	font-family: vazir-light;
+	height: 100vh;
+}
+.container {
+	max-width: 1400px;
+	margin: auto;
+}
+.box{
+    width: 50%;
+    height: 100px;
+    /* background-color: #80deea; */
+    box-shadow: 0 0 14px 0px #ccc;
+    margin: 0 auto;
+    margin-top: 250px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+   justify-content: center;
+   gap: 5px;
+   background-image: linear-gradient(to top , #03A9F4 , #80deea);
+}
+.text{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.icon{
+    width: 24px;
+    height: 24px;   
+}
+.button{
+    display: flex;
+    justify-content: center;
+    /* gap: 5px; */
+    margin-top: 40px;
+    
+}
+.btn{
+    width: 170px;
+    height: 50px;
+    font-family: vazir-light;
+    border-radius: 15px;
+    background-color: #03A9F4;
+    border: none;
+    /* border: 1px solid #26C6DA; */
+    outline: none;
+    padding: 13px;
+    cursor: pointer; 
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(to top , #03A9F4 , #80deea);
+    text-align: center;
+    margin-left: 15px;
+    
+    }
+.btn1{
+    width: 170px;
+    height: 50px;
+    font-family: vazir-light;
+    border-radius: 15px;
+    outline: none;
+    padding: 13px;
+    cursor: pointer; 
+    color: #00BCD4;
+    border: 1px solid #00BCD4;
+    font-weight: bold;
+    background: transparent;
+    text-align: center;
+    
+}
+    
+
+    
