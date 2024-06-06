@@ -33,8 +33,29 @@ function removeClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-function display_contact_info(num){
+function display_contact_info(num) {
     var phone_numbr = document.getElementsByClassName("contact-info")[num].innerHTML;
     document.getElementsByClassName("display-info")[num].innerHTML = phone_numbr;
     document.getElementsByClassName("display-info")[num].classList.add("displayed-info");
+}
+
+
+
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
