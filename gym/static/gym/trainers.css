@@ -69,12 +69,16 @@ body{
 }
 .trainers-informations{
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* background-color: #000000; */
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* align-items: stretch;f */
 }
 .content{
-    width: 80vw;
+    width: 85vw;
     margin-top: 4rem;
 }
 .title{
@@ -94,14 +98,14 @@ body{
 }
 #filter{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* width: 12rem; */
 }
 #filter span{
     display: flex;
     /* flex-direction: co; */
 }
-.container{
+/* .container{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -124,32 +128,24 @@ body{
     border-radius: 1rem;
     background-color: #F6F8FC;
     margin: 2rem 2rem;
-    /* flex-direction: column; */
 }
 .trainer-name{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    /* margin-bottom: 1rem; */
 }
 .trainer-bio {
     margin-top: 1rem;
-    /* display: flex; */
 }
 .trainer-bio span{
     display: flex;
     margin: 0.5rem 0;
-    /* width: 8rem; */
-    /* justify-content: space-between; */
 }
 .trainer-bio h4{
     padding: 0 3px;
 }
 .program{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    /* border-right: 1px solid #769599; */
     padding-right: 4rem;
     box-sizing: border-box;
 }
@@ -168,7 +164,7 @@ body{
     border: 1px solid #EF3F3E;
     background-color: #fff;
     color: #EF3F3E;
-}
+} */
 /* footer styles */
 footer{
     height: 8rem;
@@ -183,7 +179,87 @@ footer{
     padding: 2rem 0;
 }
 
+/* /////////////////////////////////////////*بشنتستیبلنتشبتنابنشابمشسابشبتبلتشس */
 
+.trainers{
+    display: grid;
+    grid-template-columns: 46% 46%;
+    justify-content: space-around;
+    width: 100%;
+}
+.filterDiv{
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    height: 20rem;
+    background-color: #F6F8FC;
+    border-radius: 1rem;
+	box-shadow: 0px 0px 5px 1px #eaeaea;
+    margin-bottom: 2rem;
+    /* margin-top: 10rem; */
+    padding: 0.5rem 2rem;
+    box-sizing: border-box;
+}
+.info-btn{
+    display: flex;
+    border-top: 1px solid #999797;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    /* margin-left: 4rem; */
+    /* margin-right: 4rem; */
+    box-sizing: border-box;
+    /* align-items: center ; */
+}
+.filterDiv span{
+    margin: 1rem 0;
+}
+.filterDiv button{
+    background: #EF3F3E;
+    color: #fff;
+    border-radius: 1rem ;
+    border: none;
+    width: 10rem;
+    /* margin-bottom: 1rem; */
+    /* margin-left: 5rem; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 2.5rem;
+    font-size: 1rem;
+    /* font-weight: 600; */
+}
+.filterDiv button:hover{
+    cursor: pointer;
+    border: 1px solid #EF3F3E;
+    background-color: #fff;
+    color: #EF3F3E;
+}
+.trainer-name{
+    display: flex;
+    /* display: grid; */
+    /* background-color: #EF3F3E; */
+    align-items: center;
+    /* grid-template-columns: 25% 75%; */
+}
+.trainer-name h4{
+    font-weight: 200;
+    /* font-size: 1.2rem; */
+}
+.trainer-name img{
+    max-width: 6rem;
+    border-radius: 10rem;
+    margin-left: 1rem;
+    border: 2px solid #000000;
+    padding: 4px;
+}
+
+
+
+
+
+
+/* /////////////////////////////////////////*بشنتستیبلنتشبتنابنشابمشسابشبتبلتشس */
 
 .hide{
     display: none;
