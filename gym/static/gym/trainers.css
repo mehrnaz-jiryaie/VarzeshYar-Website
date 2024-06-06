@@ -69,13 +69,6 @@ body{
 }
 .trainers-informations{
     display: flex;
-    /* flex-direction: row; */
-    /* width: 100%; */
-    /* background-color: #000000; */
-    /* flex-direction: row; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    /* align-items: stretch;f */
 }
 .content{
     width: 85vw;
@@ -85,13 +78,10 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* padding: 1rem 0; */
 }
 .content hr{
     margin: 2rem 0 2rem 0;
     border-top: #000000;
-    /* padding: 1rem 0 0 0; */
-    /* color: rgb(134, 132, 132); */
 }
 .title h2{
     font-size: 2rem;
@@ -99,72 +89,69 @@ body{
 #filter{
     display: flex;
     flex-direction: column;
-    /* width: 12rem; */
 }
 #filter span{
     display: flex;
-    /* flex-direction: co; */
 }
-/* .container{
+
+.trainers{
+    display: grid;
+    grid-template-columns: 46% 46%;
+    justify-content: space-around;
     width: 100%;
+}
+.filterDiv{
     display: flex;
     flex-direction: column;
-}
-.container img{
-    max-width: 5rem;
-    border-radius: 10rem;
-    margin-left: 1rem;
-    border: 2px solid #EF3F3E;
-    padding: 4px;
-}
-.trainer-description{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-	box-shadow: 0px 0px 5px 1px #72707039;
-    width: 100%;
-    padding: 2rem;
-    box-sizing: border-box;
-    border-radius: 1rem;
+    height: 20rem;
     background-color: #F6F8FC;
-    margin: 2rem 2rem;
+    border-radius: 1rem;
+	box-shadow: 0px 0px 5px 1px #eaeaea;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    box-sizing: border-box;
+}
+.info-btn{
+    display: flex;
+    border-top: 1px solid #999797;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    box-sizing: border-box;
+}
+.filterDiv span{
+    margin: 1rem 0;
+}
+.filterDiv button{
+    background: #EF3F3E;
+    color: #fff;
+    border-radius: 1rem ;
+    border: none;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+.filterDiv button:hover{
+    cursor: pointer;
+    border: 1px solid #EF3F3E;
+    background-color: #fff;
+    color: #EF3F3E;
 }
 .trainer-name{
     display: flex;
     align-items: center;
 }
-.trainer-bio {
-    margin-top: 1rem;
+.trainer-name h4{
+    font-weight: 200;
 }
-.trainer-bio span{
-    display: flex;
-    margin: 0.5rem 0;
+.trainer-name img{
+    max-width: 6rem;
+    border-radius: 10rem;
+    margin-left: 1rem;
+    border: 2px solid #000000;
+    padding: 4px;
 }
-.trainer-bio h4{
-    padding: 0 3px;
-}
-.program{
-    display: flex;
-    align-items: center;
-    padding-right: 4rem;
-    box-sizing: border-box;
-}
-.program button{
-    background: #EF3F3E;
-    color: #fff;
-    border-radius: 1rem ;
-    border: none;
-    width: 9rem;
-    height: 3rem;
-    font-size: 1rem;
-    font-weight: 600;
-}
-.program button:hover{
-    cursor: pointer;
-    border: 1px solid #EF3F3E;
-    background-color: #fff;
-    color: #EF3F3E;
-} */
+
 /* footer styles */
 footer{
     height: 8rem;
@@ -179,88 +166,6 @@ footer{
     padding: 2rem 0;
 }
 
-/* /////////////////////////////////////////*بشنتستیبلنتشبتنابنشابمشسابشبتبلتشس */
-
-.trainers{
-    display: grid;
-    grid-template-columns: 46% 46%;
-    justify-content: space-around;
-    width: 100%;
-}
-.filterDiv{
-    /* align-items: center; */
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    height: 20rem;
-    background-color: #F6F8FC;
-    border-radius: 1rem;
-	box-shadow: 0px 0px 5px 1px #eaeaea;
-    margin-bottom: 2rem;
-    /* margin-top: 10rem; */
-    padding: 0.5rem 2rem;
-    box-sizing: border-box;
-}
-.info-btn{
-    display: flex;
-    border-top: 1px solid #999797;
-    justify-content: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    /* margin-left: 4rem; */
-    /* margin-right: 4rem; */
-    box-sizing: border-box;
-    /* align-items: center ; */
-}
-.filterDiv span{
-    margin: 1rem 0;
-}
-.filterDiv button{
-    background: #EF3F3E;
-    color: #fff;
-    border-radius: 1rem ;
-    border: none;
-    width: 10rem;
-    /* margin-bottom: 1rem; */
-    /* margin-left: 5rem; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: 2.5rem;
-    font-size: 1rem;
-    /* font-weight: 600; */
-}
-.filterDiv button:hover{
-    cursor: pointer;
-    border: 1px solid #EF3F3E;
-    background-color: #fff;
-    color: #EF3F3E;
-}
-.trainer-name{
-    display: flex;
-    /* display: grid; */
-    /* background-color: #EF3F3E; */
-    align-items: center;
-    /* grid-template-columns: 25% 75%; */
-}
-.trainer-name h4{
-    font-weight: 200;
-    /* font-size: 1.2rem; */
-}
-.trainer-name img{
-    max-width: 6rem;
-    border-radius: 10rem;
-    margin-left: 1rem;
-    border: 2px solid #000000;
-    padding: 4px;
-}
-
-
-
-
-
-
-/* /////////////////////////////////////////*بشنتستیبلنتشبتنابنشابمشسابشبتبلتشس */
-
 .hide{
     display: none;
 }
@@ -270,12 +175,10 @@ footer{
 .btn {
     width: 8rem;
     font-size: 1rem;
-    /* font-weight: bold; */
     padding: 10px;
     margin: 5px;
     border-radius: 1rem;
     border: none;
-    /* cursor: pointer;     */
 }
 .btn:hover {
     cursor: pointer;
