@@ -2,7 +2,6 @@ function filterSelection(category) {
     var elements = document.getElementsByClassName("filterDiv");
     if (category === "all") category = "";
 
-    // Loop through all elements and hide those who don't match the selected category
     for (var i = 0; i < elements.length; i++) {
         removeClass(elements[i], "show");
         if (elements[i].className.indexOf(category) > -1) {
@@ -13,7 +12,6 @@ function filterSelection(category) {
     }
 }
 
-// Show filtered elements
 function addClass(element, name) {
     var arr1 = element.className.split(" ");
     var arr2 = name.split(" ");
@@ -24,7 +22,6 @@ function addClass(element, name) {
     }
 }
 
-// Hide elements that are not selected
 function removeClass(element, name) {
     var arr1 = element.className.split(" ");
     var arr2 = name.split(" ");
@@ -34,4 +31,10 @@ function removeClass(element, name) {
         }
     }
     element.className = arr1.join(" ");
+}
+
+function display_contact_info(num){
+    var phone_numbr = document.getElementsByClassName("contact-info")[num].innerHTML;
+    document.getElementsByClassName("display-info")[num].innerHTML = phone_numbr;
+    document.getElementsByClassName("display-info")[num].classList.add("displayed-info");
 }

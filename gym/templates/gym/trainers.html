@@ -36,6 +36,7 @@
     <hr>
     <section class="trainers-informations">
       <div id="filter">
+        <h4>رشته ورزشی</h4>
         <button class="btn" onclick="filterSelection('all')">همه</button>
         <button class="btn" onclick="filterSelection('bodybuilding')">بدنسازی</button>
         <button class="btn" onclick="filterSelection('martial')">رزمی</button>
@@ -54,7 +55,8 @@
           </span>
           <li>مربی بین‌المللی وینیاسایوگا، مربی یوگا، حرکات انعطافی و قدرتی</li>
           <li>دارای تجربه مربیگری کلاس‌های آنلاین</li>
-          <span class="info-btn"><button>اطلاعات تماس</button></span>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(0)">اطلاعات تماس</button></span>
+          <p class="contact-info">09122134044</p>
         </div>
         <div class="filterDiv bodybuilding">
           <span class="trainer-name">
@@ -67,20 +69,22 @@
           </span>
           <li>مربی دوومیدانی و درجه 3 بدنسازی فوتبال در تهران</li>
           <li>مربی فیتنس، TRX، بدنسازی</li>
-          <span class="info-btn"><button>اطلاعات تماس</button></span>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(1)">اطلاعات تماس</button></span>
+          <p class="contact-info">09303318088</p>
         </div>
         <div class="filterDiv bodybuilding">
           <span class="trainer-name">
-            <img src="../../static/gym/svg/profile2.png">
+            <img src="../../static/gym/svg/profile4.jpg">
             <span>
               <h2>آیسودا اسفندیاری</h2>
-              <h4>رشته‌های ورزشی: بدنسازی، تی آرایکس، فیتنس، سی ایکس</h4>
+              <h4>رشته‌های ورزشی: بدنسازی، تی آرایکس، فیتنس</h4>
               <h4>استان: اصفهان</h4>
             </span>
           </span>
           <li>دانشجوی ارشد تربیت بدنی در ایتالیا</li>
           <li>مربی فیتنس، TRX، بدنسازی</li>
-          <span class="info-btn"><button>اطلاعات تماس</button></span>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(2)">اطلاعات تماس</button></span>
+          <p class="contact-info">09124309982</p>
         </div>
         <div class="filterDiv martial">
           <span class="trainer-name">
@@ -93,11 +97,12 @@
           </span>
           <li>مدرک مربی‌گری درجه 3 کاراته</li>
           <li>دارای 10 سال سابقه مربیگری در رشته‌های مذکور</li>
-          <span class="info-btn"><button>اطلاعات تماس</button></span>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(3)">اطلاعات تماس</button></span>
+          <p class="contact-info">09918190912</p>
         </div>
         <div class="filterDiv team">
           <span class="trainer-name">
-            <img src="../../static/gym/svg/profile1.png">
+            <img src="../../static/gym/svg/profile5.jpeg">
             <span>
               <h2>احمد نعیمی</h2>
               <h4>رشته‌های ورزشی: والیبال</h4>
@@ -106,7 +111,8 @@
           </span>
           <li>مربی اسبق تیم ملی نوجوانان</li>
           <li>مدرک بین‌المللی سطح 2 والیبال</li>
-          <span class="info-btn"><button>اطلاعات تماس</button></span>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات تماس</button></span>
+          <p class="contact-info">09218915545</p>
         </div>
       </section>
     </section>
