@@ -2,77 +2,92 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	height: 100%;
-	/* overflow: hidden; */
+	overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
 }
 @font-face {
 	font-family: vazir-light;
-	src: url(fonts/Vazir-Light.woff) format("woff");
+	src: url(fonts/Vazir-Light.woff) format("truetype");
 }
 body {
-	background-color: #F6F8FC;
+	background-color: white;
 	font-family: vazir-light;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-	/* height: 100vh; */
-    height: 100%;
+	height: 100vh;
+}
+.container {
+	max-width: 1400px;
+	margin: auto;
 }
 .box{
     width: 50%;
-    /* height: 100px; */
-    height: 7rem;
+    height: 100px;
+    /* background-color: #80deea; */
     box-shadow: 0 0 14px 0px #ccc;
+    margin: 0 auto;
+    margin-top: 250px;
     display: flex;
-    border-radius: 0.5rem;
+    gap: 2px;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    background-image: linear-gradient(to top , #03A9F4 , #0097A7);
+   justify-content: center;
+   gap: 5px;
+   background-image: linear-gradient(to top , #03A9F4 , #80deea);
 }
 .text{
     font-size: x-large;
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: rgb(3, 3, 3);
 }
 .icon{
-    max-width: 2rem;
-    max-height: 2rem;   
+    width: 24px;
+    height: 24px;   
 }
 .button{
     display: flex;
     justify-content: center;
     /* gap: 5px; */
-    margin-top: 2rem;
+    margin-top: 40px;
     
 }
-.button a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn{
     width: 170px;
     height: 50px;
     font-family: vazir-light;
-    border-radius: 1rem;
-    padding: 5px;
-    cursor: pointer; 
-    outline: none;
-    font-weight: bold;
-    margin: 0 1rem;
-}
-.button a:hover{
-    opacity: 80%;
-}
-.profile-btn{
-    border: none;
+    border-radius: 15px;
     background-color: #03A9F4;
+    border: none;
+    /* border: 1px solid #26C6DA; */
+    outline: none;
+    padding: 13px;
+    cursor: pointer; 
     color: white;
-    background-image: linear-gradient(to top , #03A9F4 , #0097A7);
-}
-.dashboard-btn{
-    background-color: #FFFFFF;
-    color: #0097A7;
-    border: 1px solid #0097A7;
+    font-weight: bold;
+    background-image: linear-gradient(to top , #03A9F4 , #80deea);
+    text-align: center;
+    margin-left: 15px;
+    
+    }
+.btn1{
+    width: 170px;
+    height: 50px;
+    font-family: vazir-light;
+    border-radius: 15px;
+    outline: none;
+    padding: 13px;
+    cursor: pointer; 
+    color: #00BCD4;
+    border: 1px solid #00BCD4;
+    font-weight: bold;
     background: transparent;
+    text-align: center;
+    
 }
+    
+
+    
