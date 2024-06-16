@@ -1,11 +1,25 @@
 from django.db import models
-import datetime
+from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
 
-# from phonenumber_field.modelfields import PhoneNumberField
 
-
-class Account(models.Model):
+class Account(AbstractUser):
     """Represents an account for each person."""
+    username = models.CharField(unique=True, blank=False, max_length=100)
+    email = models.EmailField(unique=True, max_length=254)
+
+    def __str__(self):
+        """A string that represents the account in Django admin."""
+        return self.username
+
+    def clean(self):
+        if Account.objects.filter(email=self.email).exclude(pk=self.pk).exists():
+            raise ValidationError(
+                {'email': 'این ایمیل قبلا ثبت شده است.'})
+        if Account.objects.filter(username=self.username).exclude(pk=self.pk).exists():
+            raise ValidationError(
+                {'username': 'این نام کاربری قبلا ثبت شده است.'})
+
     MALE = True
     FEMALE = False
     SEX_CHOICES = [
@@ -20,30 +34,32 @@ class Account(models.Model):
         (SINGLE, 'Single'),
     ]
 
-    username = models.CharField(unique=True, blank=False, max_length=100)
-    password = models.CharField(blank=False, max_length=128)
-    email = models.EmailField(max_length=254)
-    confirm_password = models.CharField(blank=False, max_length=128)
-    first_name = models.CharField(default='ali', max_length=100)
-    last_name = models.CharField(default='alavi', max_length=100)
-    # phone_number = PhoneNumberField(max_length=11, blank=True)
-    birth_date = models.DateField(default=datetime.date.today)
-    sex = models.BooleanField(choices=SEX_CHOICES, default=MALE)
-    marital_status = models.BooleanField(
-        choices=MARITAL_STATUS_CHOICES, default=SINGLE)
-    weight = models.PositiveSmallIntegerField(default=40)
-    height = models.FloatField(default=1.5)
-    waist = models.FloatField(default=20)
-    abdomen = models.FloatField(default=20)
-    chest = models.FloatField(default=20)
-    leg = models.FloatField(default=20)
-    arm = models.FloatField(default=20)
-    hip = models.FloatField(default=20)
-    thigh = models.FloatField(default=20)
-    shoulder = models.FloatField(default=20)
-    
-    
-
-    def __str__(self):
-        """A string that reperesent the account in Django admin."""
-        return self.username
+    # owner = models.ForeignKey(Account, on_delete=models.CASCADE)
+    # first_name = models.CharField(default='ali', max_length=100)
+    # last_name = models.CharField(default='alavi', max_length=100)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
+    sex = models.CharField(max_length=1, choices=[(
+        'M', 'Male'), ('F', 'Female')], blank=True, null=True)
+    marital_status = models.CharField(max_length=10, choices=[(
+        'single', 'Single'), ('married', 'Married')], blank=True, null=True)
+    weight = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    height = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    waist = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    abdomen = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    chest = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    leg = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    arm = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    hip = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    thigh = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
+    shoulder = models.DecimalField(
+        max_digits=5, decimal_places=2, blank=True, null=True)
