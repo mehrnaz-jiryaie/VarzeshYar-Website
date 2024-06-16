@@ -21,7 +21,7 @@
           <div class="input-box">
             <img src="{% static 'registration/svg/user.svg' %}" alt="user icon" />
             <label class="information" for="username">نام کاربری</label>
-            <input class="information-input" type="text" name="username" id="username" required /><br>
+            <input class="information-input" type="text" name="username" id="username" required />
             {% if form.username.errors %}
               <div class="error">{{ form.username.errors }}</div>
             {% endif %}
@@ -29,7 +29,7 @@
           <div class="input-box">
             <img src="{% static 'registration/svg/sms.svg' %}" alt="user icon" />
             <label class="information" for="email">ایمیل</label>
-            <input class="information-input" type="email" name="email" id="email" required /><br>
+            <input class="information-input" type="email" name="email" id="email" required />
             {% if form.email.errors %}
               <div class="error">{{ form.email.errors }}</div>
             {% endif %}
@@ -37,7 +37,7 @@
           <div class="input-box">
             <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
             <label class="information" for="password1">رمز عبور</label>
-            <input class="information-input" type="password" name="password1" id="password1" required /><br>
+            <input class="information-input" type="password" name="password1" id="password1" required />
             {% if form.password1.errors %}
               <div class="error">{{ form.password1.errors }}</div>
             {% endif %}
@@ -45,7 +45,7 @@
           <div class="input-box">
             <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
             <label class="information" for="password2">تایید رمز عبور</label>
-            <input class="information-input" type="password" name="password2" id="password2" required /><br>
+            <input class="information-input" type="password" name="password2" id="password2" required />
             {% if form.password2.errors %}
               <div class="error">{{ form.password2.errors }}</div>
             {% endif %}

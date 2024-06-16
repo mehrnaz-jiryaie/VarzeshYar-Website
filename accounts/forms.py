@@ -53,44 +53,44 @@ class RegisterForm(UserCreationForm):
         return email
 
 
-# class LoginForm(AuthenticationForm):
-#     username = forms.CharField(
-#         label='نام کاربری',
-#         error_messages={
-#             'required': 'لطفا نام کاربری خود را وارد کنید.'
-#         }
-#     )
-#     password = forms.CharField(
-#         label='رمز عبور',
-#         widget=forms.PasswordInput,
-#         error_messages={
-#             'required': 'لطفا رمز عبور خود را وارد کنید.'
-#         }
-#     )
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(
+        label='نام کاربری',
+        error_messages={
+            'required': 'لطفا نام کاربری خود را وارد کنید.'
+        }
+    )
+    password = forms.CharField(
+        label='رمز عبور',
+        widget=forms.PasswordInput,
+        error_messages={
+            'required': 'لطفا رمز عبور خود را وارد کنید.'
+        }
+    )
 
-#     def confirm_login_allowed(self, user):
-#         if not user.is_active:
-#             raise forms.ValidationError(
-#                 'این حساب کاربری غیر فعال است.',
-#                 code='inactive',
-#             )
+    def confirm_login_allowed(self, user):
+        if not user.is_active:
+            raise forms.ValidationError(
+                'این حساب کاربری غیر فعال است.',
+                code='inactive',
+            )
 
-#     def clean(self):
-#         username = self.cleaned_data.get('username')
-#         password = self.cleaned_data.get('password')
+    def clean(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
 
-#         if username and password:
-#             self.user_cache = authenticate(
-#                 self.request, username=username, password=password)
-#             if self.user_cache is None:
-#                 raise forms.ValidationError(
-#                     'لطفا نام کاربری و رمز عبور صحیح را وارد کنید. توجه داشته باشید که هر دو فیلد ممکن است حساس به حروف باشند.',
-#                     code='invalid_login',
-#                 )
-#             else:
-#                 self.confirm_login_allowed(self.user_cache)
+        if username and password:
+            self.user_cache = authenticate(
+                self.request, username=username, password=password)
+            if self.user_cache is None:
+                raise forms.ValidationError(
+                    'لطفا نام کاربری و رمز عبور صحیح را وارد کنید. توجه داشته باشید که هر دو فیلد ممکن است حساس به حروف باشند.',
+                    code='invalid_login',
+                )
+            else:
+                self.confirm_login_allowed(self.user_cache)
 
-#         return self.cleaned_data
+        return self.cleaned_data
 
 
 # class ProfileForm(forms.ModelForm):
