@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import RegisterForm, LoginForm, ProfileForm
+from .forms import RegisterForm, LoginForm, ProfileForm, PhysicalInformationForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -32,7 +32,6 @@ def login_view(request):
     return render(request, 'registration/login.html', {'form': form})
 
 
-
 def successful_registration(request):
     """Successful registration page."""
     return render(request, 'registration/successful.html')
@@ -58,16 +57,22 @@ def profile_view(request):
         form = ProfileForm(instance=request.user, request=request)
     return render(request, 'registration/profile.html', {'form': form})
 
-# @login_required
-# def physical_information(request):
-#     """Physical information page."""
-#     if request.method == 'POST':
-#         form = PhysicalInformationForm(request.POST)
-#         if form.is_valid():
-#             return redirect('gym:home')
-#     else:
-#         form = PhysicalInformationForm()
-#     return render(request, 'registration/physical_information.html', {'form': form})
+
+@login_required
+def physical_information_view(request):
+    if request.method == 'POST':
+        form = PhysicalInformationForm(request.POST, instance=request.user)
+        if form.is_valid():
+            print("Form2 is valid")
+            form.save()
+            return redirect('gym:home')
+        else:
+            print("Form2 is invalid")
+            print(form.errors)
+    else:
+        form = PhysicalInformationForm(instance=request.user)
+    return render(request, 'registration/physical_information.html', {'form': form})
+
 
 def logout_view(request):
     logout(request)

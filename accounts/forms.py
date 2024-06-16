@@ -128,8 +128,9 @@ class ProfileForm(forms.ModelForm):
         return email1
 
 
-# class PhysicalInformationForm(forms.ModelForm):
-#     class Meta:
-#         model = Account
-#         fields = ['weight', 'height', 'waist', 'abdomen',
-#                   'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder']
+class PhysicalInformationForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ['weight', 'height', 'waist', 'abdomen',
+                  'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder']
+    
