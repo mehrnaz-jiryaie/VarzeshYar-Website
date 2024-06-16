@@ -1,71 +1,57 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <title>ورود</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'registration/login_style.css' %}" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="section-head">
-      <div>
-        <h2 class="section-title">ورزش‌یار</h2>
-      </div>
+        <div>
+            <h2 class="section-title">ورزش‌یار</h2>
+        </div>
     </header>
     <main class="menu">
-      <div class="box">
-        <form method="post" action="">
-          {% csrf_token %}
-          <h2>ورود</h2>
-          <div class="input-box">
-            <img
-              src="{% static 'regitration/svg/user.svg' %}"
-              alt="user icon"
-            />
-            <label class="information" for="name">نام کاربری</label>
-            <input
-              class="information-input"
-              type="text"
-              name="username"
-              id="username"
-              required
-            />
-          </div>
-          <div class="input-box">
-            <img
-              src="{% static 'regitration\svg\key.svg' %}"
-              alt="user icon"
-            />
-            <label class="information" for="password">رمز عبور</label>
-            <input
-              class="information-input"
-              type="password"
-              name="password"
-              id="password"
-              required
-            />
-          </div>
-          <div class="buttons">
-            <button><a href="{% url 'gym:home' %}">ورود</a></button>
-            <button class="register-button">
-              <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
-            </button>
-          </div>
-          {% if form.errors %}
-          <div class="errors">
-            <ul class="errorlist">
-              {% for field_errors in form.errors.values %}
-                {% for error in field_errors %}
-                  <li>{{ error }}</li>
-                {% endfor %}
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </form>
-      </div>
+        <div class="box">
+            <form method="post" action="{% url 'accounts:login' %}">
+                {% csrf_token %}
+                <h2>ورود</h2>
+                <div class="input-box">
+                    <img src="{% static 'registration/svg/user.svg' %}" alt="user icon" />
+                    <label class="information" for="username">نام کاربری</label>
+                    <input class="information-input" type="text" name="username" id="username" required />
+                    {% if form.username.errors %}
+                        <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-box">
+                    <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
+                    <label class="information" for="password">رمز عبور</label>
+                    <input class="information-input" type="password" name="password" id="password" required />
+                    {% if form.password.errors %}
+                        <div class="error">{{ form.password.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="buttons">
+                    <button>ورود</button>
+                    <button class="register-button">
+                        <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
+                    </button>
+                </div>
+                {% if form.non_field_errors %}
+                    <div class="errors">
+                        <ul class="errorlist">
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </form>
+        </div>
     </main>
-  </body>
+</body>
 </html>

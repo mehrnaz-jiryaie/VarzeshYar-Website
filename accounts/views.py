@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -18,29 +18,18 @@ def register_view(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
-# def register(request):
-#     """Register a new user."""
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             # print(f"Logging in user: {new_user}")
-#             # login(request, new_user)
-#             return redirect('accounts:successful_registration')
-#     else:
-#         form = RegistrationForm()
-#     return render(request, 'registration/register.html', {'form': form})
 
-
-# def login(request):
-#     """Login page."""
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             return redirect('gym:home')
-#     else:
-#         form = LoginForm()
-#     return render(request, 'registration\login.html', {'form': form})
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect('gym:home')
+        else:
+            print("Form errors: ", form.errors)
+    else:
+        form = LoginForm()
+    return render(request, 'registration/login.html', {'form': form})
 
 
 
