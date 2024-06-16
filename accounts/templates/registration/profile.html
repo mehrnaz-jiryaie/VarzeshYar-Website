@@ -1,106 +1,82 @@
+<!-- profile.html -->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پروفایل‌من</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static '/registration/profile.css' %}" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="{% static '/registration/profile.css' %}">
+</head>
+<body>
     <header class="section-head">
-      <div class="container">
-        <h2 class="section-title">ورزشیار</h2>
-        <img
-          src="{% static '..\static\regitration\svg\userProfile.svg' %}"
-          alt="user icon"
-          class="icon"
-        />
-      </div>
+        <div class="container">
+            <h2 class="section-title">ورزشیار</h2>
+            <img src="{% static '../static/registration/svg/userProfile.svg' %}" alt="user icon" class="icon" />
+        </div>
     </header>
     <main class="section-main">
-      <div class="box">
-        <h2>افزودن اطلاعات شخصی</h2>
-        <form method="post" action="">
-          {% csrf_token %}
-          <div class="input-box">
-            <label for="firstname">نام:</label>
-            <img
-              class="input-icon"
-              src="{% static '..\static\regitration\svg\user.svg' %}"
-              alt="user icon"
-            />
-            <input type="text" name="first_name" id="firstname" />
-          </div>
-          <div class="input-box">
-            <label for="lastname">نام خانوادگی:</label>
-            <img
-              class="input-icon"
-              src="{% static '..\static\regitration\svg\user.svg' %}"
-              alt="user icon"
-            />
-            <input type="text" name="last_name" id="lastname" />
-          </div>
-          <div class="input-box">
-            <label for="phone-number">شماره تلفن:</label>
-            <img
-              class="input-icon"
-              src="{% static '..\static\regitration\svg\phone.svg' %}"
-              alt="phone icon"
-            />
-            <input type="tel" name="phone_number" id="phone-number" />
-          </div>
-          <div class="input-box">
-            <label for="email">ایمیل:</label>
-            <img
-              class="input-icon"
-              src="{% static '..\static\regitration\svg\email.svg' %}"
-              alt=""
-            />
-            <input type="email" name="email" id="email" />
-          </div>
-          <div class="input-box">
-            <label for="password">رمزعبور:</label>
-            <img
-              class="input-icon"
-              src="{% static '..\static\regitration\svg\password.svg' %}"
-              alt=""
-            />
-            <input type="password" name="password" id="password" />
-          </div>
-          <div class="input-box">
-            <label for="birth-date">تاریخ تولد:</label>
-            <input type="date" name="birth_date" id="birth-date" />
-          </div>
-          <div class="input-box">
-            <label>جنسیت:</label>
-            <div class="radio-options">
-              <div class="radio-option">
-                <label for="male">مرد</label>
-                <input type="radio" name="sex" id="male" />
-              </div>
-              <div class="radio-option">
-                <label for="female">زن</label>
-                <input type="radio" name="sex" id="female" />
-              </div>
-            </div>
-          </div>
-          <div class="input-box">
-            <label>وضعیت تاهل:</label>
-            <div class="radio-options">
-              <div class="radio-option">
-                <label for="single">مجرد</label>
-                <input type="radio" name="marital_status" id="single" />
-              </div>
-              <div class="radio-option">
-                <label for="married">متاهل</label>
-                <input type="radio" name="marital_status" id="married" />
-              </div>
-            </div>
-          </div>
-          <a class="btn" href="{% url 'accounts:physical-information' %}">مرحله بعد</a>
-        </form>
-      </div>
+        <div class="box">
+            <h2>افزودن اطلاعات شخصی</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-box">
+                    <label for="firstname">نام:</label>
+                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" />
+                    <input type="text" name="first_name" id="firstname" value="{{ form.first_name.value }}">
+                </div>
+                <div class="input-box">
+                    <label for="lastname">نام خانوادگی:</label>
+                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" />
+                    <input type="text" name="last_name" id="lastname" value="{{ form.last_name.value }}">
+                </div>
+                <div class="input-box">
+                    <label for="phone-number">شماره تلفن:</label>
+                    <img class="input-icon" src="{% static '../static/registration/svg/phone.svg' %}" alt="phone icon" />
+                    <input type="tel" name="phone_number" id="phone-number" placeholder="09xxxxxxxxx" value="{{ form.phone_number.value|default_if_none:''  }}">
+                </div>
+                <div class="input-box">
+                    <label for="email">ایمیل:</label>
+                    <img class="input-icon" src="{% static '../static/registration/svg/email.svg' %}" alt="" />
+                    <input type="email" name="email" id="email" value="{{ form.email.value }}">
+                    {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-box">
+                    <label for="birth-date">تاریخ تولد:</label>
+                    <input type="date" name="birth_date" id="birth-date" value="{{ form.birth_date.value }}">
+                </div>
+                <div class="input-box">
+                    <label>جنسیت:</label>
+                    <div class="radio-options">
+                        <div class="radio-option">
+                            <label for="male">مرد</label>
+                            <input type="radio" name="sex" id="male" value="M" {% if form.sex.value == "M" %}checked{% endif %}>
+                        </div>
+                        <div class="radio-option">
+                            <label for="female">زن</label>
+                            <input type="radio" name="sex" id="female" value="F" {% if form.sex.value == "F" %}checked{% endif %}>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label>وضعیت تاهل:</label>
+                    <div class="radio-options">
+                        <div class="radio-option">
+                            <label for="single">مجرد</label>
+                            <input type="radio" name="marital_status" id="single" value="single" {% if form.marital_status.value == "single" %}checked{% endif %}>
+                        </div>
+                        <div class="radio-option">
+                            <label for="married">متاهل</label>
+                            <input type="radio" name="marital_status" id="married" value="married" {% if form.marital_status.value == "married" %}checked{% endif %}>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn">مرحله بعد</a></button>
+            </form>
+        </div>
     </main>
-  </body>
+</body>
 </html>
+

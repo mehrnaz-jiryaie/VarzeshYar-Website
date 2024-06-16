@@ -93,17 +93,39 @@ class LoginForm(AuthenticationForm):
         return self.cleaned_data
 
 
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = Account
-#         fields = ['first_name', 'last_name', 'phone_number',
-#                   'email', 'birth_date', 'sex', 'marital_status']
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ['first_name', 'last_name', 'phone_number',
+                  'email', 'birth_date', 'sex', 'marital_status']
         
-#     def clean_email(self):
-#         email = self.cleaned_data.get('email')
-#         if Account.objects.filter(email=email).exists():
-#             raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
-#         return email
+    # def clean_email(self):
+    #     email = self.cleaned_data.get('email')
+    #     if Account.objects.filter(email=email).exists():
+    #         raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
+    #     return email
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(ProfileForm, self).__init__(*args, **kwargs)
+
+    def clean_email(self):
+        email1 = self.cleaned_data.get('email')
+        
+        if self.request and self.request.user.is_authenticated:
+            username = self.request.user.username
+            account = Account.objects.filter(username=username).first()
+            if account:
+                email2 = account.email
+                if email1 == email2:
+                    return email1
+                else:
+                    raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
+            else:
+                raise forms.ValidationError('کاربری با این نام کاربری وجود ندارد.')
+        else:
+            raise forms.ValidationError('کاربر معتبر نیست.')
+
+        return email1
 
 
 # class PhysicalInformationForm(forms.ModelForm):
