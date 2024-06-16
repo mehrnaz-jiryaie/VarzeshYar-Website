@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -38,15 +38,25 @@ def successful_registration(request):
     return render(request, 'registration/successful.html')
 
 
-# def profile(request):
-#     """User profile page."""
-#     if request.method == 'POST':
-#         form = ProfileForm(request.POST)
-#         if form.is_valid():
-#             return redirect('registration:physical_information')
-#     else:
-#         form = ProfileForm()
-#     return render(request, 'registration/profile.html', {'form': form})
+@login_required
+def profile_view(request):
+    print("Profile view accessed")
+    # user = request.user
+    # print(f"User: {user}")
+    if request.method == 'POST':
+        print("POST request received")
+        form = ProfileForm(request.POST, instance=request.user, request=request)
+        if form.is_valid():
+            print("Form is valid")
+            form.save()
+            return redirect('accounts:physical-information')
+        else:
+            print("Form is invalid")
+            print(form.errors)
+    else:
+        print("GET request received")
+        form = ProfileForm(instance=request.user, request=request)
+    return render(request, 'registration/profile.html', {'form': form})
 
 # @login_required
 # def physical_information(request):
