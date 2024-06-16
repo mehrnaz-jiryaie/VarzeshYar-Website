@@ -109,13 +109,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+# USE_I18N = True
 
-USE_TZ = True
+# USE_TZ = True
+
+LANGUAGE_CODE = 'fa'
+USE_I18N = True
+USE_L10N = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -128,9 +132,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# My settings.
-LOGIN_REDIRECT_URL = 'gym:index'
-LOGOUT_REDIRECT_URL = 'gym:index'
+AUTH_USER_MODEL = 'accounts.Account'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
