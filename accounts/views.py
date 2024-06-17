@@ -31,10 +31,10 @@ def login_view(request):
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
 
-
+@login_required
 def successful_registration(request):
     """Successful registration page."""
-    return render(request, 'registration/successful.html')
+    return render(request, 'registration/successful_registration.html')
 
 
 @login_required
