@@ -73,7 +73,7 @@ def physical_information_view(request):
         form = PhysicalInformationForm(instance=request.user)
     return render(request, 'registration/physical_information.html', {'form': form})
 
-
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('gym:home')
