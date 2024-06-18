@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>باشگاه‌ها</title>
-    <link rel="icon" href="strength.png">
-    <link rel="stylesheet" href="gyms.css">
-    <script src="gyms.js"></script>
+    {% load static %}
+    <link rel="icon" href="{% static 'gym/svg/strength.png' %}">
+    <link rel="stylesheet" href="{% static 'gym/gyms.css' %}">
+    <script src="{% static 'gym/gyms.js' %}"></script>
 </head>
 
 <header class="sticky">
@@ -19,12 +20,17 @@
         </div>
         <div class="header_links">
             <div>
-                <a class="header_nav" href="home.html">صفحه اصلی</a>
-                <a class="header_nav" href="">باشگاه ها</a>
-                <a class="header_nav" href="">مربی ها</a>
+                <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
+                <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
+                <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
             </div>
             <div>
-                <a class="header_nav profile" href="">پروفایل</a>
+                {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
+                    <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+                {% else %}
+                    <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
+                    <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+                {% endif %}
             </div>
         </div>
     </span>
@@ -33,10 +39,15 @@
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">ورزش‌یار</button>
             <div id="myDropdown" class="dropdown-content">
-                <a href="home.html">صفحه اصلی</a>
-                <a href="">باشگاه ها</a>
-                <a href="">مربی ها</a>
-                <a href="">پروفایل</a>
+                <a href="{% url 'gym:home' %}">صفحه اصلی</a>
+                <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
+                <a href="{% url 'gym:trainers' %}">مربی ها</a>
+                {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
+                    <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+                {% else %}
+                    <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
+                    <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+                {% endif %}            
             </div>
         </div>
     </div>
@@ -59,18 +70,18 @@
             <div class="container">
                 <div class="filterDiv males">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym7.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym7.jpg' %}">
                         <div class="gym-img-container" style="background-image: url(svg/gym7.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی ریکاوری </h3>
                             <h4>قیمت: ۳۵۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png' %}">
                                 <p>تهران، میدان رسالت</p>
                             </span>
                             <button class="display-info" onclick="displayInformation(0)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/man.png">
+                                <img class="icon" src="{% static 'gym/svg/man.png' %}">
                                 <p>شنبه تا چهارشنبه ۱۷:۳۰ الی ۲۳:۰۰</p>
                             </span>
                             <p class="phone-number">021-7709745</p>
@@ -79,18 +90,18 @@
                 </div>
                 <div class="filterDiv female">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym6.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym6.jpg' %}">
                         <div class="gym-img-container" style="background-image: url(svg/gym6.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی الیت </h3>
                             <h4>قیمت: از ۳۰۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png' %}">
                                 <p>اصفهان، پاسداران </p>
                             </span>
                             <button class="display-info" onclick="displayInformation(1)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/woman.png"">
+                                <img class="icon" src="{% static 'gym/svg/woman.png' %}">
                             <p>شنبه تا پنجشنبه ۷:۰۰ الی ۲۳:۰۰
                             </p>
                         </span>
@@ -100,18 +111,18 @@
                 </div>
                 <div class="filterDiv female">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym3.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym3.jpg' %}">
                         <div class="gym-img-container" style="background-image: url(svg/gym3.jpg);"></div>
                         <div class="gym-details">
                             <h3>سالن ایروبیک و بدنسازی نیلوفرانه</h3>
                             <h4>قیمت: متغیر</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png' %}">
                                 <p>تهران، یادگار امام، خیابان فرحزاد </p>
                             </span>
                             <button class="display-info" onclick="displayInformation(2)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/woman.png"">
+                                <img class="icon" src="{% static 'gym/svg/woman.png' %}">
                             <p>شنبه تا پنجشنبه ۷:۰۰ الی ۲۳:۰۰
                             </p>
                         </span>
@@ -121,18 +132,18 @@
                 </div>
                 <div class="filterDiv female">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym2.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym2.jpg' %}">
                         <div class="gym-img-container" style="background-image: url(svg/gym2.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی اکسیژن</h3>
                             <h4>قیمت: ۱,۰۰۰,۰۰۰ تومان </h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png'%}">
                                 <p>کرج، مهرشهر، مجتمع کاریزما</p>
                             </span>
                             <button class="display-info" onclick="displayInformation(3)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/woman.png"">
+                                <img class="icon" src="{% static 'gym/svg/woman.png'%}">
                             <p>شنبه تا چهارشنبه ۷:۰۰ الی ۲۳:۰۰
                             </p>
                         </span>
@@ -142,18 +153,18 @@
                 </div>
                 <div class="filterDiv males">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym5.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym5.jpg'%}">
                         <div class="gym-img-container" style="background-image: url(svg/gym5.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی سپیدار </h3>
                             <h4>قیمت: ۵۵۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png'%}">
                                 <p>تهران، فلکه دوم صادقیه، ابتدای کاشانی</p>
                             </span>
                             <button class="display-info" onclick="displayInformation(4)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/man.png">
+                                <img class="icon" src="{% static 'gym/svg/man.png'%}">
                                 <p>شنبه تا چهارشنبه ۱۵:۰۰ الی ۲۰:۰۰</p>
                             </span>
                             <p class="phone-number">021-77097658</p>
@@ -162,18 +173,18 @@
                 </div>
                 <div class="filterDiv males">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym4.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym4.jpg'%}">
                         <div class="gym-img-container" style="background-image: url(svg/gym4.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه ورزشی سینرجیم</h3>
                             <h4>قیمت: ۳۵۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png'%}">
                                 <p>تهران، شریعتی، تقاطع سرافراز و یاسمن</p>
                             </span>
                             <button class="display-info" onclick="displayInformation(5)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/man.png">
+                                <img class="icon" src="{% static 'gym/svg/man.png'%}">
                                 <p>شنبه تا چهارشنبه ۱۷:۳۰ الی ۲۳:۰۰</p>
                             </span>
                             <p class="phone-number">021-77097658</p>
@@ -182,18 +193,18 @@
                 </div>
                 <div class="filterDiv female">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym1.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym1.jpg'%}">
                         <div class="gym-img-container" style="background-image: url(svg/gym1.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه خصوصی سهند</h3>
                             <h4>قیمت: ۷۵۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png'%}">
                                 <p>تهران، سعادت آباد، میدان شهرداری</p>
                             </span>
                             <button class="display-info" onclick="displayInformation(6)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/woman.png"">
+                                <img class="icon" src="{% static 'gym/svg/woman.png'%}">
                             <p>یکشنبه تا چهارشنبه ۷:۰۰ الی ۲۳:۰۰
                             </p>
                         </span>
@@ -203,18 +214,18 @@
                 </div>
                 <div class="filterDiv males">
                     <span class="info">
-                        <img class="gym-img" src="svg/gym8.jpg">
+                        <img class="gym-img" src="{% static 'gym/svg/gym8.jpg'%}">
                         <div class="gym-img-container" style="background-image: url(svg/gym8.jpg);"></div>
                         <div class="gym-details">
                             <h3>سالن بسکتبال چیتگر </h3>
                             <h4>قیمت: ۵۰۰,۰۰۰ تومان</h4>
                             <span>
-                                <img class="location-icon" src="svg/location.png">
+                                <img class="location-icon" src="{% static 'gym/svg/location.png'%}">
                                 <p>تهران، چیتگر </p>
                             </span>
                             <button class="display-info" onclick="displayInformation(7)">اطلاعات تماس</button>
                             <span>
-                                <img class="icon" src="svg/man.png"">
+                                <img class="icon" src="{% static 'gym/svg/man.png'%}">
                             <p>شنبه تا پنجشنبه ۷:۰۰ الی ۲۳:۰۰
                             </p>
                         </span>

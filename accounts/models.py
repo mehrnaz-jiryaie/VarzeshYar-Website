@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 
 class Account(AbstractUser):
     """Represents an account for each person."""
-    username = models.CharField(unique=True, blank=False, max_length=100)
+    username = models.CharField(unique=True, blank=False, max_length=10)
     email = models.EmailField(unique=True, max_length=254)
 
     def __str__(self):
