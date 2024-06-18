@@ -84,7 +84,7 @@ class LoginForm(AuthenticationForm):
                 self.request, username=username, password=password)
             if self.user_cache is None:
                 raise forms.ValidationError(
-                    'لطفا نام کاربری و رمز عبور صحیح را وارد کنید. توجه داشته باشید که هر دو فیلد ممکن است حساس به حروف باشند.',
+                    'لطفا نام کاربری و رمز عبور صحیح را وارد کنید.',
                     code='invalid_login',
                 )
             else:
