@@ -8,5 +8,8 @@ This project has a ```requirements.txt``` file that includes all Django packages
 ``` python 
 pip install -r requirements.txt
 ```
-
+Run the Django development server with the command:
+```python
+python manage.py runserver
+```
 
