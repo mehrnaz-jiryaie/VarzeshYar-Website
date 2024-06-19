@@ -41,6 +41,8 @@
                         <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
                     </button>
                 </div>
+            </form>
+
                 {% if form.non_field_errors %}
                     <div class="errors">
                         <ul class="errorlist">
@@ -50,7 +52,6 @@
                         </ul>
                     </div>
                 {% endif %}
-            </form>
         </div>
     </main>
 </body>
