@@ -247,6 +247,7 @@ footer {
     width: 90vw;
   }
   .header {
+    /* margin: 0; */
     padding: 0rem 2rem;
   }
   .container {
@@ -325,6 +326,28 @@ footer {
     margin-left: 1rem;
   }
 }
+@media only screen and (max-width: 915px) {
+  .header {
+    height: 0;
+    display: none;
+    margin: 0;
+  }
+  #filter h4 {
+    display: none;
+  }
+  .mobile-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #80deea;
+    height: 5rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  #logo {
+    margin: 0;
+  }
+}
 @media only screen and (max-width: 685px) {
   .header {
     height: 0;
@@ -348,6 +371,11 @@ footer {
   }
   .filterDiv {
     height: 22rem;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    /* width: 100%; */
   }
   .info {
     display: flex;
@@ -357,6 +385,7 @@ footer {
   .gym-img-container {
     display: flex;
     min-height: 12rem;
+    margin: 0;
   }
   .gym-details {
     display: grid;

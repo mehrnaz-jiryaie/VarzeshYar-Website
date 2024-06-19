@@ -42,11 +42,11 @@
                 <a href="{% url 'gym:home' %}">صفحه اصلی</a>
                 <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a href="{% url 'gym:trainers' %}">مربی ها</a>
-                {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
-                    <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+                 {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
+                    <a href="{% url 'accounts:profile' %}">پروفایل</a>
                 {% else %}
-                    <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
-                    <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+                    <a href="{% url 'accounts:login' %}">ورود</a>
+                    <a href="{% url 'accounts:register' %}">ثبت نام</a>
                 {% endif %}            
             </div>
         </div>
@@ -71,7 +71,7 @@
                 <div class="filterDiv males">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym7.jpg' %}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym7.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym7.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی ریکاوری </h3>
                             <h4>قیمت: ۳۵۰,۰۰۰ تومان</h4>
@@ -91,7 +91,7 @@
                 <div class="filterDiv female">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym6.jpg' %}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym6.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym6.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی الیت </h3>
                             <h4>قیمت: از ۳۰۰,۰۰۰ تومان</h4>
@@ -112,7 +112,7 @@
                 <div class="filterDiv female">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym3.jpg' %}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym3.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym3.jpg);"></div>
                         <div class="gym-details">
                             <h3>سالن ایروبیک و بدنسازی نیلوفرانه</h3>
                             <h4>قیمت: متغیر</h4>
@@ -133,7 +133,7 @@
                 <div class="filterDiv female">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym2.jpg' %}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym2.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym2.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی اکسیژن</h3>
                             <h4>قیمت: ۱,۰۰۰,۰۰۰ تومان </h4>
@@ -154,7 +154,7 @@
                 <div class="filterDiv males">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym5.jpg'%}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym5.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym5.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه بدنسازی سپیدار </h3>
                             <h4>قیمت: ۵۵۰,۰۰۰ تومان</h4>
@@ -174,7 +174,7 @@
                 <div class="filterDiv males">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym4.jpg'%}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym4.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym4.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه ورزشی سینرجیم</h3>
                             <h4>قیمت: ۳۵۰,۰۰۰ تومان</h4>
@@ -194,7 +194,7 @@
                 <div class="filterDiv female">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym1.jpg'%}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym1.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym1.jpg);"></div>
                         <div class="gym-details">
                             <h3>باشگاه خصوصی سهند</h3>
                             <h4>قیمت: ۷۵۰,۰۰۰ تومان</h4>
@@ -215,7 +215,7 @@
                 <div class="filterDiv males">
                     <span class="info">
                         <img class="gym-img" src="{% static 'gym/svg/gym8.jpg'%}">
-                        <div class="gym-img-container" style="background-image: url(svg/gym8.jpg);"></div>
+                        <div class="gym-img-container" style="background-image: url(../../static/gym/svg/gym8.jpg);"></div>
                         <div class="gym-details">
                             <h3>سالن بسکتبال چیتگر </h3>
                             <h4>قیمت: ۵۰۰,۰۰۰ تومان</h4>
