@@ -6,6 +6,7 @@
 </p>
 
 ---
+## About
 This website is a project for the completion of our bachelor's degree at [Bu-Ali Sina University](https://basu.ac.ir/en/) of Hamedaan.
 ## Requirements
 - [Python](https://www.python.org/downloads/) 3.12
