@@ -48,13 +48,9 @@ html :hover {
   border-radius: 0.75rem;
   box-shadow: 0px 0px 5px 1px #45aebc;
 }
-.profile:hover {
-  opacity: 0.9;
-  color: #0097cf;
-}
-.header a:hover {
+.header_nav:hover{
   cursor: pointer;
-  color: #fff;
+  opacity: 0.8;
 }
 /* body style */
 body {
