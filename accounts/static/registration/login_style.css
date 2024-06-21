@@ -51,7 +51,6 @@ body {
 }
 #username {
   background: url(svg/userProfile.svg) no-repeat scroll 8px 8px;
-  /* padding-left:2rem; */
 }
 #password {
   background: url(svg/key.svg) no-repeat scroll 8px 8px;
@@ -130,7 +129,6 @@ form h2 {
   }
   .box form {
     align-items: start;
-    /* justify-content: start; */
     height: 17rem;
   }
   .input-box {
@@ -149,4 +147,7 @@ form h2 {
     border-radius: 10px;
     width: 48%;
   }
+}
+a:visited{
+	text-decoration: none;
 }

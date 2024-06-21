@@ -101,5 +101,7 @@ input[type=text]{
 	color: white;
 	margin: auto;
 	margin-top: 20px;
-	
+}
+a:visited{
+	text-decoration: none;
 }

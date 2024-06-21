@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ثبت‌نام</title>
+  <link rel="icon" href="../../static/registration/svg/strength.png">
   {% load static %}
   <link rel="stylesheet" href="{% static 'registration/register.css' %}" />
 </head>
+
 <body>
   <header class="section-head">
     <div class="container">
@@ -19,42 +22,41 @@
         {% csrf_token %}
         <div class="input-form">
           <div class="input-box">
-            <img src="{% static 'registration/svg/user.svg' %}" alt="user icon" />
             <label class="information" for="username">نام کاربری</label>
             <input class="information-input" type="text" name="username" id="username" required />
-            {% if form.username.errors %}
-              <div class="error">{{ form.username.errors }}</div>
-            {% endif %}
           </div>
           <div class="input-box">
-            <img src="{% static 'registration/svg/sms.svg' %}" alt="user icon" />
             <label class="information" for="email">ایمیل</label>
             <input class="information-input" type="email" name="email" id="email" required />
-            {% if form.email.errors %}
-              <div class="error">{{ form.email.errors }}</div>
-            {% endif %}
           </div>
           <div class="input-box">
-            <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
             <label class="information" for="password1">رمز عبور</label>
-            <input class="information-input" type="password" name="password1" id="password1" required />
-            {% if form.password1.errors %}
-              <div class="error">{{ form.password1.errors }}</div>
-            {% endif %}
+            <input class="information-input" type="password" name="password1" id="password" required />
           </div>
           <div class="input-box">
-            <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
             <label class="information" for="password2">تایید رمز عبور</label>
-            <input class="information-input" type="password" name="password2" id="password2" required />
-            {% if form.password2.errors %}
-              <div class="error">{{ form.password2.errors }}</div>
-            {% endif %}
+            <input class="information-input" type="password" name="password2" id="password" required />
           </div>
           <button>ثبت‌نام</button>
         </div>
-        
+
       </form>
+      <!-- <div class="error-container"> -->
+        {% if form.username.errors %}
+        <span class="error">{{ form.username.errors }}</span>
+        {% endif %}
+        {% if form.email.errors %}
+        <span class="error">{{ form.email.errors }}</span>
+        {% endif %}
+        {% if form.password1.errors %}
+        <span class="error">{{ form.password1.errors }}</span>
+        {% endif %}
+        {% if form.password2.errors %}
+        <span class="error">{{ form.password2.errors }}</span>
+        {% endif %}
+
     </div>
   </main>
 </body>
+
 </html>

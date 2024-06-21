@@ -435,7 +435,6 @@ footer {
     font-size: 0.8rem;
   }
 }
-
 .dropbtn {
   background-color: #80deea;
   color: #01739d;
@@ -444,12 +443,10 @@ footer {
   border: none;
   cursor: pointer;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -458,7 +455,6 @@ footer {
   padding-left: 1rem;
   z-index: 1;
 }
-
 .dropdown-content a {
   color: #01739d;
   padding: 0.5rem 1rem;
@@ -466,7 +462,9 @@ footer {
   text-decoration: none;
   display: block;
 }
-
 .show {
   display: block;
+}
+a:visited {
+  text-decoration: none;
 }

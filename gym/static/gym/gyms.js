@@ -39,10 +39,6 @@ function removeClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-
-
-
-
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
