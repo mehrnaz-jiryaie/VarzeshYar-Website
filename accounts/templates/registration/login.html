@@ -20,7 +20,6 @@
                 {% csrf_token %}
                 <h2>ورود</h2>
                 <div class="input-box">
-                    <img src="{% static 'registration/svg/user.svg' %}" alt="user icon" />
                     <label class="information" for="username">نام کاربری</label>
                     <input class="information-input" type="text" name="username" id="username" required />
                     {% if form.username.errors %}
@@ -28,7 +27,6 @@
                     {% endif %}
                 </div>
                 <div class="input-box">
-                    <img src="{% static 'registration/svg/key.svg' %}" alt="user icon" />
                     <label class="information" for="password">رمز عبور</label>
                     <input class="information-input" type="password" name="password" id="password" required />
                     {% if form.password.errors %}

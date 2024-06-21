@@ -18,7 +18,8 @@ body {
   justify-content: center;
 }
 .section-title {
-  padding: 1rem 4rem;
+  color: #01739d;
+  padding: 1rem 7rem;
   cursor: default;
 }
 /* body styles */
@@ -42,11 +43,18 @@ body {
 .information-input {
   border: 1px solid #ccc;
   border-radius: 1rem;
-  padding: 12px 12px 12px 38px;
+  padding: 12px 12px 12px 40px;
   font-size: 16px;
   direction: ltr;
   outline: none;
   width: 60%;
+}
+#username {
+  background: url(svg/userProfile.svg) no-repeat scroll 8px 8px;
+  /* padding-left:2rem; */
+}
+#password {
+  background: url(svg/key.svg) no-repeat scroll 8px 8px;
 }
 .information-input:focus {
   border: 1px solid #0097cf;
@@ -57,12 +65,6 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
-}
-.input-box img {
-  position: absolute;
-  left: 10px;
-  width: 20px;
-  height: 20px;
 }
 .box form {
   display: flex;
@@ -111,15 +113,40 @@ form h2 {
 }
 @media only screen and (max-width: 610px) {
   .box {
-    width: 25rem;
+    width: 70vw;
   }
-  /* .box form { */
-  /* width: 50vw; */
-  /* } */
+  .section-title {
+    padding: 1rem 4rem;
+  }
 }
-@media only screen and (max-width: 610px) {
-	.box{
-		width: 19rem;
-		padding: 1rem;
-	}
+@media only screen and (max-width: 450px) {
+  .section-title {
+    padding: 1rem 2rem;
+  }
+  .box {
+    height: 21rem;
+    margin: 5rem auto;
+    padding: 1rem 2.2rem;
+  }
+  .box form {
+    align-items: start;
+    /* justify-content: start; */
+    height: 17rem;
+  }
+  .input-box {
+    flex-direction: column;
+    align-items: start;
+  }
+  .information-input {
+    padding: 10px 10px 10px 40px;
+    font-size: 14px;
+    width: 80%;
+    margin-top: 5px;
+  }
+  form button {
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 10px;
+    width: 48%;
+  }
 }
