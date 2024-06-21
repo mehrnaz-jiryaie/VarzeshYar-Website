@@ -109,28 +109,17 @@ svg {
   border-radius: 10px;
   box-shadow: 0px 0px 2px 0px #c3c2c2;
   text-align: justify;
+  box-sizing: border-box;
   text-justify: inter-word;
+}
+.article p{
+  font-size: 1.2rem;
+  margin: 0 2rem;
 }
 .article img {
   max-width: 15rem;
   margin: 0 2rem 0 1rem;
   box-shadow: 0px 0px 5px 1px #727070;
-}
-.article a {
-  color: #ef3f3e;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.article a:hover {
-  color: #be1414;
-}
-/* .article-link{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-} */
-hr {
-  margin: 1rem 0;
 }
 /* footer */
 footer {
@@ -208,6 +197,17 @@ footer {
     margin-left: 10px;
   }
 }
+@media only screen and (max-width: 820px) {
+  .article{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .article p{
+    font-size: 1rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+}
 @media only screen and (max-width: 740px) {
   .header {
     height: 0;
@@ -245,10 +245,6 @@ footer {
   }
   .gym-title img {
     max-width: 80%;
-  }
-  .content{
-    /* width: 100%; */
-    display: none;
   }
 }
 
