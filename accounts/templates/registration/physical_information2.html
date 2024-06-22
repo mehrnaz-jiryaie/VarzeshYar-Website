@@ -1,0 +1,105 @@
+<!-- physical_information.html -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل‌من</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'registration/physical_information2.css' %}">
+</head>
+<body>
+    <header class="section-head">
+        <div class="container">
+            <h2 class="section-title">ورزشیار</h2>
+            <img src="{% static '../static/registration/svg/userProfile.svg' %}" alt="user icon" class="icon" />
+        </div>
+    </header>
+    <main class="section-main">
+        <div class="box">
+            <h2>افزودن اطلاعات ورزشی:</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="all">
+                    <div class="input-box">
+                        <label for="weight"> <strong>وزن:</strong></label>
+                        <input type="text" id="weight" name="weight" value="{{ form.weight.value|default_if_none:'' }}" placeholder="بر حسب کیلوگرم">
+                        {% if form.weight.errors %}
+                            <div class="error">{{ form.weight.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="height"><strong>قد:</strong></label>
+                        <input type="text" id="height" name="height" value="{{ form.height.value|default_if_none:'' }}" placeholder="بر حسب متر">
+                        {% if form.height.errors %}
+                            <div class="error">{{ form.height.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="waist"><strong>کمر:</strong></label>
+                        <input type="text" id="waist" name="waist" value="{{ form.waist.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.waist.errors %}
+                            <div class="error">{{ form.waist.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="abdomen"><strong>شکم:</strong></label>
+                        <input type="text" id="abdomen" name="abdomen" value="{{ form.abdomen.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.abdomen.errors %}
+                            <div class="error">{{ form.abdomen.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="chest"><strong>سینه:</strong></label>
+                        <input type="text" id="chest" name="chest" value="{{ form.chest.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.chest.errors %}
+                            <div class="error">{{ form.chest.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="leg"><strong>ساق:</strong></label>
+                        <input type="text" id="leg" name="leg" value="{{ form.leg.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.leg.errors %}
+                            <div class="error">{{ form.leg.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="arm"><strong>بازو:</strong></label>
+                        <input type="text" id="arm" name="arm" value="{{ form.arm.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.arm.errors %}
+                            <div class="error">{{ form.arm.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="hip"><strong>باسن:</strong></label>
+                        <input type="text" id="hip" name="hip" value="{{ form.hip.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.hip.errors %}
+                            <div class="error">{{ form.hip.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="thigh"><strong>ران:</strong></label>
+                        <input type="text" id="thigh" name="thigh" value="{{ form.thigh.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.thigh.errors %}
+                            <div class="error">{{ form.thigh.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="input-box">
+                        <label for="shoulder"><strong>سرشان:</strong></label>
+                        <input type="text" id="shoulder" name="shoulder" value="{{ form.shoulder.value|default_if_none:'' }}" placeholder="بر حسب سانتی متر">
+                        {% if form.shoulder.errors %}
+                            <div class="error">{{ form.shoulder.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+               
+                <button type="submit" class="btn">ثبت</button>  
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+
+<!-- <button type="submit" class="btn">ثبت</button> -->
+
+

@@ -71,7 +71,7 @@ def physical_information_view(request):
             print(form.errors)
     else:
         form = PhysicalInformationForm(instance=request.user)
-    return render(request, 'registration/physical_information.html', {'form': form})
+    return render(request, 'registration/physical_information2.html', {'form': form})
 
 @login_required
 def logout_view(request):
