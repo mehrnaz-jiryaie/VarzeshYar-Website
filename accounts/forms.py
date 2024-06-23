@@ -99,11 +99,7 @@ class ProfileForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'phone_number',
                   'email', 'birth_date', 'sex', 'marital_status']
         
-    # def clean_email(self):
-    #     email = self.cleaned_data.get('email')
-    #     if Account.objects.filter(email=email).exists():
-    #         raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
-    #     return email
+   
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(ProfileForm, self).__init__(*args, **kwargs)

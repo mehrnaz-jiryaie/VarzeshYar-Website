@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'gym',
     'accounts',
     # Default Apps
-    # 'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
