@@ -17,8 +17,10 @@ urlpatterns = [
     path('profile/', views.profile_view, name='profile'),
     # Physical information page.
     path('profile/physical-information/', views.physical_information_view, name='physical-information'),
-    # Trainaer registration page.
+    # Trainer registration page.
     path('trainer_register/', views.trainer_register_view, name='trainer_registeration'),
-    # Trainaer login page.
+    # Trainer login page.
     path('trainer_login/', views.trainer_login_view, name='login'),
+    # Trainer profile page.
+    path('trainer_profile/', views.trainer_profile_view, name='trainer_profile'),
 ]

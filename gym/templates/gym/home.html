@@ -23,19 +23,19 @@
             {% if user.is_authenticated %} 
               {% if user_type == 'account' %} 
                 {{ user.username }} عزیز، خوش آمدید!
-          </span>
+          
                 <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
                 <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
               {% elif user_type == 'trainer' %}
                 <p>Welcome, {{ user.username }}!</p>
-                <a class="header_nav profile" href="">پروفایل‌ من</a>
+                <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل‌ من</a>
                 <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
               {% else %}
                 <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
                 <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
               {% endif %}
             {% endif %}
-
+          </span>
         </div>
       </div>
     </span>

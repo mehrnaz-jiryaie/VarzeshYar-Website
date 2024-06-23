@@ -143,9 +143,9 @@ class ProfileForm(forms.ModelForm):
         
         if self.request and self.request.user.is_authenticated:
             username = self.request.user.username
-            account = Account.objects.filter(username=username).first()
-            if account:
-                email2 = account.email
+            trainer_account = TrainerAccount.objects.filter(username=username).first()
+            if trainer_account:
+                email2 = trainer_account.email
                 if email1 == email2:
                     return email1
                 else:

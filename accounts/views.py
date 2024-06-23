@@ -111,3 +111,20 @@ def trainer_login_view(request):
     else:
         form = LoginForm()
     return render(request, 'registration/trainer-login.html', {'form': form})
+
+
+def trainer_profile_view(request):
+    if request.method == 'POST':
+        print("POST request received")
+        form = ProfileForm(request.POST, instance=request.user, request=request)
+        if form.is_valid():
+            print("Form is valid")
+            form.save()
+            return redirect('gym:home')
+        else:
+            print("Form is invalid")
+            print(form.errors)
+    else:
+        print("GET request received")
+        form = ProfileForm(instance=request.user, request=request)
+    return render(request, 'registration/trainer-profile.html', {'form': form})

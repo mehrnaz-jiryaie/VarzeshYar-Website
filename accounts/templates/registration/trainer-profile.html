@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پروفایل‌من</title>
+    {% load static %}
     <link rel="icon" href="../../static/registration/svg/strength.png">
-    <!-- <link rel="stylesheet" href="{% static '/registration/profile.css' %}"> -->
-    <link rel="stylesheet" href="trainer-profile.css">
+ 
+    <link rel="stylesheet" href="{% static 'registration/trainer-profile.css'%}">
 </head>
 
 
@@ -22,6 +23,7 @@
     <main>
         <h2>افزودن اطلاعات</h2>
         <form>
+            {% csrf_token %}
             <div class="information-inputs">
                 <label for="firstname">نام</label>
                 <input type="text" name="first_name" id="firstname" value="" maxlength="35">
