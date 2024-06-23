@@ -1,0 +1,92 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل‌من</title>
+    <link rel="icon" href="../../static/registration/svg/strength.png">
+    <!-- <link rel="stylesheet" href="{% static '/registration/profile.css' %}"> -->
+    <link rel="stylesheet" href="trainer-profile.css">
+</head>
+
+
+<body>
+    <header>
+        <a>ورزشیار</a>
+        <a href="">ورزشکاران</a>
+        <!-- <img src="{% static '../static/registration/svg/userProfile.svg' %}" alt="user icon" class="icon"/> -->
+        <img src="../static/registration/svg/userProfile.svg" alt="user icon" class="icon" />
+    </header>
+    <main>
+        <h2>افزودن اطلاعات</h2>
+        <form>
+            <div class="information-inputs">
+                <label for="firstname">نام</label>
+                <input type="text" name="first_name" id="firstname" value="" maxlength="35">
+                <br>
+                <label for="lastname">نام‌خانوادگی</label>
+                <input type="text" name="last_name" id="lastname" value="" maxlength="35">
+                <label for="phonenumber">شماره تلفن</label>
+                <input type="tel" name="phone-number" id="phonenumber" value="" placeholder="09xxxxxxxxx" maxlength="11"
+                    oninput="validatePhoneNumber(this)">
+                <br>
+                <label for="email">ایمیل</label>
+                <input type="email" name="email" id="email" value="" maxlength="320">
+                <label for="field">رشته ورزشی</label>
+                <input type="field" name="field" id="field" value="" maxlength="35">
+                <br>
+                <label for="city">استان</label>
+                <select name="city" id="city">
+                    <option value="1">تهران</option>
+                    <option value="2">گیلان</option>
+                    <option value="3">آذربایجان شرقی</option>
+                    <option value="4">خوزستان</option>
+                    <option value="5">فارس</option>
+                    <option value="6">اصفهان</option>
+                    <option value="7">خراسان رضوی</option>
+                    <option value="8">قزوین</option>
+                    <option value="9">سمنان</option>
+                    <option value="10">قم</option>
+                    <option value="11">مرکزی</option>
+                    <option value="12">زنجان</option>
+                    <option value="13">مازندران</option>
+                    <option value="14">گلستان</option>
+                    <option value="15">اردبیل</option>
+                    <option value="16">آذربایجان غربی</option>
+                    <option value="17">همدان</option>
+                    <option value="18">کردستان</option>
+                    <option value="19">کرمانشاه</option>
+                    <option value="20">لرستان</option>
+                    <option value="21">بوشهر</option>
+                    <option value="22">کرمان</option>
+                    <option value="23">هرمزگان</option>
+                    <option value="24">چهارمحال و بختیاری</option>
+                    <option value="25">یزد</option>
+                    <option value="26">سیستان و بلوچستان</option>
+                    <option value="27">ایلام</option>
+                    <option value="28">کهگلویه و بویراحمد</option>
+                    <option value="29">خراسان شمالی</option>
+                    <option value="30">خراسان جنوبی</option>
+                    <option value="31">البرز</option>
+                </select>
+            </div>
+            <div class="trainer-details">
+                <label for="detaile">توضیحات (حداکثر 250 کاراکتر)</label>
+                <textarea name="details" cols="40" rows="5" placeholder="درباره من..." maxlength="250"></textarea>
+            </div>
+            <div class="buttons">
+                <button id="resign">انصراف</button>
+                <button id="submit">ثبت</button>
+            </div>
+        </form>
+    </main>
+</body>
+<script>
+    function validatePhoneNumber(input) {
+        input.value = input.value.replace(/[^0-9]/g, '').slice(0, 11);
+    }
+</script>
+
+</html>
