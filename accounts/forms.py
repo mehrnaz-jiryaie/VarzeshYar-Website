@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import Account
+from .models import Account, TrainerAccount
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 
@@ -38,7 +38,10 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = Account
         fields = ('username', 'email', 'password1', 'password2')
-
+        
+        model = TrainerAccount
+        fields = ('username', 'email', 'password1', 'password2')
+        
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
@@ -49,6 +52,12 @@ class RegisterForm(UserCreationForm):
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if Account.objects.filter(email=email).exists():
+            raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
+        return email
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if TrainerAccount.objects.filter(email=email).exists():
             raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
         return email
 
@@ -96,8 +105,13 @@ class LoginForm(AuthenticationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Account
-        fields = ['first_name', 'last_name', 'phone_number',
-                  'email', 'birth_date', 'sex', 'marital_status']
+        fields = ('first_name', 'last_name', 'phone_number',
+                  'email', 'birth_date', 'sex', 'marital_status')
+        
+    class Meta:
+        model = TrainerAccount
+        fields = ('first_name', 'last_name', 'phone_number',
+                  'email', 'specialty', 'biography', 'city')
         
    
     def __init__(self, *args, **kwargs):
@@ -124,9 +138,29 @@ class ProfileForm(forms.ModelForm):
         return email1
 
 
+    def clean_email(self):
+        email1 = self.cleaned_data.get('email')
+        
+        if self.request and self.request.user.is_authenticated:
+            username = self.request.user.username
+            account = Account.objects.filter(username=username).first()
+            if account:
+                email2 = account.email
+                if email1 == email2:
+                    return email1
+                else:
+                    raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
+            else:
+                raise forms.ValidationError('کاربری با این نام کاربری وجود ندارد.')
+        else:
+            raise forms.ValidationError('کاربر معتبر نیست.')
+
+        return email1
+
 class PhysicalInformationForm(forms.ModelForm):
     class Meta:
         model = Account
-        fields = ['weight', 'height', 'waist', 'abdomen',
-                  'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder']
+        fields = ('weight', 'height', 'waist', 'abdomen',
+                  'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder')
+    
     

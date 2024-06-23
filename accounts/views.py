@@ -73,7 +73,41 @@ def physical_information_view(request):
         form = PhysicalInformationForm(instance=request.user)
     return render(request, 'registration/physical_information2.html', {'form': form})
 
+
 @login_required
 def logout_view(request):
     logout(request)
     return redirect('gym:home')
+
+
+def trainer_register_view(request):
+    """Trainer registeration."""
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            print('valid form')
+            user = form.save()
+            print('test form')
+            login(request, user)
+            print('login test')
+            return redirect('accounts:successful_registration')
+        else:
+            # Print form errors for debugging
+            print("Form errors: ", form.errors)
+    else:
+        form = RegisterForm()
+    return render(request, 'registration/trainer-register.html', {'form': form})
+
+
+
+def trainer_login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect('gym:home')
+        else:
+            print("Form errors: ", form.errors)
+    else:
+        form = LoginForm()
+    return render(request, 'registration/trainer-login.html', {'form': form})

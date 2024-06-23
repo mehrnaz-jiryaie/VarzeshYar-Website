@@ -5,6 +5,8 @@ from django.core.exceptions import ValidationError
 
 class Account(AbstractUser):
     """Represents an Account for each person."""
+    class Meta:
+        verbose_name = "Athlete"
     username = models.CharField(unique=True, blank=False, max_length=100)
     email = models.EmailField(unique=True, max_length=254)
     groups = models.ManyToManyField(
@@ -27,12 +29,12 @@ class Account(AbstractUser):
         return self.username
 
     def clean(self):
-        if Account.objects.filter(email=self.email).exclude(pk=self.pk).exists():
-            raise ValidationError(
-                {'email': 'این ایمیل قبلا ثبت شده است.'})
-        if Account.objects.filter(username=self.username).exclude(pk=self.pk).exists():
-            raise ValidationError(
-                {'username': 'این نام کاربری قبلا ثبت شده است.'})
+        if Account.objects.filter(email=self.email).exclude(pk=self.pk).exists() or \
+           TrainerAccount.objects.filter(email=self.email).exclude(pk=self.pk).exists():
+            raise ValidationError({'email': 'این ایمیل قبلا ثبت شده است.'})
+        if Account.objects.filter(username=self.username).exclude(pk=self.pk).exists() or \
+           TrainerAccount.objects.filter(username=self.username).exclude(pk=self.pk).exists():
+            raise ValidationError({'username': 'این نام کاربری قبلا ثبت شده است.'})
 
     MALE = True
     FEMALE = False
@@ -79,6 +81,8 @@ class Account(AbstractUser):
 
 class TrainerAccount(AbstractUser):
     """Represents a TrainerAccount Account."""
+    class Meta:
+        verbose_name = "Trainer"
     username = models.CharField(unique=True, blank=False, max_length=100)
     email = models.EmailField(unique=True, max_length=254)
     groups = models.ManyToManyField(
@@ -101,22 +105,14 @@ class TrainerAccount(AbstractUser):
         return self.username
 
     def clean(self):
-        if TrainerAccount.objects.filter(email=self.email).exclude(pk=self.pk).exists():
-            raise ValidationError(
-                {'email': 'این ایمیل قبلا ثبت شده است.'})
-        if TrainerAccount.objects.filter(username=self.username).exclude(pk=self.pk).exists():
-            raise ValidationError(
-                {'username': 'این نام کاربری قبلا ثبت شده است.'})
+        if TrainerAccount.objects.filter(email=self.email).exclude(pk=self.pk).exists() or \
+           Account.objects.filter(email=self.email).exclude(pk=self.pk).exists():
+            raise ValidationError({'email': 'این ایمیل قبلا ثبت شده است.'})
+        if TrainerAccount.objects.filter(username=self.username).exclude(pk=self.pk).exists() or \
+           Account.objects.filter(username=self.username).exclude(pk=self.pk).exists():
+            raise ValidationError({'username': 'این نام کاربری قبلا ثبت شده است.'})
 
     phone_number = models.CharField(max_length=15, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
-    sex = models.CharField(max_length=1, choices=[
-        ('M', 'Male'), ('F', 'Female')
-    ], blank=True, null=True)
-    marital_status = models.CharField(max_length=10, choices=[
-        ('single', 'Single'), ('married', 'Married')
-    ], blank=True, null=True)
     specialty = models.CharField(max_length=100, blank=True, null=True)
-    experience_years = models.PositiveIntegerField(blank=True, null=True)
-    certifications = models.TextField(blank=True, null=True)
     biography = models.TextField(blank=True, null=True)
+    city = models.CharField(max_length=30, blank=True, null=True)
