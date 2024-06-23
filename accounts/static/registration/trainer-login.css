@@ -1,0 +1,153 @@
+@font-face {
+  font-family: vazir-light;
+  src: url(fonts/Vazir-Light.woff) format("woff");
+}
+body {
+  background-color: white;
+  font-family: vazir-light;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* header styles */
+.section-head {
+  background: #80deea;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-title {
+  color: #01739d;
+  padding: 1rem 7rem;
+  cursor: default;
+}
+/* body styles */
+.menu {
+  background: #e1f5fe;
+  height: 100%;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 7rem auto;
+  width: 30rem;
+  height: 18rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0px #ccc;
+}
+.information-input {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 12px 12px 12px 40px;
+  font-size: 16px;
+  direction: ltr;
+  outline: none;
+  width: 60%;
+}
+#username {
+  background: url(svg/userProfile.svg) no-repeat scroll 8px 8px;
+}
+#password {
+  background: url(svg/key.svg) no-repeat scroll 8px 8px;
+}
+.information-input:focus {
+  border: 1px solid #0097cf;
+}
+.input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15rem;
+  width: 100%;
+}
+form button {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0097cf;
+  color: white;
+  font-family: vazir-light;
+  cursor: pointer;
+  width: 48%;
+}
+form button:hover {
+  opacity: 0.8;
+}
+form h2 {
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.register-button {
+  background-color: #c5d6de;
+}
+.register-button a {
+  color: black;
+}
+.errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 1rem;
+  font-family: vazir-light;
+}
+@media only screen and (max-width: 610px) {
+  .box {
+    width: 70vw;
+  }
+  .section-title {
+    padding: 1rem 4rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .section-title {
+    padding: 1rem 2rem;
+  }
+  .box {
+    height: 21rem;
+    margin: 5rem auto;
+    padding: 1rem 2.2rem;
+  }
+  .box form {
+    align-items: start;
+    height: 17rem;
+  }
+  .input-box {
+    flex-direction: column;
+    align-items: start;
+  }
+  .information-input {
+    padding: 10px 10px 10px 40px;
+    font-size: 14px;
+    width: 80%;
+    margin-top: 5px;
+  }
+  form button {
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 10px;
+    width: 48%;
+  }
+}
+a:visited{
+	text-decoration: none;
+}

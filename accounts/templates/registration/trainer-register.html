@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ثبت‌نام</title>
+  <link rel="icon" href="../../static/registration/svg/strength.png">
+  <!-- <link rel="stylesheet" href="{% static 'registration/trainer-register.css' %}" /> -->
+  <link rel="stylesheet" href="trainer-register.css" />
+</head>
+
+<body>
+  <header class="section-head">
+    <div class="container">
+      <h2 class="section-title">ورزش‌یار</h2>
+    </div>
+  </header>
+  <main class="menu">
+    <div class="box">
+      <form method="post">
+        <div class="input-form">
+          <div class="input-box">
+            <label class="information" for="username">نام کاربری</label>
+            <input class="information-input" type="text" name="username" id="username" required />
+          </div>
+          <div class="input-box">
+            <label class="information" for="email">ایمیل</label>
+            <input class="information-input" type="email" name="email" id="email" required />
+          </div>
+          <div class="input-box">
+            <label class="information" for="password1">رمز عبور</label>
+            <input class="information-input" type="password" name="password1" id="password" required />
+          </div>
+          <div class="input-box">
+            <label class="information" for="password2">تایید رمز عبور</label>
+            <input class="information-input" type="password" name="password2" id="password" required />
+          </div>
+          <button>ثبت‌نام</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
