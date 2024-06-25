@@ -135,6 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTHENTICATION_BACKENDS = [
     'accounts.backends.AccountBackend',
     'django.contrib.auth.backends.ModelBackend',  # Keep the default for fallback
+    'accounts.backends.TrainerAccountBackend',
 ]
 
 AUTH_USER_MODEL = 'accounts.Account'

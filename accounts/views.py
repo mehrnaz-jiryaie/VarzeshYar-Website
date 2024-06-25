@@ -1,34 +1,60 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import RegisterForm, LoginForm, ProfileForm, PhysicalInformationForm
+from .forms import AccountRegisterForm, LoginForm, ProfileForm, PhysicalInformationForm, TrainerRegisterForm
 from django.contrib.auth.decorators import login_required
+from accounts.backends import AccountBackend, TrainerAccountBackend
+from django.contrib.auth.forms import AuthenticationForm
 
 
-def register_view(request):
+def register_account_view(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = AccountRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            login(request, user, backend='accounts.backends.AccountBackend')
             return redirect('accounts:successful_registration')
-        else:
-            # Print form errors for debugging
-            print("Form errors: ", form.errors)
     else:
-        form = RegisterForm()
+        form = AccountRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
+
+def register_trainer_account_view(request):
+    if request.method == 'POST':
+        form = TrainerRegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user, backend='accounts.backends.TrainerAccountBackend')
+            return redirect('accounts:successful_registration')
+    else:
+        form = TrainerRegisterForm()
+    return render(request, 'registration/trainer-register.html', {'form': form})
+
+# def register_view(request):
+#     if request.method == 'POST':
+#         form = RegisterForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('accounts:successful_registration')
+#         else:
+#             # Print form errors for debugging
+#             print("Form errors: ", form.errors)
+#     else:
+#         form = RegisterForm()
+#     return render(request, 'registration/register.html', {'form': form})
 
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request, data=request.POST)
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            login(request, form.get_user())
-            return redirect('gym:home')
-        else:
-            print("Form errors: ", form.errors)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password, backend='accounts.backends.AccountBackend')
+            if user is not None:
+                login(request, user, backend='accounts.backends.AccountBackend')
+                return redirect('gym:home')
     else:
-        form = LoginForm()
+        form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
 
 @login_required
@@ -80,36 +106,38 @@ def logout_view(request):
     return redirect('gym:home')
 
 
-def trainer_register_view(request):
-    """Trainer registeration."""
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            print('valid form')
-            user = form.save()
-            print('test form')
-            login(request, user)
-            print('login test')
-            return redirect('accounts:successful_registration')
-        else:
-            # Print form errors for debugging
-            print("Form errors: ", form.errors)
-    else:
-        form = RegisterForm()
-    return render(request, 'registration/trainer-register.html', {'form': form})
+# def trainer_register_view(request):
+#     """Trainer registeration."""
+#     if request.method == 'POST':
+#         form = RegisterForm(request.POST)
+#         if form.is_valid():
+#             print('valid form')
+#             user = form.save()
+#             print('test form')
+#             login(request, user)
+#             print('login test')
+#             return redirect('accounts:successful_registration')
+#         else:
+#             # Print form errors for debugging
+#             print("Form errors: ", form.errors)
+#     else:
+#         form = RegisterForm()
+#     return render(request, 'registration/trainer-register.html', {'form': form})
 
 
 
 def trainer_login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request, data=request.POST)
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            login(request, form.get_user())
-            return redirect('gym:home')
-        else:
-            print("Form errors: ", form.errors)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password, backend='accounts.backends.TrainerAccountBackend')
+            if user is not None:
+                login(request, user, backend='accounts.backends.TrainerAccountBackend')
+                return redirect('gym:home')
     else:
-        form = LoginForm()
+        form = AuthenticationForm()
     return render(request, 'registration/trainer-login.html', {'form': form})
 
 

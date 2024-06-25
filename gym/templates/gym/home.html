@@ -30,10 +30,10 @@
                 <p>Welcome, {{ user.username }}!</p>
                 <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل‌ من</a>
                 <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
-              {% else %}
-                <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
-                <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
               {% endif %}
+            {% else %}
+                <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">ورود</a>
+                <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
             {% endif %}
           </span>
         </div>
@@ -49,7 +49,7 @@
           {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
           <a href="{% url 'accounts:profile' %}">پروفایل</a>
           {% else %}
-          <a href="{% url 'accounts:login' %}">ورود</a>
+          <a href="{% url 'accounts:athlete-login' %}">ورود</a>
           <a href="{% url 'accounts:register' %}">ثبت نام</a>
           {% endif %}
         </div>
