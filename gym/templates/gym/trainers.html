@@ -23,13 +23,14 @@
         <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
         <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
+        <a class="header_nav" href="">حرکات ورزشی</a>
       </div>
       <div>
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
-          <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+        <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
-          <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
-          <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+        <a class="header_nav profile" href="">پنل مربیان</a>
+        <a class="header_nav profile" href="">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>
@@ -42,11 +43,12 @@
         <a href="{% url 'gym:home' %}">صفحه اصلی</a>
         <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a href="{% url 'gym:trainers' %}">مربی ها</a>
+        <a href="">حرکات ورزشی</a>
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
-          <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+        <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
-          <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
-          <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+        <a class="header_nav profile" href="{% url 'accounts:login' %}">ورود</a>
+        <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
         {% endif %}
       </div>
     </div>
