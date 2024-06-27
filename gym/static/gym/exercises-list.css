@@ -1,0 +1,235 @@
+@font-face {
+  font-family: vazir-light;
+  src: url(fonts/Vazir-Light.woff) format("woff");
+}
+html {
+  font-family: vazir-light;
+}
+html :hover {
+  cursor: default;
+}
+/* header styles */
+.header {
+  background-color: #80deea;
+  height: 6rem;
+  width: 100vw; 
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0rem 7rem;
+  box-sizing: border-box;
+  color: #01739d;
+  box-shadow: 0px 0px 5px 1px #769599;
+  font-size: 1.3rem;
+}
+header {
+  width: 100%;
+  background-color: #45aebc;
+}
+.mobile-header {
+  display: none;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.header_links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.header_nav {
+  margin: 0 1rem;
+}
+.profile {
+  background-color: #fff;
+  color: #01739d;
+  padding: 0.5rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0px 0px 5px 1px #45aebc;
+}
+.profile:hover {
+  opacity: 0.9;
+  color: #0097cf;
+}
+header a:hover {
+  cursor: pointer;
+  color: #fff;
+}
+#logo {
+  margin: 0 2rem;
+}
+#logo h2:hover {
+  font-weight: 200;
+}
+/* body style */
+body{
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+main{
+  width: 90%;
+  margin-top: 4rem;
+  /* padding-top: 1rem; */
+  /* background-color: #0097cf; */
+}
+.exercises-list{
+  margin-top: 1rem;
+  display: grid;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* justify-items: stretch; */
+  grid-template-columns: 22% 22% 22% 22%;
+}
+.exercises-list img{
+  max-width: 100%;
+  margin-bottom: 5px;
+  border-radius: 1rem;
+}
+.exercise{
+	box-shadow: 0 0 10px 0px #ccc;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* box-sizing: border-box; */
+  margin-top: 2.5rem;
+  padding: 1rem 10px 1.5rem 10px;
+  height: 23.5rem;
+}
+.exercise h3{
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+.exercise h5{
+  font-size: 0.9rem;
+  /* color: #01739d; */
+}
+/* footer styles */
+footer {
+  height: 8rem;
+  width: 100vw;
+  margin-top: 10rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ef3e3e6d;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+  border-top-right-radius: 10% 7%;
+  border-top-left-radius: 10% 7%;
+}
+
+/* responsive styles */
+@media only screen and (max-width: 1500px) {
+}
+@media only screen and (max-width: 1100px) {
+  .header {
+    /* margin: 0; */
+    padding: 0rem 2rem;
+  }
+  .exercises-list{
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .header {
+    padding: 0;
+    width: 100%;
+  }
+  .header_links {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .header_nav {
+    margin: 0 1rem;
+  }
+}
+@media only screen and (max-width: 915px) {
+  .header {
+    height: 0;
+    display: none;
+    margin: 0;
+  }
+  .mobile-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #80deea;
+    height: 5rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  #logo {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 685px) {
+  .header {
+    height: 0;
+    display: none;
+    margin: 0;
+  }
+  .mobile-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #80deea;
+    height: 5rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  #logo {
+    margin: 0;
+  }
+  .exercises-list{
+    grid-template-columns: 46% 46%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .exercises-list{
+    grid-template-columns: 90%;
+  }
+}
+.dropbtn {
+  background-color: #80deea;
+  color: #01739d;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #80deea;
+  width: 100%;
+  padding-left: 1rem;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #01739d;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: block;
+}
+.show {
+  display: block;
+}
+a:visited {
+  text-decoration: none;
+}
