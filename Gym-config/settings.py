@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'gym',
     'accounts',
     # Default Apps
-    # 'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.user_type',
             ],
         },
     },
@@ -131,6 +131,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.AccountBackend',
+    'django.contrib.auth.backends.ModelBackend',  # Keep the default for fallback
+    'accounts.backends.TrainerAccountBackend',
+]
 
 AUTH_USER_MODEL = 'accounts.Account'
 LOGIN_REDIRECT_URL = 'home'

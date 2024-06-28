@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورزش‌یار</title>
+    {% load static %}
+    <link rel="icon" href="../static/gym/svg/strength.png" />
+    <link rel="stylesheet" href="../../static/gym/home.css" />
+    <script src="{% static 'gym/gyms.js' %}"></script>
+  </head>
 
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,11 +30,88 @@
         <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
         <a class="header_nav" href="">حرکات ورزشی</a>
+=======
+  <header class="sticky">
+    <span class="header">
+      <div class="header_links">
+        <div>
+          <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
+          <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
+          <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
+        </div>
+        <div>
+          <span id="welcome">
+            {% if user.is_authenticated %} 
+              {% if user_type == 'account' %} 
+                {{ user.username }} عزیز، خوش آمدید!
+          
+                <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
+                <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
+              {% elif user_type == 'trainer' %}
+                <p>Welcome, {{ user.username }}!</p>
+                <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل‌ من</a>
+                <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
+              {% endif %}
+            {% else %}
+                <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">ورود</a>
+                <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+            {% endif %}
+          </span>
+        </div>
+>>>>>>> 0afb32432bb20b1f794905816ef04434485853d6
       </div>
-      <div>
-        <span id="welcome">
-          {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
+    </span>
+    <div class="mobile-header">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">ورزش‌یار</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="{% url 'gym:home' %}">صفحه اصلی</a>
+          <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
+          <a href="{% url 'gym:trainers' %}">مربی ها</a>
+          {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
+          <a href="{% url 'accounts:profile' %}">پروفایل</a>
+          {% else %}
+          <a href="{% url 'accounts:athlete-login' %}">ورود</a>
+          <a href="{% url 'accounts:register' %}">ثبت نام</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <div class="gym-title curved">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#80DEEA"
+          fill-opacity="1"
+          d="M0,96L60,80C120,64,240,32,360,53.3C480,75,600,149,720,202.7C840,256,960,288,1080,250.7C1200,213
+        ,1320,107,1380,53.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="logo-design">
+        <img src="../../static/gym/svg/work-out.png" />
+        <div>
+          <h1>ورزشیار</h1>
+          <h3>راهنمایی به سوی انتخاب هوشمندانه مربی و باشگاه ورزشی</h3>
+        </div>
+      </div>
+    </div>
+    <main class="content">
+      <div class="article">
+        <span>
+          <p>
+            به "ورزش‌یار" خوش آمدید، پلتفرمی که به ورزشکاران کمک می‌کند تا
+            بهترین مسیر را برای پیشرفت و موفقیت ورزشی خود انتخاب کنند. با
+            استفاده از "ورزشیار"، شما می‌توانید به راحتی از میان باشگاه‌ها و
+            مربیان مختلف، انتخابی هوشمندانه داشته باشید و تمرینات خود را به سطح
+            جدیدی ببرید.
+          </p>
         </span>
+        <span>
+          <img src="../../static/gym/svg/gym.jpg" />
+        </span>
+<<<<<<< HEAD
         <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
         <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
         {% else %}
@@ -48,70 +135,42 @@
         <a href="{% url 'accounts:login' %}">ورود</a>
         <a href="{% url 'accounts:register' %}">ثبت نام</a>
         {% endif %}
+=======
       </div>
-    </div>
-  </div>
-</header>
-
-<body>
-  <div class="gym-title curved">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#80DEEA" fill-opacity="1"
-        d="M0,96L60,80C120,64,240,32,360,53.3C480,75,600,149,720,202.7C840,256,960,288,1080,250.7C1200,213
-        ,1320,107,1380,53.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-      </path>
-    </svg>
-    <div class="logo-design">
-      <img src="../../static/gym/svg/work-out.png">
-      <div>
-        <h1>ورزشیار</h1>
-        <h3>راهنمایی به سوی انتخاب هوشمندانه مربی و باشگاه ورزشی</h3>
+      <div class="article">
+        <span>
+          <img src="../../static/gym/svg/coach.avif" />
+        </span>
+        <span>
+          <p>
+            در "ورزش‌یار"، شما با مجموعه‌ای از بهترین باشگاه‌ها و مربیان در
+            سراسر کشور آشنا خواهید شد. هر ورزشکار می‌تواند با استفاده از
+            پروفایل‌های کامل و نظرات سایر کاربران، مربی و باشگاه مناسب خود را
+            انتخاب کند. ما اینجا هستیم تا شما بهترین تصمیم‌ها را برای پیشرفت
+            ورزشی‌تان بگیرید.
+          </p>
+        </span>
+>>>>>>> 0afb32432bb20b1f794905816ef04434485853d6
       </div>
-    </div>
-  </div>
-  <main class="content">
-    <div class="article">
-      <span>
-        <p>
-          به "ورزش‌یار" خوش آمدید، پلتفرمی که به ورزشکاران کمک می‌کند تا بهترین مسیر را
-          برای پیشرفت و موفقیت ورزشی خود انتخاب کنند. با استفاده از "ورزشیار"، شما می‌توانید به راحتی از میان باشگاه‌ها
-          و مربیان مختلف، انتخابی هوشمندانه داشته باشید و تمرینات خود را به سطح جدیدی ببرید.
-        </p>
-      </span>
-      <span>
-        <img src="../../static/gym/svg/gym.jpg">
-      </span>
-    </div>
-    <div class="article">
-      <span>
-        <img src="../../static/gym/svg/coach.avif">
-      </span>
-      <span>
-        <p>
-          در "ورزش‌یار"، شما با مجموعه‌ای از بهترین باشگاه‌ها و مربیان در سراسر کشور آشنا خواهید شد. هر ورزشکار می‌تواند
-          با
-          استفاده از پروفایل‌های کامل و نظرات سایر کاربران،
-          مربی و باشگاه مناسب خود را انتخاب کند. ما اینجا هستیم تا شما بهترین تصمیم‌ها را برای پیشرفت ورزشی‌تان بگیرید.
-        </p>
-      </span>
-    </div>
-    <div class="article">
-      <span>
-        <p>
-          ثبت‌نام در "ورزش‌یار" ساده و سریع است. تنها با چند کلیک، می‌توانید پروفایل شخصی خود را ایجاد کنید،
-          رشته ورزشی مورد علاقه‌تان را انتخاب کنید و به جستجوی مربیان و باشگاه‌های مختلف بپردازید.
-          شما دیگر نیازی به جستجوی طولانی و زمان‌بر برای پیدا کردن مربی و باشگاه مناسب ندارید. .        </p>
-      </span>
-      <span>
-        <img src="../../static/gym/svg/computer.avif">
-      </span>
-    </div>
-  </main>
-</body>
-<footer>
-  <h4>ارتباط با ما</h4>
-  <h4>پشتیبانی</h4>
-  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
-</footer>
-
+      <div class="article">
+        <span>
+          <p>
+            ثبت‌نام در "ورزش‌یار" ساده و سریع است. تنها با چند کلیک، می‌توانید
+            پروفایل شخصی خود را ایجاد کنید، رشته ورزشی مورد علاقه‌تان را انتخاب
+            کنید و به جستجوی مربیان و باشگاه‌های مختلف بپردازید. شما دیگر نیازی
+            به جستجوی طولانی و زمان‌بر برای پیدا کردن مربی و باشگاه مناسب
+            ندارید. .
+          </p>
+        </span>
+        <span>
+          <img src="../../static/gym/svg/computer.avif" />
+        </span>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <h4>ارتباط با ما</h4>
+    <h4>پشتیبانی</h4>
+    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+  </footer>
 </html>

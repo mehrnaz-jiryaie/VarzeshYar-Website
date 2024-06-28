@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ورود</title>
-    <link rel="icon" href="../../static/registration/svg/strength.png">
+    {% load static %}
+    <link rel="icon" href="../../static/registration/svg/strength.png" />
     <!-- <link rel="stylesheet" href="{% static 'registration/trainer-login.css' %}" /> -->
-    <link rel="stylesheet" href="trainer-login.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="{% static 'registration/trainer-login.css' %}"
+    />
+  </head>
 
-<body>
+  <body>
     <header class="section-head">
-        <div>
-            <h2 class="section-title">ورزش‌یار</h2>
-        </div>
+      <div>
+        <h2 class="section-title">ورزش‌یار</h2>
+      </div>
     </header>
     <main class="menu">
-        <div class="box">
-            <form method="post" action="{% url 'accounts:login' %}">
-                <h2> ورود مربی</h2>
-                <div class="input-box">
-                    <label class="information" for="username">نام کاربری</label>
-                    <input class="information-input" type="text" name="username" id="username" required />
-                </div>
-                <div class="input-box">
-                    <label class="information" for="password">رمز عبور</label>
-                    <input class="information-input" type="password" name="password" id="password" required />
-                </div>
-                <div class="buttons">
-                    <button>ورود</button>
-                    <button class="register-button">
-                        <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
-                    </button>
-                </div>
-            </form>
+      <div class="box">
+        <form method="post">
+          {% csrf_token %}
+          <h2>ورود مربی</h2>
+          <div class="input-box">
+            <label class="information" for="username">نام کاربری</label>
+            <input
+              class="information-input"
+              type="text"
+              name="username"
+              id="username"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label class="information" for="password">رمز عبور</label>
+            <input
+              class="information-input"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <div class="buttons">
+            <button>ورود</button>
+            <button class="register-button">
+              <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
+            </button>
+          </div>
+        </form>
+        {% if form.non_field_errors %}
+        <div class="errors">
+          <ul class="errorlist">
+            {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
         </div>
+        {% endif %}
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
