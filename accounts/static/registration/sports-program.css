@@ -1,0 +1,131 @@
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	/* height: 100%; */
+	/* overflow: hidden; */
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+}
+@font-face {
+	font-family: vazir-light;
+	src: url(../vazir-light/Vazir-Light.ttf) format("truetype");
+}
+body {
+	background-color: white;
+	font-family: vazir-light;
+	height: 100vh;
+}
+.section-head .container {
+	max-width: 1400px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.section-head {
+	background: #80deea;
+	padding: 24px;
+	color: #01739d;
+}
+
+.section-main {
+	height: 1000px;
+	background-color: #eceff1;
+	padding: 25px;
+	
+}
+.all {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 16px;
+	padding: 10px;
+}
+
+.box {
+	background-color: #fff;
+	width: 1200px;
+	min-height: 800px;
+	display: flex;
+	/* justify-content: center; */
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	padding: 12px;
+	box-shadow: 0 0 10px 0px #ccc;
+	margin: auto;
+	border-radius: 20px;
+	padding: 18px;
+	padding-top: 10px;
+}
+.input-box {
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}
+.inp-container{
+	display: flex;
+	gap: 8px;
+}
+.inp-container div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.input-box input[type=number]{
+	border: 1px solid #B0BEC5;
+	border-radius: 14px;
+	padding: 10px;
+	font-size: 11px;
+	outline-color: #03A9F4;
+	padding-left: 10px;
+	width: 64px;	
+}
+.btn{
+	font-family: vazir-light;
+	width: 180px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	border: none;
+	margin-top: 15px;
+	border-radius: 20px;
+	background-image: linear-gradient(to top , #03A9F4 , #80deea);
+	color: white;
+	margin: auto;
+	margin-top: 20px;	
+	display: inline;
+}
+.box form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 55px;
+}
+@media screen and (max-width: 900px){
+	.box form{
+		flex-direction: column;
+		gap: 16px;
+		padding: unset;
+		margin-top: 8px;
+	}	
+	.box{
+		width: unset;
+		height: unset;
+		padding-top: 24px;
+	}
+	form .input-box{
+		width: 100%;
+		padding: unset;
+	}
+}
+
