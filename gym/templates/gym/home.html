@@ -10,7 +10,7 @@
     <script src="{% static 'gym/gyms.js' %}"></script>
   </head>
 
-<<<<<<< HEAD
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
         <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
         <a class="header_nav" href="">حرکات ورزشی</a>
-=======
+
   <header class="sticky">
     <span class="header">
       <div class="header_links">
@@ -44,7 +44,6 @@
             {% if user.is_authenticated %} 
               {% if user_type == 'account' %} 
                 {{ user.username }} عزیز، خوش آمدید!
-          
                 <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
                 <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
               {% elif user_type == 'trainer' %}
@@ -53,12 +52,12 @@
                 <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
               {% endif %}
             {% else %}
-                <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">ورود</a>
-                <a class="header_nav profile" href="{% url 'accounts:register' %}">ثبت نام</a>
+            <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پنل مربیان</a>
+            <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
             {% endif %}
           </span>
         </div>
->>>>>>> 0afb32432bb20b1f794905816ef04434485853d6
+
       </div>
     </span>
     <div class="mobile-header">
@@ -111,12 +110,20 @@
         <span>
           <img src="../../static/gym/svg/gym.jpg" />
         </span>
-<<<<<<< HEAD
-        <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
-        <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
+
+        {% if user.is_authenticated %}
+          {% if user_type == 'account' %}
+            {{user.username}} عزیز، خوش آمدید!
+            <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
+            <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
+          {% elif user_type == 'trainer' %}
+            {{user.username}} عزیز، خوش آمدید!
+            <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل‌ من</a>
+            <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
+          {% endif %}
         {% else %}
-        <a class="header_nav profile" href="">پنل مربیان</a>
-        <a class="header_nav profile" href="">پنل ورزشکاران</a>
+          <a class="header_nav profile" href="">پنل مربیان</a>
+          <a class="header_nav profile" href="">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>
@@ -128,14 +135,22 @@
         <a href="{% url 'gym:home' %}">صفحه اصلی</a>
         <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a href="{% url 'gym:trainers' %}">مربی ها</a>
-        <a href="">حرکات ورزشی</a>
+        <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
         {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
-        <a href="{% url 'accounts:profile' %}">پروفایل</a>
+          {% if user_type == 'account' %}
+            {{ user.username }} عزیز، خوش آمدید!
+            <a href="{% url 'accounts:profile' %}">پروفایل</a>
+            <a href="{% url 'accounts:logout' %}">خروج</a>
+          {% elif user_type == 'trainer' %}
+            {{ user.username }} عزیز، خوش آمدید!
+            <a href="{% url 'accounts:trainer_profile' %}">پروفایل</a>
+            <a href="{% url 'accounts:logout' %}">خروج</a>
+            {% endif %}
         {% else %}
-        <a href="{% url 'accounts:login' %}">ورود</a>
-        <a href="{% url 'accounts:register' %}">ثبت نام</a>
+        <a href="{% url 'accounts:trainer_profile' %}">پنل مربیان</a>
+        <a href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
         {% endif %}
-=======
+
       </div>
       <div class="article">
         <span>
@@ -150,7 +165,7 @@
             ورزشی‌تان بگیرید.
           </p>
         </span>
->>>>>>> 0afb32432bb20b1f794905816ef04434485853d6
+
       </div>
       <div class="article">
         <span>

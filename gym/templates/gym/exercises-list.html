@@ -5,10 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>حرکات ورزشی</title>
-    <!-- <link rel="icon" href="{% static 'gym/svg/strength.png' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'gym/gyms.css' %}"> -->
-    <link rel="stylesheet" href="exercises-list.css">
-    <!-- <script src="{% static 'gym/gyms.js' %}"></script> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gym/exercises-list.css' %}">
 </head>
 
 <header class="sticky">
@@ -45,137 +43,137 @@
         <h2>نحوه انجام انواع حرکات ورزشی</h2>
         <span class="exercises-list">
             <div class="exercise">
-                <img src="Squat-with-Dumbbells.gif" alt="">
+                <img src="{% static 'gym\svg\exercises-list\Squat-with-Dumbbells.gif' %}" alt="">
                 <h3>اسکوات جفت دمبل</h3>
                 <h5>گروه‌های عضلانی هدف:<br>لگن و پا</h5>
             </div>
             <div class="exercise">
-                <img src="Lever-Deadlift.gif" alt="">
+                <img src="{% static 'gym\svg\exercises-list\Lever-Deadlift.gif' %}" alt="">
                 <h3>داخل ران سیمکش</h3>
                 <h5>گروه‌های عضلانی هدف:<br>عضلات داخلی ران و پا</h5>
             </div>
             <div class="exercise">
-                <img src="svg/outer-thigh.gif">
+                <img src="{% static 'gym\svg\exercises-list\outer-thigh.gif'%}">
                 <h3>پشت ران سیمکش</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>پشت پا (همسترینگ)</h5>
             </div>
             <div class="exercise">
-                <img src="dumbbell-single-leg-hip-thrust.gif">
+                <img src="{% static 'gym\svg\exercises-list\dumbbell-single-leg-hip-thrust.gif'%}">
                 <h3>هپ تراست نشسته</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>عضلات گلوتئال و پشت پا</h5>
             </div>
             <div class="exercise">
-                <img src="dumbbell-kickbacks-for-triceps.gif">
+                <img src="{% static 'gym\svg\exercises-list\dumbbell-kickbacks-for-triceps.gif'%}">
                 <h3>کیک بک دمبل آزاد</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>پشت بازو</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Fly_Chest.gif">
+                <img src="{% static 'gym\svg\exercises-list\Fly_Chest.gif'%}">
                 <h3>فلای دستگاه</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>عضله سینه و سه‌سر بازو</h5>
             </div>
             <div class="exercise">
-                <img src="svg/outer-thigh-cable.gif">
+                <img src="{% static 'gym\svg\exercises-list\outer-thigh-cable.gif'%}">
                 <h3>خارج ران سیمکش</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>خارج ران</h5>
             </div>
             <div class="exercise">
-                <img src="svg/standing-calf-raise.gif">
+                <img src="{% static 'gym\svg\exercises-list\standing-calf-raise.gif'%}">
                 <h3>ساق پا ایستاده</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>دو قلو ساق پا</h5>
             </div>
             <div class="exercise">
-                <img src="svg/squat.gif">
+                <img src="{% static 'gym\svg\exercises-list\squat.gif'%}">
                 <h3>سلام ژاپنی</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>شکم، فیله و پا</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Press_Chest.gif">
+                <img src="{% static 'gym\svg\exercises-list\Press_Chest.gif'%}">
                 <h3>بالا سینه هالتر دو ضرب</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>عضلات بالایی سینه و ساعد</h5>
             </div>
             <div class="exercise">
-                <img src="svg/single-arm.gif">
+                <img src="{% static 'gym\svg\exercises-list\single-arm.gif'%}">
                 <h3>قفسه سینه تک دست</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>قفسه سینه</h5>
             </div>
             <div class="exercise">
-                <img src="svg/tricep-pushdown.gif">
+                <img src="{% static 'gym\svg\exercises-list\tricep-pushdown.gif'%}">
                 <h3>پشت بازو سیمکش</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>پشت بازو</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Military-Press.gif">
+                <img src="{% static 'gym\svg\exercises-list\Military-Press.gif'%}">
                 <h3>سینه نظامی روی بالا سینه</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>سینه و بازو</h5>
             </div>
             <div class="exercise">
-                <img src="svg/cable-crunch.gif">
+                <img src="{% static 'gym\svg\exercises-list\cable-crunch.gif'%}">
                 <h3>کرانچ اوت</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>عضله راست شکمی و دنده‌ای </h5>
             </div>
             <div class="exercise">
-                <img src="svg/Single-Shoulder-Press.gif">
+                <img src="{% static 'gym\svg\exercises-list\Single-Shoulder-Press.gif'%}">
                 <h3>سرشانه دمبل تک دست</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>سرشانه جلویی</h5>
             </div>
             <div class="exercise">
-                <img src="svg/French-Press.gif">
+                <img src="{% static 'gym\svg\exercises-list\French-Press.gif'%}">
                 <h3>پشت بازو فرانسوی</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>سه سربازویی (پشت بازو)</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Face-Pull.gif">
+                <img src="{% static 'gym\svg\exercises-list\Face-Pull.gif'%}">
                 <h3>پول فیس</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>بخش پشتی سرشانه</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Seated-Cable-Rope.gif">
+                <img src="{% static 'gym\svg\exercises-list\Seated-Cable-Rope.gif'%}">
                 <h3>قایقی دست باز</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>پشتی بزرگ و گرد بزرگ</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Lateral-raise_Shoulders.gif">
+                <img src="{% static 'gym\svg\exercises-list\Lateral-raise_Shoulders.gif'%}">
                 <h3>نشرخم دو جانبه</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>بخش پشت سرشانه</h5>
             </div>
             <div class="exercise">
-                <img src="svg/plank.gif">
+                <img src="{% static 'gym\svg\exercises-list\plank.gif'%}">
                 <h3>پلنک</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>شکم، شانه، دست و پاها</h5>
             </div>
             <div class="exercise">
-                <img src="svg/Machine-Flys.gif">
+                <img src="{% static 'gym\svg\exercises-list\Machine-Flys.gif'%}">
                 <h3>فلی بک</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>سرشانه پشتی</h5>
             </div>
             <div class="exercise">
-                <img src="svg/russian-twist.gif">
+                <img src="{% static 'gym\svg\exercises-list\russian-twist.gif'%}">
                 <h3>چرخش روسی</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>عضلات شکم و بخش پایینی کمر</h5>
             </div>
             <div class="exercise">
-                <img src="svg/moun.gif">
+                <img src="{% static 'gym\svg\exercises-list\moun.gif'%}">
                 <h3>کوه‌نوردی</h3>
                 <h5>گروه‌های عضلانی هدف:</h5>
                 <h5>شانه، دستها، کمر و پاها</h5>

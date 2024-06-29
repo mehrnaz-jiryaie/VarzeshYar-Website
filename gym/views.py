@@ -11,3 +11,7 @@ def trainers(request):
 def gyms_view(request):
     """Shows list of all gyms."""
     return render(request, 'gym/gyms.html')
+
+def exc_list(request):
+    """Shows list of all exercises."""
+    return render(request, 'gym/exercises-list.html')
