@@ -156,3 +156,7 @@ def trainer_profile_view(request):
         print("GET request received")
         form = ProfileForm(instance=request.user, request=request)
     return render(request, 'registration/trainer-profile.html', {'form': form})
+
+@login_required
+def program_view(request):
+    return render(request, 'registration/sports-program.html')

@@ -6,7 +6,7 @@ app_name = 'accounts'
 
 urlpatterns = [
     # Login page
-    # path('login/', views.login_view, name='athlete-login'),
+    path('login/', views.login_view, name='athlete-login'),
     path('logout/', views.logout_view, name='logout'),
     # Athlete registration page.
     path('register/', views.register_account_view, name='register'),
@@ -20,9 +20,10 @@ urlpatterns = [
     # Trainer registration page.
     path('trainer_register/', views.register_trainer_account_view, name='trainer_registeration'),
     # Trainer login page.
-    # path('trainer_login/', views.trainer_login_view, name='trainer-login'),
+    path('trainer_login/', views.trainer_login_view, name='trainer-login'),
     # Trainer profile page.
     path('trainer_profile/', views.trainer_profile_view, name='trainer_profile'),
     path('login/account/', views.login_view, name='athlete-login'),
     path('login/trainer_account/', views.trainer_login_view, name='trainer-login'),
+    path('profile/program/', views.program_view, name='exc-program'),
 ]
