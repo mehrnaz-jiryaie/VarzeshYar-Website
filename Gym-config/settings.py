@@ -138,7 +138,7 @@ AUTHENTICATION_BACKENDS = [
     'accounts.backends.TrainerAccountBackend',
 ]
 
-AUTH_USER_MODEL = 'accounts.Account'
+# AUTH_USER_MODEL = 'accounts.Account'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 
