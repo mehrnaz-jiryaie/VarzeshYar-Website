@@ -154,7 +154,7 @@ footer {
     width: 90vw;
   }
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1120px) {
   .header {
     padding: 0rem 2rem;
     box-sizing: border-box;
@@ -183,7 +183,16 @@ footer {
 }
 @media only screen and (max-width: 900px) {
   #welcome {
-    display: none;
+    /* display: none; */
+  }
+  .profile {
+    color: #fff;
+    background-color: inherit;
+    font-weight: 600;
+    /* color: #01739d; */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
   .logo-design {
     justify-content: space-around;
@@ -280,4 +289,7 @@ footer {
 }
 a:visited{
 	text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
