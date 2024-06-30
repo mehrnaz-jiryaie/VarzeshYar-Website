@@ -217,7 +217,7 @@ footer {
     margin: 1rem 0 1.5rem 0;
   }
 }
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 855px) {
   .header {
     height: 0;
     display: none;
@@ -239,6 +239,8 @@ footer {
     margin-top: 5rem;
     /* margin: 0; */
   }
+}
+  @media only screen and (max-width: 740px) {
   svg{
     display: none;
   }

@@ -7,12 +7,11 @@
     <title>حرکات ورزشی</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'gym/exercises-list.css' %}">
+    <script src="{% static 'gym/gyms.js' %}"></script>
 </head>
 
 <header class="sticky">
-
     <span class="header">
-
         <div id="logo">
             <h2>ورزش‌یار</h2>
         </div>
@@ -21,7 +20,7 @@
                 <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
                 <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
-                <a class="header_nav" href="">حرکات ورزشی</a>
+                <a class="header_nav" href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
             </div>
         </div>
     </span>
@@ -32,7 +31,7 @@
                 <a href="{% url 'gym:home' %}">صفحه اصلی</a>
                 <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a href="{% url 'gym:trainers' %}">مربی ها</a>
-                <a href="">حرکات ورزشی</a>
+                <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
             </div>
         </div>
     </div>

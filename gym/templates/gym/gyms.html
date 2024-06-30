@@ -43,7 +43,7 @@
                 <a href="{% url 'gym:home' %}">صفحه اصلی</a>
                 <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a href="{% url 'gym:trainers' %}">مربی ها</a>
-                <a href="{% url 'gym:exc-list' %}">حرکات ورزشی/a>
+                <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
                 {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
                 <a href="{% url 'accounts:profile' %}">پروفایل</a>
                 {% else %}
