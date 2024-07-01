@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import AccountRegisterForm, LoginForm, ProfileForm, PhysicalInformationForm, TrainerRegisterForm
+from .forms import AccountRegisterForm, LoginForm, ProfileForm, PhysicalInformationForm, TrainerRegisterForm, TrainerProfileForm
 from django.contrib.auth.decorators import login_required
 from accounts.backends import AccountBackend, TrainerAccountBackend
 from django.contrib.auth.forms import AuthenticationForm
@@ -16,6 +16,7 @@ def register_account_view(request):
     else:
         form = AccountRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
+
 
 def register_trainer_account_view(request):
     if request.method == 'POST':
@@ -97,7 +98,7 @@ def physical_information_view(request):
             print(form.errors)
     else:
         form = PhysicalInformationForm(instance=request.user)
-    return render(request, 'registration/physical_information2.html', {'form': form})
+    return render(request, 'registration/physical_information.html', {'form': form})
 
 
 @login_required
@@ -144,7 +145,7 @@ def trainer_login_view(request):
 def trainer_profile_view(request):
     if request.method == 'POST':
         print("POST request received")
-        form = ProfileForm(request.POST, instance=request.user, request=request)
+        form = TrainerProfileForm(request.POST, instance=request.user, request=request)
         if form.is_valid():
             print("Form is valid")
             form.save()
@@ -154,9 +155,20 @@ def trainer_profile_view(request):
             print(form.errors)
     else:
         print("GET request received")
-        form = ProfileForm(instance=request.user, request=request)
+        form = TrainerProfileForm(instance=request.user, request=request)
     return render(request, 'registration/trainer-profile.html', {'form': form})
 
 @login_required
 def program_view(request):
-    return render(request, 'registration/sports-program.html')
+    if request.method == 'POST':
+        form = PhysicalInformationForm(request.POST, instance=request.user)
+        if form.is_valid():
+            print("Form2 is valid")
+            form.save()
+            return redirect('gym:home')
+        else:
+            print("Form2 is invalid")
+            print(form.errors)
+    else:
+        form = PhysicalInformationForm(instance=request.user)
+    return render(request, 'registration/sports-program.html', {form:'form'})

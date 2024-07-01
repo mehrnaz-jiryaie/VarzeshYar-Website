@@ -45,9 +45,10 @@
             />
           </div>
           <div class="buttons">
-            <button>ورود</button>
+            <a href="{% url 'accounts:trainer_registeration' %}">ورود</a>
+            <!-- <button>ورود</button> -->
             <button class="register-button">
-              <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
+              <a href="{% url 'accounts:trainer_registeration' %}">ثبت‌نام</a>
             </button>
           </div>
         </form>

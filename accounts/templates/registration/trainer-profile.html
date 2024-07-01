@@ -52,7 +52,7 @@
             type="tel"
             name="phone_number"
             id="phonenumber"
-            value="{{form.phone_number.value}}"
+            value="{{form.phone_number.value|default_if_none:''}}"
             placeholder="09xxxxxxxxx"
             maxlength="11"
             oninput="validatePhoneNumber(this)"
@@ -67,7 +67,7 @@
             maxlength="320"
           />
           <label for="field">رشته ورزشی</label>
-          <input type="field" name="specialty" id="field" value="{{form.city.value}}" maxlength="35" />
+          <input type="field" name="specialty" id="field" value="{{form.specialty.value}}" maxlength="35" />
           <br />
           <label for="city">استان</label>
           <select name="city" id="city">
@@ -110,12 +110,13 @@
             name="biography"
             cols="40"
             rows="5"
+            value = "{{form.biography.value}}"
             placeholder="درباره من..."
             maxlength="250"
           ></textarea>
         </div>
         <div class="buttons">
-          <button id="resign">انصراف</button>
+          <!-- <button id="resign"><a href="{% url 'gym:home' %}">انصراف</a></button> -->
           <button id="submit">ثبت</button>
         </div>
       </form>

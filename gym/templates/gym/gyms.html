@@ -47,7 +47,6 @@
                 {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
                 <a href="{% url 'accounts:profile' %}">پروفایل</a>
                 {% else %}
-                <a href="{% url 'accounts:login' %}">ورود</a>
                 <a href="{% url 'accounts:register' %}">ثبت نام</a>
                 {% endif %}
             </div>

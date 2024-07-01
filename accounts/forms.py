@@ -103,65 +103,12 @@ class TrainerRegisterForm(UserCreationForm):
 
 
 
-class LoginForm(forms.Form):
-    USER_TYPE_CHOICES = [
-        ('account', 'Account'),
-        ('trainer', 'TrainerAccount')
-    ]
+# class LoginForm(forms.Form):
+#     USER_TYPE_CHOICES = [
+#         ('account', 'Account'),
+#         ('trainer', 'TrainerAccount')
+#     ]
 
-    username = forms.CharField(
-        label='نام کاربری',
-        error_messages={
-            'required': 'لطفا نام کاربری خود را وارد کنید.'
-        }
-    )
-    password = forms.CharField(
-        label='رمز عبور',
-        widget=forms.PasswordInput,
-        error_messages={
-            'required': 'لطفا رمز عبور خود را وارد کنید.'
-        }
-    )
-    user_type = forms.ChoiceField(
-        label='نوع کاربر',
-        choices=USER_TYPE_CHOICES,
-        error_messages={
-            'required': 'لطفا نوع کاربر خود را مشخص کنید.'
-        }
-    )
-
-    def confirm_login_allowed(self, user):
-        if not user.is_active:
-            raise forms.ValidationError(
-                'این حساب کاربری غیر فعال است.',
-                code='inactive',
-            )
-
-    def clean(self):
-        username = self.cleaned_data.get('username')
-        password = self.cleaned_data.get('password')
-        user_type = self.cleaned_data.get('user_type')
-
-        if username and password and user_type:
-            backend = 'your_app.backends.AccountBackend' if user_type == 'account' else 'your_app.backends.TrainerAccountBackend'
-            self.user_cache = authenticate(
-                self.request, username=username, password=password, backend=backend)
-            if self.user_cache is None:
-                raise forms.ValidationError(
-                    'لطفا نام کاربری و رمز عبور صحیح را وارد کنید.',
-                    code='invalid_login',
-                )
-            else:
-                self.confirm_login_allowed(self.user_cache)
-
-        return self.cleaned_data
-
-    def get_user(self):
-        return self.user_cache
-
-
-
-# class LoginForm(AuthenticationForm):
 #     username = forms.CharField(
 #         label='نام کاربری',
 #         error_messages={
@@ -175,6 +122,13 @@ class LoginForm(forms.Form):
 #             'required': 'لطفا رمز عبور خود را وارد کنید.'
 #         }
 #     )
+#     user_type = forms.ChoiceField(
+#         label='نوع کاربر',
+#         choices=USER_TYPE_CHOICES,
+#         error_messages={
+#             'required': 'لطفا نوع کاربر خود را مشخص کنید.'
+#         }
+#     )
 
 #     def confirm_login_allowed(self, user):
 #         if not user.is_active:
@@ -186,10 +140,12 @@ class LoginForm(forms.Form):
 #     def clean(self):
 #         username = self.cleaned_data.get('username')
 #         password = self.cleaned_data.get('password')
+#         user_type = self.cleaned_data.get('user_type')
 
-#         if username and password:
+#         if username and password and user_type:
+#             backend = 'your_app.backends.AccountBackend' if user_type == 'account' else 'your_app.backends.TrainerAccountBackend'
 #             self.user_cache = authenticate(
-#                 self.request, username=username, password=password)
+#                 self.request, username=username, password=password, backend=backend)
 #             if self.user_cache is None:
 #                 raise forms.ValidationError(
 #                     'لطفا نام کاربری و رمز عبور صحیح را وارد کنید.',
@@ -199,6 +155,50 @@ class LoginForm(forms.Form):
 #                 self.confirm_login_allowed(self.user_cache)
 
 #         return self.cleaned_data
+
+#     def get_user(self):
+#         return self.user_cache
+
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(
+        label='نام کاربری',
+        error_messages={
+            'required': 'لطفا نام کاربری خود را وارد کنید.'
+        }
+    )
+    password = forms.CharField(
+        label='رمز عبور',
+        widget=forms.PasswordInput,
+        error_messages={
+            'required': 'لطفا رمز عبور خود را وارد کنید.'
+        }
+    )
+
+    def confirm_login_allowed(self, user):
+        if not user.is_active:
+            raise forms.ValidationError(
+                'این حساب کاربری غیر فعال است.',
+                code='inactive',
+            )
+
+    def clean(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+
+        if username and password:
+            self.user_cache = authenticate(
+                self.request, username=username, password=password)
+            if self.user_cache is None:
+                raise forms.ValidationError(
+                    'لطفا نام کاربری و رمز عبور صحیح را وارد کنید.',
+                    code='invalid_login',
+                )
+            else:
+                self.confirm_login_allowed(self.user_cache)
+
+        return self.cleaned_data
 
 
 class ProfileForm(forms.ModelForm):
@@ -231,25 +231,6 @@ class ProfileForm(forms.ModelForm):
         return email1
 
 
-    def clean_email(self):
-        email1 = self.cleaned_data.get('email')
-        
-        if self.request and self.request.user.is_authenticated:
-            username = self.request.user.username
-            trainer_account = TrainerAccount.objects.filter(username=username).first()
-            if trainer_account:
-                email2 = trainer_account.email
-                if email1 == email2:
-                    return email1
-                else:
-                    raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
-            else:
-                raise forms.ValidationError('کاربری با این نام کاربری وجود ندارد.')
-        else:
-            raise forms.ValidationError('کاربر معتبر نیست.')
-
-        return email1
-
 class PhysicalInformationForm(forms.ModelForm):
     class Meta:
         model = Account
@@ -266,3 +247,8 @@ class TrainerProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(TrainerProfileForm, self).__init__(*args, **kwargs)
+        
+
+# class ProgramForm(forms.ModelForm):
+#     class Meta:
+#         model = 

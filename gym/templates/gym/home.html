@@ -31,8 +31,6 @@
         <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
         <!-- <a class="header_nav" href="">حرکات ورزشی</a> -->
-        <a class="header_nav" href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
-
 
       </div>
       <div>
@@ -43,12 +41,12 @@
           <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل‌ من</a>
           <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
           {% elif user_type == 'trainer' %}
-          <p>Welcome, {{ user.username }}!</p>
+          {{ user.username }} عزیز، خوش آمدید!
           <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل‌ من</a>
           <a class="header_nav profile" href="{% url 'accounts:logout' %}">خروج</a>
           {% endif %}
           {% else %}
-          <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پنل مربیان</a>
+          <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
           <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
           {% endif %}
         </span>

@@ -23,7 +23,7 @@
         <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
         <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
-        <a class="header_nav" href="">حرکات ورزشی</a>
+        <a class="header_nav" href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
       </div>
       <div>
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
@@ -47,7 +47,6 @@
         {% if user.is_authenticated %} <!--{{ user.username }} عزیز، خوش آمدید! -->
         <a class="header_nav " href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
-        <a class="header_nav" href="{% url 'accounts:login' %}">پنل ورزشکار</a>
         <a class="header_nav" href="{% url 'accounts:register' %}">پنل مربیان</a>
         {% endif %}
       </div>

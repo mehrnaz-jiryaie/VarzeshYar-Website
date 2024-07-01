@@ -13,8 +13,13 @@
     <img class="icon" src="{% static 'registration/svg/check-icon.svg' %}" alt="check-icon">
    </div> 
    <div class="button">
+    {% if user_type == 'account' %}
     <a class="btn" href="{% url 'accounts:profile' %}">مشاهده پروفایل</a>
     <a class="btn1" href="{% url 'gym:home' %}">مشاهده صفحه اصلی </a>   
+    {% elif user_type == 'trainer' %}
+    <a class="btn" href="{% url 'accounts:trainer_profile' %}">مشاهده پروفایل</a>
+    <a class="btn1" href="{% url 'gym:home' %}">مشاهده صفحه اصلی </a>
+    {% endif %}
    </div>
 </body>
 </html>
