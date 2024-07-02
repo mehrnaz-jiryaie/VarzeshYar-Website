@@ -19,7 +19,7 @@
         <div class="box">
             <form method="post" >
                 {% csrf_token %}
-                <h2>ورود</h2>
+                <h2>ورود ورزشکار</h2>
                 <div class="input-box">
                     <label class="information" for="username">نام کاربری</label>
                     <input class="information-input" type="text" name="username" id="username" required />
@@ -35,10 +35,8 @@
                     {% endif %}
                 </div>
                 <div class="buttons">
-                    <button>ورود</button>
-                    <button class="register-button">
-                        <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
-                    </button>
+                    <button type="submit">ورود</button>
+                    <a href="{% url 'accounts:register' %}">ثبت‌نام</a>
                 </div>
             </form>
 
