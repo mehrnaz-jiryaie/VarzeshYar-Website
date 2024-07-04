@@ -11,8 +11,10 @@
 <body>
     <header class="section-head">
         <div class="container">
-            <h2 class="section-title">ورزشیار</h2>
-            <a class="header_nav profile" href="{% url 'accounts:exc-program' %}">برنامه‌ورزشی</a>
+            <div class="links">    
+                <h2 class="section-title">ورزشیار</a>
+                <a class="section-title" href="{% url 'accounts:exc-program' %}">برنامه‌ورزشی</a>
+            </div>
             <img src="{% static '../static/registration/svg/userProfile.svg' %}" alt="user icon" class="icon" />
         </div>
     </header>
@@ -23,26 +25,24 @@
                 {% csrf_token %}
                 <div class="input-box">
                     <label for="firstname">نام:</label>
-                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" />
+                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" maxlength="35"/>
                     <input type="text" name="first_name" id="firstname" value="{{ form.first_name.value }}">
                 </div>
                 <div class="input-box">
                     <label for="lastname">نام خانوادگی:</label>
-                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" />
+                    <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" maxlength="35"/>
                     <input type="text" name="last_name" id="lastname" value="{{ form.last_name.value }}">
                 </div>
                 <div class="input-box">
                     <label for="phone-number">شماره تلفن:</label>
                     <img class="input-icon" src="{% static '../static/registration/svg/phone.svg' %}" alt="phone icon" />
-                    <input type="tel" name="phone_number" id="phone-number" placeholder="09xxxxxxxxx" value="{{ form.phone_number.value|default_if_none:''  }}">
+                    <input type="tel" name="phone_number" maxlength="11" oninput="validatePhoneNumber(this)" id="phone-number" placeholder="09xxxxxxxxx" value="{{ form.phone_number.value|default_if_none:''  }}">
                 </div>
                 <div class="input-box">
                     <label for="email">ایمیل:</label>
                     <img class="input-icon" src="{% static '../static/registration/svg/email.svg' %}" alt="" />
-                    <input type="email" name="email" id="email" value="{{ form.email.value }}">
-                    {% if form.email.errors %}
-                        <div class="error">{{ form.email.errors }}</div>
-                    {% endif %}
+                    <input type="email" name="email" maxlength="320" id="email" value="{{ form.email.value }}">
+                    
                 </div>
                 <div class="input-box">
                     <label for="birth-date">تاریخ تولد:</label>
@@ -74,10 +74,24 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn">مرحله بعد</a></button>
+                <div></div>
+                <div class="form-links">
+                    <div>
+                        {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}</div>
+                    <button type="submit" class="btn">ثبت و ادامه</a></button>
+                    <button type="reset" class="btn">انصراف</button>
+                <a href="" class="btn">صفحه اصلی</a>
+                </div>
             </form>
         </div>
     </main>
 </body>
+<script>
+    function validatePhoneNumber(input) {
+      input.value = input.value.replace(/[^0-9]/g, "").slice(0, 11);
+    }
+  </script>
 </html>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,18 +41,18 @@
           <button>ثبت‌نام</button>
         </div>
       </form>
-        {% if form.username.errors %}
-        <span class="error">{{ form.username.errors }}</span>
-        {% endif %}
-        {% if form.email.errors %}
-        <span class="error">{{ form.email.errors }}</span>
-        {% endif %}
-        {% if form.password1.errors %}
-        <span class="error">{{ form.password1.errors }}</span>
-        {% endif %}
-        {% if form.password2.errors %}
-        <span class="error">{{ form.password2.errors }}</span>
-        {% endif %}
+      {% if form.password1.errors %}
+      <span class="error">{{ form.password1.errors }}</span>
+      {% endif %}
+      {% if form.password2.errors %}
+      <span class="error">{{ form.password2.errors }}</span>
+      {% endif %}
+      {% if form.email.errors %}
+      <span class="error">{{ form.email.errors }}</span>
+      {% endif %}
+      {% if form.username.errors %}
+      <span class="error">{{ form.username.errors }}</span>
+      {% endif %}
     </div>
   </main>
 </body>

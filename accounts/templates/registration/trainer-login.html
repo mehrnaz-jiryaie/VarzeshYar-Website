@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ورود</title>
-    {% load static %}
-    <link rel="icon" href="../../static/registration/svg/strength.png" />
-    <!-- <link rel="stylesheet" href="{% static 'registration/trainer-login.css' %}" /> -->
-    <link
-      rel="stylesheet"
-      href="{% static 'registration/trainer-login.css' %}"
-    />
-  </head>
 
-  <body>
-    <header class="section-head">
-      <div>
-        <h2 class="section-title">ورزش‌یار</h2>
-      </div>
-    </header>
-    <main class="menu">
-      <div class="box">
-        <form method="post">
-          {% csrf_token %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ورود</title>
+  {% load static %}
+  <link rel="icon" href="../../static/registration/svg/strength.png" />
+  <!-- <link rel="stylesheet" href="{% static 'registration/trainer-login.css' %}" /> -->
+  <link rel="stylesheet" href="{% static 'registration/trainer-login.css' %}" />
+</head>
+
+<body>
+  <header class="section-head">
+    <div>
+      <h2 class="section-title">ورزش‌یار</h2>
+    </div>
+  </header>
+  <main class="menu">
+    <div class="box">
+      <form method="post">
+        {% csrf_token %}
+        <span class="info">
           <h2>ورود مربی</h2>
           <div class="input-box">
             <label class="information" for="username">نام کاربری</label>
-            <input
-              class="information-input"
-              type="text"
-              name="username"
-              id="username"
-              required
-            />
+            <input class="information-input" type="text" name="username" id="username" required />
           </div>
           <div class="input-box">
             <label class="information" for="password">رمز عبور</label>
-            <input
-              class="information-input"
-              type="password"
-              name="password"
-              id="password"
-              required
-            />
+            <input class="information-input" type="password" name="password" id="password" required />
           </div>
           <div class="buttons">
             <button type="submit">ورود</button>
             <!-- <button class="register-button"> -->
-              <a href="{% url 'accounts:trainer_registeration' %}">ثبت‌نام</a>
+            <a href="{% url 'accounts:trainer_registeration' %}">ثبت‌نام</a>
             <!-- </button> -->
           </div>
-          {% if form.non_field_errors %}
+        </span>
+
+        {% if form.non_field_errors %}
         <div class="errors">
           <ul class="errorlist">
             {% for error in form.non_field_errors %}
@@ -59,8 +48,9 @@
           </ul>
         </div>
         {% endif %}
-        </form>
-      </div>
-    </main>
-  </body>
+      </form>
+    </div>
+  </main>
+</body>
+
 </html>
