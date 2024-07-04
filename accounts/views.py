@@ -174,3 +174,5 @@ def program_view(request):
     else:
         form = ProgramForm(instance=request.user)
     return render(request, 'registration/sports-program.html', {form:'form'})
+
+
