@@ -50,7 +50,12 @@ html :hover {
 }
 .header_nav:hover{
   cursor: pointer;
+  /* color: #fff; */
   opacity: 0.8;
+}
+#nv:hover{
+  opacity: 1;
+  color: #fff;
 }
 /* body style */
 body {
