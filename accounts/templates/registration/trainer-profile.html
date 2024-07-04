@@ -37,7 +37,8 @@
         <input type="field" name="specialty" id="field" value="{{form.specialty.value|default_if_none:''}}" maxlength="35" />
         <br />
         <label for="city">استان</label>
-        <select name="city" id="city" value ="{{form.city.value|default_if_none:''}}">
+        <input name="city">
+        <!-- <select name="city" id="city" value ="{{form.city.value|default_if_none:''}}">
           <option value="1">تهران</option>
           <option value="2">گیلان</option>
           <option value="3">آذربایجان شرقی</option>
@@ -69,7 +70,7 @@
           <option value="29">خراسان شمالی</option>
           <option value="30">خراسان جنوبی</option>
           <option value="31">البرز</option>
-        </select>
+        </select> -->
       </div>
       <div class="trainer-details">
         <label for="detaile">توضیحات (حداکثر 250 کاراکتر)</label>
