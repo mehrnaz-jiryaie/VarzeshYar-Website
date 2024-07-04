@@ -34,10 +34,10 @@
         <label for="email">ایمیل</label>
         <input type="email" name="email" id="email" value="{{form.email.value}}" maxlength="320" />
         <label for="field">رشته ورزشی</label>
-        <input type="field" name="specialty" id="field" value="{{form.specialty.value}}" maxlength="35" />
+        <input type="field" name="specialty" id="field" value="{{form.specialty.value|default_if_none:''}}" maxlength="35" />
         <br />
         <label for="city">استان</label>
-        <select name="city" id="city">
+        <select name="city" id="city" value ="{{form.city.value|default_if_none:''}}">
           <option value="1">تهران</option>
           <option value="2">گیلان</option>
           <option value="3">آذربایجان شرقی</option>
@@ -79,7 +79,7 @@
       <div class="buttons">
         <!-- <button id="resign"><a href="{% url 'gym:home' %}">انصراف</a></button> -->
         <button id="submit">ثبت</button>
-        <a href="">صفحه اصلی</>
+        <a href="">صفحه اصلی</a>
       </div>
     </form>
   </main>

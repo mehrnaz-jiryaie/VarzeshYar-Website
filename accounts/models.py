@@ -214,4 +214,4 @@ class TrainerAccount(AbstractUser):
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     specialty = models.CharField(max_length=100, blank=True, null=True)
     biography = models.TextField(blank=True, null=True)
-    city = models.CharField(max_length=30, blank=True, null=True)
+    city = models.IntegerField(blank=True, null=True)
