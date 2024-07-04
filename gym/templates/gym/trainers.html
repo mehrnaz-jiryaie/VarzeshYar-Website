@@ -29,8 +29,8 @@
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
         <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
-        <a class="header_nav profile" href="">پنل مربیان</a>
-        <a class="header_nav profile" href="">پنل ورزشکاران</a>
+        <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+        <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>
@@ -47,7 +47,8 @@
         {% if user.is_authenticated %} <!--{{ user.username }} عزیز، خوش آمدید! -->
         <a class="header_nav " href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
-        <a class="header_nav" href="{% url 'accounts:register' %}">پنل مربیان</a>
+        <a class="header_nav" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+        <a class="header_nav" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>

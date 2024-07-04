@@ -29,8 +29,8 @@
                 {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
                 <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
                 {% else %}
-                <a class="header_nav profile" href="">پنل مربیان</a>
-                <a class="header_nav profile" href="">پنل ورزشکاران</a>
+                <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+                <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
                 {% endif %}
             </div>
         </div>
@@ -44,10 +44,11 @@
                 <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a href="{% url 'gym:trainers' %}">مربی ها</a>
                 <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
-                {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
-                <a href="{% url 'accounts:profile' %}">پروفایل</a>
+                {% if user.is_authenticated %} <!--{{ user.username }} عزیز، خوش آمدید! -->
+                <a class="header_nav " href="{% url 'accounts:profile' %}">پروفایل</a>
                 {% else %}
-                <a href="{% url 'accounts:register' %}">ثبت نام</a>
+                <a class="header_nav" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+                <a class="header_nav" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
                 {% endif %}
             </div>
         </div>

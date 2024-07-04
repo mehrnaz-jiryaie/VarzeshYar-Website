@@ -27,10 +27,10 @@
 
     <div class="header_links">
       <div>
-        <a class="header_nav" href="{% url 'gym:home' %}">صفحه اصلی</a>
-        <a class="header_nav" href="{% url 'gym:gyms' %}">باشگاه ها</a>
-        <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
-        <!-- <a class="header_nav" href="">حرکات ورزشی</a> -->
+        <a class="header_nav" id="nv" href="{% url 'gym:home' %}">صفحه اصلی</a>
+        <a class="header_nav" id="nv" href="{% url 'gym:gyms' %}">باشگاه ها</a>
+        <a class="header_nav" id="nv" href="{% url 'gym:trainers' %}">مربی ها</a>
+        <a class="header_nav" id="nv" href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
 
       </div>
       <div>
@@ -61,11 +61,12 @@
         <a href="{% url 'gym:home' %}">صفحه اصلی</a>
         <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
         <a href="{% url 'gym:trainers' %}">مربی ها</a>
+        <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
         {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
         <a href="{% url 'accounts:profile' %}">پروفایل</a>
         {% else %}
+        <a href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
         <a href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
-        <a href="{% url 'accounts:register' %}">پنل مربیان</a>
         {% endif %}
       </div>
     </div>

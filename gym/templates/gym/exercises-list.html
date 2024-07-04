@@ -22,6 +22,14 @@
                 <a class="header_nav" href="{% url 'gym:trainers' %}">مربی ها</a>
                 <a class="header_nav" href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
             </div>
+            <div>
+                {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
+                <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+                {% else %}
+                <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+                <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
+                {% endif %}
+            </div>
         </div>
     </span>
     <div class="mobile-header">
@@ -32,6 +40,12 @@
                 <a href="{% url 'gym:gyms' %}">باشگاه ها</a>
                 <a href="{% url 'gym:trainers' %}">مربی ها</a>
                 <a href="{% url 'gym:exc-list' %}">حرکات ورزشی</a>
+                {% if user.is_authenticated %}<!-- {{ user.username }} عزیز، خوش آمدید! -->
+                <a href="{% url 'accounts:profile' %}">پروفایل</a>
+                {% else %}
+                <a href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+                <a href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
+                {% endif %}
             </div>
         </div>
     </div>
