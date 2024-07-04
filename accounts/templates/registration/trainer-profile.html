@@ -37,7 +37,7 @@
         <input type="field" name="specialty" id="field" value="{{form.specialty.value|default_if_none:''}}" maxlength="35" />
         <br />
         <label for="city">استان</label>
-        <input name="city">
+        <input name="city" value ="{{form.city.value|default_if_none:''}}">
         <!-- <select name="city" id="city" value ="{{form.city.value|default_if_none:''}}">
           <option value="1">تهران</option>
           <option value="2">گیلان</option>
