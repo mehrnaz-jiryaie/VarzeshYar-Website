@@ -19,19 +19,21 @@
     <main class="section-main">
       <div class="box">
         <h2>برنامه‌ی‌ورزشی</h2>
-        <form action="post">
-			{% csrf_token %}
+        <form method="post">
+          {% csrf_token %}
           <div class="all">
             <div class="input-box">
               <label for="squat">اسکوات جفت دمبل:</label>
               <div class="inp-container">
                 <div>
                   <label for="squat-repeat">تکرار</label>
-                  <input type="number" name="" id="squat-repeat" />
+                  <input type="number" name="dumbbell_pair_squat_reps" id="squat-repeat"  />
+                  {{form.dumbbell_pair_squat_reps}}
                 </div>
                 <div>
                   <label for="squat-repeat">ست</label>
-                  <input type="number" name="" id="squat-set" />
+                  <input type="number" name="dumbbell_pair_squat_sets" id="squat-set"  />
+                  {{form.dumbbell_pair_squat_sets}}
                 </div>
               </div>
             </div>
@@ -40,11 +42,11 @@
               <div class="inp-container">
                 <div>
                   <label for="frontleg-repeat">تکرار</label>
-                  <input type="number" name="" id="frontleg-repeat" />
+                  <input type="number" name="front_thigh_reps" id="frontleg-repeat" />
                 </div>
                 <div>
                   <label for="frontleg-repeat">ست</label>
-                  <input type="number" name="" id="frontleg-set" />
+                  <input type="number" name="front_thigh_sets" id="frontleg-set" />
                 </div>
               </div>
             </div>
@@ -53,11 +55,11 @@
               <div class="inp-container">
                 <div>
                   <label for="thigh-repeat">تکرار</label>
-                  <input type="number" name="" id="thigh-repeat" />
+                  <input type="number" name="outer_thigh_wire_reps" id="thigh-repeat" />
                 </div>
                 <div>
                   <label for="thigh-repeat">ست</label>
-                  <input type="number" name="" id="thigh-set" />
+                  <input type="number" name="outer_thigh_wire_sets" id="thigh-set" />
                 </div>
               </div>
             </div>
@@ -66,11 +68,11 @@
               <div class="inp-container">
                 <div>
                   <label for="thigh-repeat">تکرار</label>
-                  <input type="number" name="" id="thigh-repeat" />
+                  <input type="number" name="inside_the_thigh_wire_reps" id="thigh-repeat" />
                 </div>
                 <div>
                   <label for="thigh-repeat">ست</label>
-                  <input type="number" name="" id="thigh-set" />
+                  <input type="number" name="inside_the_thigh_wire_sets" id="thigh-set" />
                 </div>
               </div>
             </div>
@@ -79,11 +81,11 @@
               <div class="inp-container">
                 <div>
                   <label for="hiptrust-repeat">تکرار</label>
-                  <input type="number" name="" id="hiptrust-repeat" />
+                  <input type="number" name="seated_hip_trust_reps" id="hiptrust-repeat" />
                 </div>
                 <div>
                   <label for="hiptrust-repeat">ست</label>
-                  <input type="number" name="" id="hiptrust-set" />
+                  <input type="number" name="seated_hip_trust_sets" id="hiptrust-set" />
                 </div>
               </div>
             </div>
@@ -92,11 +94,11 @@
               <div class="inp-container">
                 <div>
                   <label for="leg-repeat">تکرار</label>
-                  <input type="number" name="" id="leg-repeat" />
+                  <input type="number" name="standing_leg_reps" id="leg-repeat" />
                 </div>
                 <div>
                   <label for="leg-repeat">ست</label>
-                  <input type="number" name="" id="leg-set" />
+                  <input type="number" name="standing_leg_sets" id="leg-set" />
                 </div>
               </div>
             </div>
@@ -105,11 +107,11 @@
               <div class="inp-container">
                 <div>
                   <label for="backtigh-repeat">تکرار</label>
-                  <input type="number" name="" id="backtigh-repeat" />
+                  <input type="number" name="back_of_the_thigh_wired_reps" id="backtigh-repeat" />
                 </div>
                 <div>
                   <label for="backtigh-repeat">ست</label>
-                  <input type="number" name="" id="backtigh-set" />
+                  <input type="number" name="back_of_the_thigh_wired_sets" id="backtigh-set" />
                 </div>
               </div>
             </div>
@@ -118,11 +120,11 @@
               <div class="inp-container">
                 <div>
                   <label for="kickback-repeat">تکرار</label>
-                  <input type="number" name="" id="kickback-repeat" />
+                  <input type="number" name="free_dumbbell_kickback_reps" id="kickback-repeat" />
                 </div>
                 <div>
                   <label for="kickback-repeat">ست</label>
-                  <input type="number" name="" id="kickback-set" />
+                  <input type="number" name="free_dumbbell_kickback_sets" id="kickback-set" />
                 </div>
               </div>
             </div>
@@ -131,11 +133,11 @@
               <div class="inp-container">
                 <div>
                   <label for="height-repeat">تکرار</label>
-                  <input type="number" name="" id="height-repeat" />
+                  <input type="number" name="hello_japanese_on_high_reps" id="height-repeat"/>
                 </div>
                 <div>
                   <label for="height-repeat">ست</label>
-                  <input type="number" name="" id="height-set" />
+                  <input type="number" name="hello_japanese_on_high_sets" id="height-set" />
                 </div>
               </div>
             </div>
@@ -144,11 +146,11 @@
               <div class="inp-container">
                 <div>
                   <label for="fly-repeat">تکرار</label>
-                  <input type="number" name="" id="fly-repeat" />
+                  <input type="number" name="fly_reps" id="fly-repeat" />
                 </div>
                 <div>
                   <label for="fly-repeat">ست</label>
-                  <input type="number" name="" id="fly-set" />
+                  <input type="number" name="fly_sets" id="fly-set" />
                 </div>
               </div>
             </div>
@@ -157,11 +159,11 @@
               <div class="inp-container">
                 <div>
                   <label for="upperchest-repeat">تکرار</label>
-                  <input type="number" name="" id="upperchest-repeat" />
+                  <input type="number" name="double_barbell_chest_reps" id="upperchest-repeat" />
                 </div>
                 <div>
                   <label for="upperchest-repeat">ست</label>
-                  <input type="number" name="" id="upperchest-set" />
+                  <input type="number" name="double_barbell_chest_sets" id="upperchest-set" />
                 </div>
               </div>
             </div>
@@ -170,11 +172,11 @@
               <div class="inp-container">
                 <div>
                   <label for="chest1-repeat">تکرار</label>
-                  <input type="number" name="" id="chest1-repeat" />
+                  <input type="number" name="single_arm_chest_reps" id="chest1-repeat" />
                 </div>
                 <div>
                   <label for="chest1-repeat">ست</label>
-                  <input type="number" name="" id="chest1-set" />
+                  <input type="number" name="single_arm_chest_sets" id="chest1-set"/>
                 </div>
               </div>
             </div>
@@ -183,11 +185,11 @@
               <div class="inp-container">
                 <div>
                   <label for="crossover-repeat">تکرار</label>
-                  <input type="number" name="" id="crossover-repeat" />
+                  <input type="number" name="cross_over_reps" id="crossover-repeat" />
                 </div>
                 <div>
                   <label for="crossover-repeat">ست</label>
-                  <input type="number" name="" id="crossover-set" />
+                  <input type="number" name="cross_over_sets" id="crossover-set"/>
                 </div>
               </div>
             </div>
@@ -196,11 +198,11 @@
               <div class="inp-container">
                 <div>
                   <label for="chest2-repeat">تکرار</label>
-                  <input type="number" name="" id="chest2-repeat" />
+                  <input type="number" name="military_chest_on_the_upper_chest_reps" id="chest2-repeat"/>
                 </div>
                 <div>
                   <label for="chest2-repeat">ست</label>
-                  <input type="number" name="" id="chest2-set" />
+                  <input type="number" name="military_chest_on_the_upper_chest_sets" id="chest2-set"/>
                 </div>
               </div>
             </div>
@@ -209,11 +211,11 @@
               <div class="inp-container">
                 <div>
                   <label for="arm1-repeat">تکرار</label>
-                  <input type="number" name="" id="arm1-repeat" />
+                  <input type="number" name="triceps_wire_reps" id="arm1-repeat" />
                 </div>
                 <div>
                   <label for="arm1-repeat">ست</label>
-                  <input type="number" name="" id="arm1-set" />
+                  <input type="number" name="triceps_wire_sets" id="arm1-set" />
                 </div>
               </div>
             </div>
@@ -222,11 +224,11 @@
               <div class="inp-container">
                 <div>
                   <label for="arm2-repeat">تکرار</label>
-                  <input type="number" name="" id="arm2-repeat" />
+                  <input type="number" name="french_triceps_reps" id="arm2-repeat" />
                 </div>
                 <div>
                   <label for="arm2-repeat">ست</label>
-                  <input type="number" name="" id="arm2-set" />
+                  <input type="number" name="french_triceps_sets" id="arm2-set" />
                 </div>
               </div>
             </div>
@@ -235,11 +237,11 @@
               <div class="inp-container">
                 <div>
                   <label for="shoulder-repeat">تکرار</label>
-                  <input type="number" name="" id="shoulder-repeat" />
+                  <input type="number" name="single_arm_dumbbell_shoulder_reps" id="shoulder-repeat" />
                 </div>
                 <div>
                   <label for="shoulder-repeat">ست</label>
-                  <input type="number" name="" id="shoulder-set" />
+                  <input type="number" name="single_arm_dumbbell_shoulder_sets" id="shoulder-set" />
                 </div>
               </div>
             </div>
@@ -248,11 +250,11 @@
               <div class="inp-container">
                 <div>
                   <label for="shoulderfullbody-repeat">تکرار</label>
-                  <input type="number" name="" id="shoulderfullbody-repeat" />
+                  <input type="number" name="full_body_barbell_shoulder_strap_reps" id="shoulderfullbody-repeat" />
                 </div>
                 <div>
                   <label for="shoulderfullbody-repeat">ست</label>
-                  <input type="number" name="" id="shoulderfullbody-set" />
+                  <input type="number" name="full_body_barbell_shoulder_strap_sets" id="shoulderfullbody-set" />
                 </div>
               </div>
             </div>
@@ -261,11 +263,11 @@
               <div class="inp-container">
                 <div>
                   <label for="bend-repeat">تکرار</label>
-                  <input type="number" name="" id="bend-repeat" />
+                  <input type="number" name="two_sided_bending_publication_reps" id="bend-repeat" />
                 </div>
                 <div>
                   <label for="bend-repeat">ست</label>
-                  <input type="number" name="" id="bend-set" />
+                  <input type="number" name="two_sided_bending_publication_sets" id="bend-set" />
                 </div>
               </div>
             </div>
@@ -274,11 +276,11 @@
               <div class="inp-container">
                 <div>
                   <label for="boat-repeat">تکرار</label>
-                  <input type="number" name="" id="boat-repeat" />
+                  <input type="number" name="hand_open_boat_reps" id="boat-repeat" />
                 </div>
                 <div>
                   <label for="boat-repeat">ست</label>
-                  <input type="number" name="" id="boat-set" />
+                  <input type="number" name="hand_open_boat_sets" id="boat-set" />
                 </div>
               </div>
             </div>
@@ -287,11 +289,11 @@
               <div class="inp-container">
                 <div>
                   <label for="pullface-repeat">تکرار</label>
-                  <input type="number" name="" id="pullface-repeat" />
+                  <input type="number" name="pull_face_reps" id="pullface-repeat" />
                 </div>
                 <div>
                   <label for="pullface-repeat">ست</label>
-                  <input type="number" name="" id="pullface-set" />
+                  <input type="number" name="pull_face_sets" id="pullface-set" />
                 </div>
               </div>
             </div>
@@ -300,11 +302,11 @@
               <div class="inp-container">
                 <div>
                   <label for="flyback-repeat">تکرار</label>
-                  <input type="number" name="" id="flyback-repeat" />
+                  <input type="number" name="fly_back_reps" id="flyback-repeat" />
                 </div>
                 <div>
                   <label for="flyback-repeat">ست</label>
-                  <input type="number" name="" id="flyback-set" />
+                  <input type="number" name="fly_back_sets" id="flyback-set"/>
                 </div>
               </div>
             </div>
@@ -313,11 +315,11 @@
               <div class="inp-container">
                 <div>
                   <label for="plunk-repeat">تکرار</label>
-                  <input type="number" name="" id="plunk-repeat" />
+                  <input type="number" name="plank_reps" id="plunk-repeat" />
                 </div>
                 <div>
                   <label for="plunk-repeat">ست</label>
-                  <input type="number" name="" id="plunk-set" />
+                  <input type="number" name="plank_sets" id="plunk-set"/>
                 </div>
               </div>
             </div>
@@ -326,11 +328,11 @@
               <div class="inp-container">
                 <div>
                   <label for="russianrot-repeat">تکرار</label>
-                  <input type="number" name="" id="russianrot-repeat" />
+                  <input type="number" name="russian_turn_reps" id="russianrot-repeat"/>
                 </div>
                 <div>
                   <label for="russianrot-repeat">ست</label>
-                  <input type="number" name="" id="russianrot-set" />
+                  <input type="number" name="russian_turn_sets" id="russianrot-set" />
                 </div>
               </div>
             </div>
@@ -339,11 +341,11 @@
               <div class="inp-container">
                 <div>
                   <label for="crunch-repeat">تکرار</label>
-                  <input type="number" name="" id="crunch-repeat" />
+                  <input type="number" name="crunch_reps" id="crunch-repeat"/>
                 </div>
                 <div>
                   <label for="crunch-repeat">ست</label>
-                  <input type="number" name="" id="crunch-set" />
+                  <input type="number" name="crunch_sets" id="crunch-set" />
                 </div>
               </div>
             </div>
@@ -352,11 +354,11 @@
               <div class="inp-container">
                 <div>
                   <label for="brllyroll-repeat">تکرار</label>
-                  <input type="number" name="" id="bellyroll-repeat" />
+                  <input type="number" name="belly_roll_reps" id="bellyroll-repeat" />
                 </div>
                 <div>
                   <label for="brllyroll-repeat">ست</label>
-                  <input type="number" name="" id="bellyroll-set" />
+                  <input type="number" name="belly_roll_sets" id="bellyroll-set" />
                 </div>
               </div>
             </div>
@@ -365,11 +367,11 @@
               <div class="inp-container">
                 <div>
                   <label for="flank-repeat">تکرار</label>
-                  <input type="number" name="" id="flank-repeat" />
+                  <input type="number" name="russian_side_reps" id="flank-repeat" />
                 </div>
                 <div>
                   <label for="flank-repeat">ست</label>
-                  <input type="number" name="" id="flank-set" />
+                  <input type="number" name="russian_side_sets" id="flank-set" />
                 </div>
               </div>
             </div>
@@ -378,11 +380,11 @@
               <div class="inp-container">
                 <div>
                   <label for="mountainsto-repeat">تکرار</label>
-                  <input type="number" name="" id="mountainsto-repeat" />
+                  <input type="number" name="climber_reps" id="mountainsto-repeat" />
                 </div>
                 <div>
                   <label for="mountainsto-repeat">ست</label>
-                  <input type="number" name="" id="mountainsto-set" />
+                  <input type="number" name="climber_sets" id="mountainsto-set" />
                 </div>
               </div>
             </div>
@@ -391,11 +393,11 @@
               <div class="inp-container">
                 <div>
                   <label for="parallel-repeat">تکرار</label>
-                  <input type="number" name="" id="parallel-repeat" />
+                  <input type="number" name="parallel_abdomen_reps" id="parallel-repeat" />
                 </div>
                 <div>
                   <label for="parallel-repeat">ست</label>
-                  <input type="number" name="" id="parallel-set" />
+                  <input type="number" name="parallel_abdomen_sets" id="parallel-set" />
                 </div>
               </div>
             </div>
@@ -404,18 +406,18 @@
               <div class="inp-container">
                 <div>
                   <label for="The abdomen-repeat">تکرار</label>
-                  <input type="number" name="" id="The abdomen-repeat" />
+                  <input type="number" name="lower_abdomen_90_degrees_reps" id="The abdomen-repeat" />
                 </div>
                 <div>
                   <label for="The abdomen-repeat">ست</label>
-                  <input type="number" name="" id="The abdomen-set" />
+                  <input type="number" name="lower_abdomen_90_degrees_sets" id="The abdomen-set" />
                 </div>
               </div>
             </div>
           </div>
           <div>
             <button class="btn">ثبت</button>
-			<a class="btn" href="{% url 'accounts:profile' %}">بازگشت</a>
+            <a class="btn" href="{% url 'accounts:profile' %}">بازگشت</a>
           </div>
         </form>
       </div>

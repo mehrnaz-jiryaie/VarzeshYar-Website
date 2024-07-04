@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .forms import AccountRegisterForm, LoginForm, ProfileForm, PhysicalInformationForm, TrainerRegisterForm, TrainerProfileForm
+from .forms import AccountRegisterForm, LoginForm, ProfileForm, PhysicalInformationForm, TrainerRegisterForm, TrainerProfileForm, ProgramForm
 from django.contrib.auth.decorators import login_required
 from accounts.backends import AccountBackend, TrainerAccountBackend
 from django.contrib.auth.forms import AuthenticationForm
@@ -161,14 +161,16 @@ def trainer_profile_view(request):
 @login_required
 def program_view(request):
     if request.method == 'POST':
-        form = PhysicalInformationForm(request.POST, instance=request.user)
+        form = ProgramForm(request.POST, instance=request.user)
         if form.is_valid():
             print("Form2 is valid")
+            # exercise_program = form.save(commit=False)
+            # exercise_program.user = request.user
             form.save()
             return redirect('gym:home')
         else:
             print("Form2 is invalid")
             print(form.errors)
     else:
-        form = PhysicalInformationForm(instance=request.user)
+        form = ProgramForm(instance=request.user)
     return render(request, 'registration/sports-program.html', {form:'form'})

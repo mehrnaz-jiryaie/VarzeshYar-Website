@@ -38,7 +38,7 @@ class AccountRegisterForm(UserCreationForm):
     class Meta:
         model = Account
         fields = ('username', 'email', 'password1', 'password2')
-        
+
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
@@ -51,8 +51,8 @@ class AccountRegisterForm(UserCreationForm):
         if Account.objects.filter(email=email).exists():
             raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
         return email
-    
-    
+
+
 class TrainerRegisterForm(UserCreationForm):
     email = forms.EmailField(
         required=True,
@@ -86,21 +86,19 @@ class TrainerRegisterForm(UserCreationForm):
     class Meta:
         model = TrainerAccount
         fields = ('username', 'email', 'password1', 'password2')
-        
+
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError('رمزهای عبور مطابقت ندارند.')
         return password2
-    
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if TrainerAccount.objects.filter(email=email).exists():
             raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
         return email
-
-
 
 
 # class LoginForm(forms.Form):
@@ -160,7 +158,6 @@ class TrainerRegisterForm(UserCreationForm):
 #         return self.user_cache
 
 
-
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
         label='نام کاربری',
@@ -205,15 +202,15 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Account
         fields = ('first_name', 'last_name', 'phone_number',
-                  'email', 'birth_date', 'sex', 'marital_status') 
-   
+                  'email', 'birth_date', 'sex', 'marital_status')
+
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(ProfileForm, self).__init__(*args, **kwargs)
 
     def clean_email(self):
         email1 = self.cleaned_data.get('email')
-        
+
         if self.request and self.request.user.is_authenticated:
             username = self.request.user.username
             account = Account.objects.filter(username=username).first()
@@ -224,7 +221,8 @@ class ProfileForm(forms.ModelForm):
                 else:
                     raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
             else:
-                raise forms.ValidationError('کاربری با این نام کاربری وجود ندارد.')
+                raise forms.ValidationError(
+                    'کاربری با این نام کاربری وجود ندارد.')
         else:
             raise forms.ValidationError('کاربر معتبر نیست.')
 
@@ -236,19 +234,82 @@ class PhysicalInformationForm(forms.ModelForm):
         model = Account
         fields = ('weight', 'height', 'waist', 'abdomen',
                   'chest', 'leg', 'arm', 'hip', 'thigh', 'shoulder')
-    
-    
+
+
 class TrainerProfileForm(forms.ModelForm):
     class Meta:
         model = TrainerAccount
         fields = ('first_name', 'last_name', 'phone_number',
                   'email', 'specialty', 'biography', 'city')
-        
+
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(TrainerProfileForm, self).__init__(*args, **kwargs)
-        
 
-# class ProgramForm(forms.ModelForm):
-#     class Meta:
-#         model = 
+
+class ProgramForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ('dumbbell_pair_squat_reps', 'dumbbell_pair_squat_sets',
+                   
+                  'inside_the_thigh_wire_reps', 'inside_the_thigh_wire_sets',
+                   
+                  'back_of_the_thigh_wired_reps', 'back_of_the_thigh_wired_sets', 
+                  
+                  'fly_reps', 'fly_sets',
+                  
+                  'cross_over_reps', 'cross_over_sets', 
+                  
+                  'french_triceps_reps', 'french_triceps_sets', 
+                  
+                  'two_sided_bending_publication_reps',
+                  'two_sided_bending_publication_sets',
+                  
+                  'fly_back_reps', 'fly_back_sets', 
+                  
+                  'crunch_reps', 'crunch_sets', 
+                  
+                  'climber_reps', 'climber_sets',
+                   
+                  'front_thigh_reps', 'front_thigh_sets', 
+                  
+                  'seated_hip_trust_reps', 'seated_hip_trust_sets',
+                   
+                  'free_dumbbell_kickback_reps', 'free_dumbbell_kickback_sets',
+                   
+                  'double_barbell_chest_reps', 'double_barbell_chest_sets',
+                   
+                  'military_chest_on_the_upper_chest_reps', 
+                  'military_chest_on_the_upper_chest_sets',
+                  
+                  'single_arm_dumbbell_shoulder_reps', 
+                  'single_arm_dumbbell_shoulder_sets',  
+                  
+                  'hand_open_boat_reps', 'hand_open_boat_sets', 
+                  
+                  'plank_reps', 'plank_sets', 
+                  
+                  'belly_roll_reps', 'belly_roll_sets', 
+                  
+                  'parallel_abdomen_reps', 'parallel_abdomen_sets', 
+                  
+                  'outer_thigh_wire_reps', 'outer_thigh_wire_sets',
+                   
+                  'standing_leg_reps', 'standing_leg_sets', 
+                  
+                  'hello_japanese_on_high_reps', 'hello_japanese_on_high_sets',
+                   
+                  'single_arm_chest_reps', 'single_arm_chest_sets', 
+                  
+                  'triceps_wire_reps', 'triceps_wire_sets',
+                   
+                  'full_body_barbell_shoulder_strap_reps', 
+                  'full_body_barbell_shoulder_strap_sets', 
+                  
+                  'pull_face_reps', 'pull_face_sets', 
+                  
+                  'russian_turn_reps', 'russian_turn_sets',
+                   
+                  'russian_side_reps', 'russian_side_sets', 
+                  
+                  'lower_abdomen_90_degrees_reps', 'lower_abdomen_90_degrees_sets')
