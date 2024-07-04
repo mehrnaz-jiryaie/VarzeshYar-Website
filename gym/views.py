@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from accounts.models import TrainerAccount
 
 def home(request):
     """Home Page"""
@@ -6,7 +7,8 @@ def home(request):
 
 def trainers(request):
     """Shows list of all trainers."""
-    return render(request, 'gym/trainers.html')
+    trainers = TrainerAccount.objects.order_by('date_joined')
+    return render(request, 'gym/trainers.html', {'trainers' : trainers})
 
 def gyms_view(request):
     """Shows list of all gyms."""

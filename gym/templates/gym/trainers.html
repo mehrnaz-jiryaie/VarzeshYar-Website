@@ -148,6 +148,22 @@
               تماس</button></span>
           <p class="contact-info">09218915545</p>
         </div>
+        <div class="filterDiv team">
+          <span class="trainer-name">
+            {% for trainer in trainers %}
+                <img src="../../static/gym/svg/profile5.jpeg">
+                <span>
+                  <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+                  <h4>رشته‌های ورزشی: {{trainer.specialty}}</h4>
+                  <h4>استان: {{trainer.city}}</h4>
+                </span>
+              </span>
+              <li>{{trainer.biography}}</li>
+              <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+                  تماس</button></span>
+              <p class="contact-info">{{trainer.phone_number}}</p>
+            {% endfor %}
+        </div>
       </section>
     </section>
   </main>
