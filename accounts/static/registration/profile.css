@@ -10,10 +10,17 @@ html {
   box-sizing: inherit;
   margin: 0;
 }
+a:visited {
+  text-decoration: none;
+}
 @font-face {
   font-family: vazir-light;
   src: url(fonts/Vazir-Light.woff) format("woff");
 }
+a{
+  text-decoration: none;
+}
+
 body {
   background-color: white;
   font-family: vazir-light;
@@ -27,12 +34,29 @@ body {
   align-items: center;
   /* color: #01739d; */
 }
+.links {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+.form-links {
+  display: grid;
+  width: 200%;
+  /* justify-content: center; */
+  align-items: center;
+  grid-template-columns: 32% 22% 22% 22%;
+}
+.links a {
+  font-size: 1.3rem;
+  margin-right: 1.5rem;
+  /* margin: 10rem; */
+  font-weight: bold;
+}
 .section-head {
   background: #80deea;
   padding: 24px;
   color: #01739d;
 }
-
 .section-main {
   height: 100%;
   background-color: #eceff1;
@@ -57,14 +81,21 @@ body {
 }
 .box form {
   width: 100%;
-  display: flex;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 17% 17% 17% 17% 30%;
+  /* justify-content: space-around; */
+  /* align-items: stretch; */
+  /* justify-items: stretch; */
+  /* display: flex;
   flex-direction: row;
   column-gap: 60px;
   row-gap: 10px;
   flex-wrap: wrap;
   margin-top: 30px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 10px; */
 }
 input[type="text"],
 input[type="email"],
@@ -78,13 +109,15 @@ input[type="password"] {
   font-size: 12px;
   outline-color: #03a9f4;
   /* width: ; */
-  padding-left: 30px;
+  /* box-sizing: border-box; */
+  padding-left: 40px;
 }
 input[type="email"],
 input[type="tel"],
 input[type="password"] {
   direction: ltr;
-  padding-left: 50px;
+  /* box-sizing: border-box; */
+  padding-left: 40px;
 }
 form .input-box {
   display: flex;
@@ -92,35 +125,47 @@ form .input-box {
   align-items: center;
   justify-content: space-between;
   outline: none;
-  padding: 9px;
-  width: 40%;
+  /* padding: 9px; */
+  width: 85%;
 }
 .radio-options {
   display: flex;
   align-items: center;
   gap: 68px;
 }
+.radio-options label:hover {
+  cursor: pointer;
+}
+.error {
+  color: red;
+}
 .btn {
   font-family: vazir-light;
-  width: 180px;
+  width: 160px;
+  height: 3rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   padding: 10px;
   /* background-color: #80deea; */
   border: none;
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   background-image: linear-gradient(to top, #03a9f4, #80deea);
   color: white;
-  margin: auto;
-  margin-top: 40px;
+  /* margin: auto; */
+  /* margin-top: 40px; */
+}
+.btn:hover{
+  opacity: 0.8;
 }
 .input-icon {
   width: 20px;
   height: 20px;
   position: absolute;
-  left: 25px;
+  left: 15px;
 }
 
 input[type="radio"] {
@@ -137,3 +182,54 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-color: #80deea;
 }
+
+@media screen and (max-width: 870px) {
+  .box {
+    width: 500px;
+    height: 100%;
+    /* padding-top: 24px; */
+  }
+  .box form {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 10% 10%;
+    padding-right: 15px;
+  }
+  .form-links {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 100%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .box {
+    width: 95%;
+  }
+}
+/* @media screen and (max-width: 500px) {
+  form .input-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .input-icon {
+    display: none;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="password"] {
+    margin-top: 1rem;
+    padding-left: 10px;
+  }
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    margin-top: 1rem;
+    padding-left: 10px;
+  }
+} */

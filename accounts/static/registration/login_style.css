@@ -75,6 +75,7 @@ body {
 form button {
   font-size: 1rem;
   padding: 10px;
+  box-sizing: border-box;
   border-radius: 10px;
   border: none;
   background-color: #0097cf;
@@ -86,6 +87,9 @@ form button {
 form button:hover {
   opacity: 0.8;
 }
+.buttons a:hover{
+  opacity: 0.8;
+}
 form h2 {
   text-align: center;
 }
@@ -94,6 +98,19 @@ form h2 {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+}
+.buttons a{
+  font-size: 1rem;
+  padding: 10px;
+  padding-right: 19%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #0097cf;
+  color: white;
+  font-family: vazir-light;
+  cursor: pointer;
+  width: 48%;
 }
 .register-button {
   background-color: #c5d6de;
@@ -151,3 +168,7 @@ form h2 {
 a:visited{
 	text-decoration: none;
 }
+a{
+  text-decoration: none;
+}
+

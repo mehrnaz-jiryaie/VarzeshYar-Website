@@ -15,6 +15,13 @@ html {
 	font-family: vazir-light;
 	src: url(fonts/Vazir-Light.woff) format("truetype");
 }
+a:visited {
+    text-decoration: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  
 body {
 	background-color: white;
 	font-family: vazir-light;

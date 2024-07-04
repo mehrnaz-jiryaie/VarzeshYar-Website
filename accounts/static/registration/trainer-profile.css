@@ -12,10 +12,11 @@ html {
 /* header styles */
 header {
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 95% 5%;
   height: 5.25rem;
   /* width: 100%; */
   width: 100vw;
+  /* justify-content:; */
   box-sizing: border-box;
   max-width: 100%;
   color: #01739d;
@@ -38,6 +39,7 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  font-family: vazir-light;
 }
 main {
   height: 27rem;
@@ -114,15 +116,51 @@ form{
   display: flex;
   justify-content: center;
 }
+.buttons button:hover{
+  opacity: 0.8;
+}
+.buttons a:hover{
+  opacity: 0.8;
+}
 .buttons button{
   margin-right: 1rem;
   font-family: vazir-light;
-	width: 180px;
+	width: 160px;
 	cursor: pointer;
-	padding: 10px;
+	/* padding: 10px; */
+  justify-content: center;
+  align-items: center;
 	border: none;
 	border-radius: 20px;
 	background-image: linear-gradient(to top , #03A9F4 , #80deea);
 	color: white;
   font-size: 1rem;
+}
+.buttons a{
+  margin-right: 1rem;
+  font-family: vazir-light;
+	width: 160px;
+	cursor: pointer;
+  box-sizing: border-box;
+  padding-right:  5.5%;
+  padding-top: 5px;
+	/* padding: 10px; */
+  /* margin-top: 10px; */
+  /* align-items: center; */
+  /* justify-content: center; */
+	border: none;
+	border-radius: 20px;
+	background-image: linear-gradient(to top , #03A9F4 , #80deea);
+	color: white;
+  font-size: 1rem;
+}
+/* #city{ */
+  /* padding-left: 10rem; */
+/* } */
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  text-decoration: none;
 }

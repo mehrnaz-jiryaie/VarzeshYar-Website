@@ -1,6 +1,6 @@
 @font-face {
   font-family: vazir-light;
-  src: url(fonts/Vazir-Light.ttf) format("tff");
+  src: url(fonts/Vazir-Light.woff) format("woff");
 }
 body {
   background-color: white;
@@ -35,10 +35,20 @@ body {
   background-color: #ffffff;
   margin: 7rem auto;
   width: 30rem;
-  height: 18rem;
+  height: 19rem;
   padding: 1rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px 0px #ccc;
+}
+.info{
+  height: 14rem;
+  /* background-color: #0097cf; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.buttons a:hover{
+  opacity: 0.8;
 }
 .information-input {
   border: 1px solid #ccc;
@@ -69,8 +79,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 15rem;
+  height: 19rem;
   width: 100%;
+}
+.buttons a{
+  font-size: 1rem;
+  padding: 10px;
+  padding-right: 19%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  background-color: #0097cf;
+  color: white;
+  font-family: vazir-light;
+  cursor: pointer;
+  width: 48%;
+  justify-content: center;
+  align-items: center;
 }
 form button {
   font-size: 1rem;
@@ -123,13 +149,13 @@ form h2 {
     padding: 1rem 2rem;
   }
   .box {
-    height: 21rem;
+    height: 23rem;
     margin: 5rem auto;
     padding: 1rem 2.2rem;
   }
   .box form {
     align-items: start;
-    height: 17rem;
+    height: 20rem;
   }
   .input-box {
     flex-direction: column;
@@ -150,4 +176,7 @@ form h2 {
 }
 a:visited{
 	text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
