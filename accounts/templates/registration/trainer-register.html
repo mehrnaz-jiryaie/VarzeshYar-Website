@@ -31,6 +31,63 @@
             <input class="information-input" type="email" name="email" id="email" required />
           </div>
           <div class="input-box">
+            <label class="information" for="name">نام</label>
+            <input class="information-input" type="text" name="name" id="name" required />
+          </div>
+          <div class="input-box">
+            <label class="information" for="last-name">نام‌خانوادگی</label>
+            <input class="information-input" type="text" name="last-name" id="last-name" required />
+          </div>
+          <div class="input-box">
+            <label class="information" for="phone">شماره تلفن</label>
+            <input class="information-input" type="tel" name="phone" id="phone" value="" placeholder="09xxxxxxxxx" maxlength="11" oninput="validatePhoneNumber(this)">
+          </div>
+          <div class="input-box">
+            <label class="information" for="sport">رشته ورزشی</label>
+            <select name="sport" id="sport" value ="">
+              <option value="1">بدنسازی</option>
+              <option value="2">رزمی</option>
+              <option value="4">گروهی</option>
+              <option value="31">حرکتی</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label class="information" for="city">استان</label>
+            <select name="city" id="city" value ="">
+              <option value="1">تهران</option>
+              <option value="2">گیلان</option>
+              <option value="3">آذربایجان شرقی</option>
+              <option value="4">خوزستان</option>
+              <option value="5">فارس</option>
+              <option value="6">اصفهان</option>
+              <option value="7">خراسان رضوی</option>
+              <option value="8">قزوین</option>
+              <option value="9">سمنان</option>
+              <option value="10">قم</option>
+              <option value="11">مرکزی</option>
+              <option value="12">زنجان</option>
+              <option value="13">مازندران</option>
+              <option value="14">گلستان</option>
+              <option value="15">اردبیل</option>
+              <option value="16">آذربایجان غربی</option>
+              <option value="17">همدان</option>
+              <option value="18">کردستان</option>
+              <option value="19">کرمانشاه</option>
+              <option value="20">لرستان</option>
+              <option value="21">بوشهر</option>
+              <option value="22">کرمان</option>
+              <option value="23">هرمزگان</option>
+              <option value="24">چهارمحال و بختیاری</option>
+              <option value="25">یزد</option>
+              <option value="26">سیستان و بلوچستان</option>
+              <option value="27">ایلام</option>
+              <option value="28">کهگلویه و بویراحمد</option>
+              <option value="29">خراسان شمالی</option>
+              <option value="30">خراسان جنوبی</option>
+              <option value="31">البرز</option>
+            </select>
+          </div>
+          <div class="input-box">
             <label class="information" for="password1">رمز عبور</label>
             <input class="information-input" type="password" name="password1" id="password" required />
           </div>
@@ -38,23 +95,27 @@
             <label class="information" for="password2">تایید رمز عبور</label>
             <input class="information-input" type="password" name="password2" id="password" required />
           </div>
-          <button>ثبت‌نام</button>
         </div>
+        <button>ثبت‌نام</button>
+        {% if form.password1.errors %}
+        <span class="error">{{ form.password1.errors }}</span>
+        {% endif %}
+        {% if form.password2.errors %}
+        <span class="error">{{ form.password2.errors }}</span>
+        {% endif %}
+        {% if form.email.errors %}
+        <span class="error">{{ form.email.errors }}</span>
+        {% endif %}
+        {% if form.username.errors %}
+        <span class="error">{{ form.username.errors }}</span>
+        {% endif %}
       </form>
-      {% if form.password1.errors %}
-      <span class="error">{{ form.password1.errors }}</span>
-      {% endif %}
-      {% if form.password2.errors %}
-      <span class="error">{{ form.password2.errors }}</span>
-      {% endif %}
-      {% if form.email.errors %}
-      <span class="error">{{ form.email.errors }}</span>
-      {% endif %}
-      {% if form.username.errors %}
-      <span class="error">{{ form.username.errors }}</span>
-      {% endif %}
     </div>
   </main>
 </body>
-
+<script>
+  function validatePhoneNumber(input) {
+    input.value = input.value.replace(/[^0-9]/g, "").slice(0, 11);
+  }
+</script>
 </html>
