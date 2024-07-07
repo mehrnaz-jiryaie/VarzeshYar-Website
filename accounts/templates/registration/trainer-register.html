@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ثبت‌نام</title>
   {% load static %}
-  <link rel="icon" href="../../static/registration/svg/strength.png">
-  <!-- <link rel="stylesheet" href="{% static 'registration/trainer-register.css' %}" /> -->
+  <link rel="icon" href="{% static 'gym\svg\strength.png' %}">
   <link rel="stylesheet" href="{% static 'registration/trainer-register.css' %}" />
 </head>
 
@@ -32,59 +31,59 @@
           </div>
           <div class="input-box">
             <label class="information" for="name">نام</label>
-            <input class="information-input" type="text" name="name" id="name" required />
+            <input class="information-input" type="text" name="first_name" id="first_name" value="{{form.first_name.value|default_if_none:''}}" required />
           </div>
           <div class="input-box">
             <label class="information" for="last-name">نام‌خانوادگی</label>
-            <input class="information-input" type="text" name="last-name" id="last-name" required />
+            <input class="information-input" type="text" name="last_name" id="last_name" value="{{form.last_name.value|default_if_none:''}}" required />
           </div>
           <div class="input-box">
             <label class="information" for="phone">شماره تلفن</label>
-            <input class="information-input" type="tel" name="phone" id="phone" value="" placeholder="09xxxxxxxxx" maxlength="11" oninput="validatePhoneNumber(this)">
+            <input class="information-input" type="tel" name="phone_number" id="phone_number" value="{{form.phone_number.value|default_if_none:''}}" placeholder="09xxxxxxxxx" maxlength="11" oninput="validatePhoneNumber(this)">
           </div>
           <div class="input-box">
             <label class="information" for="sport">رشته ورزشی</label>
-            <select name="sport" id="sport" value ="">
-              <option value="1">بدنسازی</option>
-              <option value="2">رزمی</option>
-              <option value="4">گروهی</option>
-              <option value="31">حرکتی</option>
+            <select name="specialty" id="specialty">
+              <option value="1" {% if form.specialty.value == '1' %}selected{% endif %}>بدنسازی</option>
+              <option value="2" {% if form.specialty.value == '2' %}selected{% endif %}>رزمی</option>
+              <option value="4" {% if form.specialty.value == '4' %}selected{% endif %}>گروهی</option>
+              <option value="31" {% if form.specialty.value == '31' %}selected{% endif %}>حرکتی</option>
             </select>
           </div>
           <div class="input-box">
             <label class="information" for="city">استان</label>
-            <select name="city" id="city" value ="">
-              <option value="1">تهران</option>
-              <option value="2">گیلان</option>
-              <option value="3">آذربایجان شرقی</option>
-              <option value="4">خوزستان</option>
-              <option value="5">فارس</option>
-              <option value="6">اصفهان</option>
-              <option value="7">خراسان رضوی</option>
-              <option value="8">قزوین</option>
-              <option value="9">سمنان</option>
-              <option value="10">قم</option>
-              <option value="11">مرکزی</option>
-              <option value="12">زنجان</option>
-              <option value="13">مازندران</option>
-              <option value="14">گلستان</option>
-              <option value="15">اردبیل</option>
-              <option value="16">آذربایجان غربی</option>
-              <option value="17">همدان</option>
-              <option value="18">کردستان</option>
-              <option value="19">کرمانشاه</option>
-              <option value="20">لرستان</option>
-              <option value="21">بوشهر</option>
-              <option value="22">کرمان</option>
-              <option value="23">هرمزگان</option>
-              <option value="24">چهارمحال و بختیاری</option>
-              <option value="25">یزد</option>
-              <option value="26">سیستان و بلوچستان</option>
-              <option value="27">ایلام</option>
-              <option value="28">کهگلویه و بویراحمد</option>
-              <option value="29">خراسان شمالی</option>
-              <option value="30">خراسان جنوبی</option>
-              <option value="31">البرز</option>
+            <select name="city" id="city" value ="{{form.city.value}}">
+              <option value="1" {% if form.city.value == '1' %}selected{% endif %}>تهران</option>
+              <option value="2" {% if form.city.value == '2' %}selected{% endif %}>گیلان</option>
+              <option value="3" {% if form.city.value == '3' %}selected{% endif %}>آذربایجان شرقی</option>
+              <option value="4" {% if form.city.value == '4' %}selected{% endif %}>خوزستان</option>
+              <option value="5" {% if form.city.value == '5' %}selected{% endif %}>فارس</option>
+              <option value="6" {% if form.city.value == '6' %}selected{% endif %}>اصفهان</option>
+              <option value="7" {% if form.city.value == '7' %}selected{% endif %}>خراسان رضوی</option>
+              <option value="8" {% if form.city.value == '8' %}selected{% endif %}>قزوین</option>
+              <option value="9" {% if form.city.value == '9' %}selected{% endif %}>سمنان</option>
+              <option value="10" {% if form.city.value == '10' %}selected{% endif %}>قم</option>
+              <option value="11" {% if form.city.value == '11' %}selected{% endif %}>مرکزی</option>
+              <option value="12" {% if form.city.value == '12' %}selected{% endif %}>زنجان</option>
+              <option value="13" {% if form.city.value == '13' %}selected{% endif %}>مازندران</option>
+              <option value="14" {% if form.city.value == '14' %}selected{% endif %}>گلستان</option>
+              <option value="15" {% if form.city.value == '15' %}selected{% endif %}>اردبیل</option>
+              <option value="16" {% if form.city.value == '16' %}selected{% endif %}>آذربایجان غربی</option>
+              <option value="17" {% if form.city.value == '17' %}selected{% endif %}>همدان</option>
+              <option value="18" {% if form.city.value == '18' %}selected{% endif %}>کردستان</option>
+              <option value="19" {% if form.city.value == '19' %}selected{% endif %}>کرمانشاه</option>
+              <option value="20" {% if form.city.value == '20' %}selected{% endif %}>لرستان</option>
+              <option value="21" {% if form.city.value == '21' %}selected{% endif %}>بوشهر</option>
+              <option value="22" {% if form.city.value == '22' %}selected{% endif %}>کرمان</option>
+              <option value="23" {% if form.city.value == '23' %}selected{% endif %}>هرمزگان</option>
+              <option value="24" {% if form.city.value == '24' %}selected{% endif %}>چهارمحال و بختیاری</option>
+              <option value="25" {% if form.city.value == '25' %}selected{% endif %}>یزد</option>
+              <option value="26" {% if form.city.value == '26' %}selected{% endif %}>سیستان و بلوچستان</option>
+              <option value="27" {% if form.city.value == '27' %}selected{% endif %}>ایلام</option>
+              <option value="28" {% if form.city.value == '28' %}selected{% endif %}>کهگلویه و بویراحمد</option>
+              <option value="29" {% if form.city.value == '29' %}selected{% endif %}>خراسان شمالی</option>
+              <option value="30" {% if form.city.value == '30' %}selected{% endif %}>خراسان جنوبی</option>
+              <option value="31" {% if form.city.value == '31' %}selected{% endif %}>البرز</option>
             </select>
           </div>
           <div class="input-box">

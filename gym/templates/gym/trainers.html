@@ -27,10 +27,14 @@
       </div>
       <div>
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
-        <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+          {% if user_type == 'trainer' %}
+            <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل</a>
+          {% elif user_type == 'account' %}
+            <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+          {% endif %}
         {% else %}
-        <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
-        <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
+          <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+          <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>

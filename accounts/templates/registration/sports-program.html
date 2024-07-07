@@ -27,13 +27,13 @@
               <div class="inp-container">
                 <div>
                   <label for="squat-repeat">تکرار</label>
-                  <input type="number" name="dumbbell_pair_squat_reps" id="squat-repeat" value="{{form.dumbbell_pair_squat_reps.value}}" />
-                  <!-- {{form.dumbbell_pair_squat_reps}} -->
+                  <input type="number" name="dumbbell_pair_squat_reps"  value="{{form.dumbbell_pair_squat_reps.value|default_if_none:''}}" />
+                  
                 </div>
                 <div>
                   <label for="squat-repeat">ست</label>
-                  <input type="number" name="dumbbell_pair_squat_sets" id="squat-set" value="{{form.dumbbell_pair_squat_sets.value}}" />
-                  <!-- {{form.dumbbell_pair_squat_sets}} -->
+                  <input type="number" name="dumbbell_pair_squat_sets"  value="{{form.dumbbell_pair_squat_sets.value|default_if_none:''}}" />
+                 
                 </div>
               </div>
             </div>
@@ -418,7 +418,7 @@
           <div>
             <button class="btn">ثبت</button>
             <a class="btn" href="{% url 'accounts:profile' %}">بازگشت</a>
-            <a class="btn" href="">صفحه اصلی</a>
+            <a class="btn" href="{% url 'gym:home' %}">صفحه اصلی</a>
           </div>
         </form>
       </div>
