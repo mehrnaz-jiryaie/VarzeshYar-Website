@@ -169,6 +169,6 @@ def program_view(request):
         if form.is_valid():
             form.save()
             return redirect('gym:home')
-    
-    form = ProgramForm(instance=request.user)
+    else:
+        form = ProgramForm(instance=request.user)
     return render(request, 'registration/sports-program.html', {'form':form})
