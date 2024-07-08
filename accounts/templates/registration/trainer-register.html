@@ -46,13 +46,13 @@
             <select name="specialty" id="specialty">
               <option value="1" {% if form.specialty.value == '1' %}selected{% endif %}>بدنسازی</option>
               <option value="2" {% if form.specialty.value == '2' %}selected{% endif %}>رزمی</option>
-              <option value="4" {% if form.specialty.value == '4' %}selected{% endif %}>گروهی</option>
-              <option value="31" {% if form.specialty.value == '31' %}selected{% endif %}>حرکتی</option>
+              <option value="3" {% if form.specialty.value == '3' %}selected{% endif %}>گروهی</option>
+              <option value="4" {% if form.specialty.value == '4' %}selected{% endif %}>حرکتی</option>
             </select>
           </div>
           <div class="input-box">
             <label class="information" for="city">استان</label>
-            <select name="city" id="city" value ="{{form.city.value}}">
+            <select name="city" id="city">
               <option value="1" {% if form.city.value == '1' %}selected{% endif %}>تهران</option>
               <option value="2" {% if form.city.value == '2' %}selected{% endif %}>گیلان</option>
               <option value="3" {% if form.city.value == '3' %}selected{% endif %}>آذربایجان شرقی</option>

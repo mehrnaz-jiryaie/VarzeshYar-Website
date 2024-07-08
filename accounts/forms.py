@@ -85,8 +85,8 @@ class TrainerRegisterForm(UserCreationForm):
 
     class Meta:
         model = TrainerAccount
-        fields = ('username', 'password1', 'password2', 'first_name', 'last_name', 'phone_number',
-                  'email', 'specialty', 'biography', 'city')
+        fields = ('username', 'password1', 'password2', 'first_name', 'last_name', 
+                  'phone_number', 'email', 'specialty', 'biography', 'city')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
@@ -244,45 +244,9 @@ class TrainerProfileForm(forms.ModelForm):
                   'email', 'specialty', 'biography', 'city')
         
     
-    # CITY_CHOICES = [
-    #     ('1', 'تهران'),
-    #     ('2', 'گیلان'),
-    #     ('3', 'آذربایجان شرقی'),
-    #     ('4', 'خوزستان'),
-    #     ('5', 'فارس'),
-    #     ('6', 'اصفهان'),
-    #     ('7', 'خراسان رضوی'),
-    #     ('8', 'قزوین'),
-    #     ('9', 'سمنان'),
-    #     ('10', 'قم'),
-    #     ('11', 'مرکزی'),
-    #     ('12', 'زنجان'),
-    #     ('13', 'مازندران'),
-    #     ('14', 'گلستان'),
-    #     ('15', 'اردبیل'),
-    #     ('16', 'آذربایجان غربی'),
-    #     ('17', 'همدان'),
-    #     ('18', 'کردستان'),
-    #     ('19', 'کرمانشاه'),
-    #     ('20', 'لرستان'),
-    #     ('21', 'بوشهر'),
-    #     ('22', 'کرمان'),
-    #     ('23', 'هرمزگان'),
-    #     ('24', 'چهارمحال و بختیاری'),
-    #     ('25', 'یزد'),
-    #     ('26', 'سیستان و بلوچستان'),
-    #     ('27', 'ایلام'),
-    #     ('28', 'کهگلویه و بویراحمد'),
-    #     ('29', 'خراسان شمالی'),
-    #     ('30', 'خراسان جنوبی'),
-    #     ('31', 'البرز'),
-    # ]
-
-    # city = forms.ChoiceField(choices=CITY_CHOICES)
-    
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(TrainerProfileForm, self).__init__(*args, **kwargs)
+    # def __init__(self, *args, **kwargs):
+    #     self.request = kwargs.pop('request', None)
+    #     super(TrainerProfileForm, self).__init__(*args, **kwargs)
 
 
 class ProgramForm(forms.ModelForm):

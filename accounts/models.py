@@ -214,4 +214,13 @@ class TrainerAccount(AbstractUser):
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     specialty = models.CharField(max_length=100, blank=True, null=True)
     biography = models.TextField(blank=True, null=True)
-    city = models.CharField(max_length=20, blank=True, null=True)
+    
+    city = models.CharField(max_length=2, choices=[
+        ('1', 'تهران'), ('2', 'گیلان'), ('3', 'آذربایجان شرقی'), ('4', 'خوزستان'),
+        ('5', 'فارس'), ('6', 'اصفهان'), ('7', 'خراسان رضوی'), ('8', 'قزوین'),
+        ('9', 'سمنان'), ('10', 'قم'), ('11', 'مرکزی'), ('12', 'زنجان'),
+        ('13', 'مازندران'), ('14', 'گلستان'), ('15', 'اردبیل'), ('16', 'آذربایجان غربی'),
+        ('17', 'همدان'), ('18', 'کرمانشاه'), ('19', 'ایلام'), ('20', 'کهگیلویه و بویراحمد'),
+        ('21', 'بوشهر'), ('22', 'زاهدان'), ('23', 'هرمزگان'), ('24', 'مرکزی')
+    ])
+    # city = models.CharField(max_length=100, blank=True, null=True)
