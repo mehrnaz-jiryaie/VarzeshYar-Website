@@ -167,20 +167,8 @@ def program_view(request):
     if request.method == 'POST':
         form = ProgramForm(request.POST, instance=request.user)
         if form.is_valid():
-            print("Form9 is valid")
-            # exercise_program = form.save(commit=False)
-            # exercise_program.user = request.user
             form.save()
             return redirect('gym:home')
-        else:
-            print("Form9 is invalid")
-            print(form.errors)
-    else:
-        print('form9')
-        form = ProgramForm(instance=request.user)
-        
-    for field in form:
-        print(f'{field.name}: {field.value()}')
-    return render(request, 'registration/sports-program.html', {form:'form'})
-
-
+    
+    form = ProgramForm(instance=request.user)
+    return render(request, 'registration/sports-program.html', {'form':form})
