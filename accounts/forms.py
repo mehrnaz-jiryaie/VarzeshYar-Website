@@ -34,6 +34,12 @@ class AccountRegisterForm(UserCreationForm):
             'required': 'لطفا تایید رمز عبور را وارد کنید.',
         }
     )
+    phone_number = forms.CharField(
+        error_messages={
+            'required': 'لطفا نام کاربری خود را وارد کنید.',
+            'unique': 'این نام کاربری قبلا ثبت شده است.'
+        }
+    )
 
     class Meta:
         model = Account
@@ -82,6 +88,12 @@ class TrainerRegisterForm(UserCreationForm):
             'required': 'لطفا تایید رمز عبور را وارد کنید.',
         }
     )
+    phone_number = forms.CharField(
+        error_messages={
+            'required': 'لطفا نام کاربری خود را وارد کنید.',
+            'unique': 'این نام کاربری قبلا ثبت شده است.'
+        }
+    )
 
     class Meta:
         model = TrainerAccount
@@ -100,6 +112,12 @@ class TrainerRegisterForm(UserCreationForm):
         if TrainerAccount.objects.filter(email=email).exists():
             raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
         return email
+    
+    # def clean_phone_number(self):
+    #     phone_number = self.cleaned_data.get('phone_number')
+    #     if TrainerAccount.objects.filter(phone_number=phone_number).exists():
+    #         raise forms.ValidationError("This phone number is already in use.")
+    #     return phone_number
 
 
 # class LoginForm(forms.Form):
@@ -242,6 +260,13 @@ class TrainerProfileForm(forms.ModelForm):
         model = TrainerAccount
         fields = ('first_name', 'last_name', 'phone_number',
                   'email', 'specialty', 'biography', 'city')
+        
+    phone_number = forms.CharField(
+        error_messages={
+            'required': 'لطفا نام کاربری خود را وارد کنید.',
+            'unique': 'این نام کاربری قبلا ثبت شده است.'
+        }
+    )
         
     
     # def __init__(self, *args, **kwargs):

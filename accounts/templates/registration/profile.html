@@ -38,6 +38,7 @@
                     <label for="phone-number">شماره تلفن:</label>
                     <img class="input-icon" src="{% static '../static/registration/svg/phone.svg' %}" alt="phone icon" />
                     <input type="tel" name="phone_number" maxlength="11" oninput="validatePhoneNumber(this)" id="phone-number" placeholder="09xxxxxxxxx" value="{{ form.phone_number.value|default_if_none:''  }}">
+                    
                 </div>
                 <div class="input-box">
                     <label for="email">ایمیل:</label>
@@ -78,8 +79,11 @@
                 <div></div>
                 <div class="form-links">
                     <div>
-                        {% if form.email.errors %}
+                    {% if form.email.errors %}
                         <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}
+                    {% if form.phone_number.errors %}
+                        <div class="error">{{ form.phone_number.errors }}</div>
                     {% endif %}</div>
                     <button type="submit" class="btn">ثبت و ادامه</a></button>
                     <button type="reset" class="btn">انصراف</button>

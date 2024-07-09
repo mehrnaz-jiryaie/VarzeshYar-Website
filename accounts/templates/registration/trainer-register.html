@@ -108,6 +108,9 @@
         {% if form.username.errors %}
         <span class="error">{{ form.username.errors }}</span>
         {% endif %}
+        {% if form.phone_number.errors %}
+        <span class="error">{{ form.phone_number.errors }}</span>
+        {% endif %}
       </form>
     </div>
   </main>

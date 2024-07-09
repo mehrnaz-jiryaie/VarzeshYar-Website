@@ -84,6 +84,14 @@
         <button type="reset">انصراف</button>
         <a href="{% url 'gym:home' %}">صفحه اصلی</a>
       </div>
+      <div class="form-links">
+        <div>
+        {% if form.email.errors %}
+            <div class="error">{{ form.email.errors }}</div>
+        {% endif %}
+        {% if form.phone_number.errors %}
+            <div class="error">{{ form.phone_number.errors }}</div>
+        {% endif %}</div>
     </form>
   </main>
 </body>
