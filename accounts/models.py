@@ -9,6 +9,7 @@ class Account(AbstractUser):
         verbose_name = "Athlete"
     username = models.CharField(unique=True, blank=False, max_length=100)
     email = models.EmailField(unique=True, max_length=254)
+    phone_number = models.CharField(unique=True ,max_length=15, blank=True, null=True)
     groups = models.ManyToManyField(
         'auth.Group',
         related_name='athlete_user_set',
@@ -36,6 +37,9 @@ class Account(AbstractUser):
            TrainerAccount.objects.filter(username=self.username).exclude(pk=self.pk).exists():
             raise ValidationError(
                 {'username': 'این نام کاربری قبلا ثبت شده است.'})
+        if Account.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists() or \
+           TrainerAccount.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists():
+            raise ValidationError({'phone_number': 'این شماره تلفن قبلا ثبت شده است.'})
 
     MALE = True
     FEMALE = False
@@ -51,7 +55,6 @@ class Account(AbstractUser):
         (SINGLE, 'Single'),
     ]
 
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     sex = models.CharField(max_length=1, choices=[(
         'M', 'Male'), ('F', 'Female')], blank=True, null=True)
@@ -183,6 +186,7 @@ class TrainerAccount(AbstractUser):
         verbose_name = "Trainer"
     username = models.CharField(unique=True, blank=False, max_length=100)
     email = models.EmailField(unique=True, max_length=254)
+    phone_number = models.CharField(unique=True ,max_length=15, blank=True, null=True)
     groups = models.ManyToManyField(
         'auth.Group',
         related_name='TrainerAccount_user_set',
@@ -210,8 +214,10 @@ class TrainerAccount(AbstractUser):
            Account.objects.filter(username=self.username).exclude(pk=self.pk).exists():
             raise ValidationError(
                 {'username': 'این نام کاربری قبلا ثبت شده است.'})
+        if TrainerAccount.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists() or \
+           Account.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists():
+            raise ValidationError({'phone_number': 'این شماره تلفن قبلا ثبت شده است.'})
 
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
     specialty = models.CharField(max_length=100, blank=True, null=True)
     biography = models.TextField(blank=True, null=True)
     
@@ -223,4 +229,4 @@ class TrainerAccount(AbstractUser):
         ('17', 'همدان'), ('18', 'کرمانشاه'), ('19', 'ایلام'), ('20', 'کهگیلویه و بویراحمد'),
         ('21', 'بوشهر'), ('22', 'زاهدان'), ('23', 'هرمزگان'), ('24', 'مرکزی')
     ])
-    # city = models.CharField(max_length=100, blank=True, null=True)
+    
