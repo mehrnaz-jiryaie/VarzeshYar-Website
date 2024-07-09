@@ -62,12 +62,12 @@ select {
 }
 #name,
 #last-name,
-#sport,
+#specialty,
 #city {
   direction: rtl;
 }
 #city,
-#sport {
+#specialty {
   width: 64%;
 }
 #phone {
@@ -181,7 +181,7 @@ form h2 {
   #city{
     width: 96%;
   }
-  #sport{
+  #specialty{
     width: 96%;
   }
   .box form {

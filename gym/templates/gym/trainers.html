@@ -82,12 +82,12 @@
             <img src="../../static/gym/svg/profile2.png">
             <span>
               <h2>محدثه عبدی</h2>
-              <h4>رشته‌های ورزشی: یوگا</h4>
-              <h4>استان: تهران</h4>
+              <h4>رشته‌ ورزشی:    یوگا</h4>
+              <h4>استان:    تهران</h4>
             </span>
           </span>
           <li>مربی بین‌المللی وینیاسایوگا، مربی یوگا، حرکات انعطافی و قدرتی</li>
-          <li>دارای تجربه مربیگری کلاس‌های آنلاین</li>
+          <!-- <li>دارای تجربه مربیگری کلاس‌های آنلاین</li> -->
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(0)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09122134044</p>
@@ -97,12 +97,12 @@
             <img src="../../static/gym/svg/profile1.png">
             <span>
               <h2>داود جلیل پور</h2>
-              <h4>رشته‌های ورزشی: بدنسازی</h4>
-              <h4>استان: تهران</h4>
+              <h4>رشته‌ ورزشی:    بدنسازی</h4>
+              <h4>استان:    تهران</h4>
             </span>
           </span>
           <li>مربی دوومیدانی و درجه 3 بدنسازی فوتبال در تهران</li>
-          <li>مربی فیتنس، TRX، بدنسازی</li>
+          <!-- <li>مربی فیتنس، TRX، بدنسازی</li> -->
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(1)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09303318088</p>
@@ -112,12 +112,12 @@
             <img src="../../static/gym/svg/profile4.jpg">
             <span>
               <h2>آیسودا اسفندیاری</h2>
-              <h4>رشته‌های ورزشی: بدنسازی، تی آرایکس، فیتنس</h4>
-              <h4>استان: اصفهان</h4>
+              <h4>رشته‌ ورزشی:     بدنسازی، تی آرایکس، فیتنس</h4>
+              <h4>استان:    اصفهان</h4>
             </span>
           </span>
           <li>دانشجوی ارشد تربیت بدنی در ایتالیا</li>
-          <li>مربی فیتنس، TRX، بدنسازی</li>
+          <!-- <li>مربی فیتنس، TRX، بدنسازی</li> -->
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(2)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09124309982</p>
@@ -127,12 +127,12 @@
             <img src="../../static/gym/svg/profile3.png">
             <span>
               <h2>حسین مشرفی</h2>
-              <h4>رشته‌های ورزشی: کاراته</h4>
-              <h4>استان: تهران</h4>
+              <h4>رشته‌ ورزشی:    کاراته</h4>
+              <h4>استان:    تهران</h4>
             </span>
           </span>
-          <li>مدرک مربی‌گری درجه 3 کاراته</li>
-          <li>دارای 10 سال سابقه مربیگری در رشته‌های مذکور</li>
+          <!-- <li>مدرک مربی‌گری درجه 3 کاراته</li> -->
+          <li>دارای 10 سال سابقه مربیگری در رشته‌ مذکور</li>
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(3)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09918190912</p>
@@ -142,11 +142,11 @@
             <img src="../../static/gym/svg/profile5.jpeg">
             <span>
               <h2>احمد نعیمی</h2>
-              <h4>رشته‌های ورزشی: والیبال</h4>
-              <h4>استان: تهران</h4>
+              <h4>رشته‌ ورزشی:   والیبال</h4>
+              <h4>استان:   تهران</h4>
             </span>
           </span>
-          <li>مربی اسبق تیم ملی نوجوانان</li>
+          <!-- <li>مربی اسبق تیم ملی نوجوانان</li>y -->
           <li>مدرک بین‌المللی سطح 2 والیبال</li>
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
               تماس</button></span>
@@ -155,9 +155,10 @@
         <div class="filterDiv team">
           <span class="trainer-name">
             {% for trainer in trainers %}
-                <img src="../../static/gym/svg/profile5.jpeg">
+                <img src="../../static/gym/svg/icons.png">
                 <span>
                   <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+                  <div class="mm">
                   <h4>رشته‌ ورزشی: </h4>
                   {% if trainer.specialty == '1' %}
                     بدنسازی
@@ -233,10 +234,11 @@
                   {% elif trainer.city == '31' %}
                     البرز
                   {% endif %}
+                </div>
                 </span>
               </span>
               <li>{{trainer.biography}}</li>
-              <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+              <span class="info-btn"><button class="display-info" onclick="display_contact_info(5)">اطلاعات
                   تماس</button></span>
               <p class="contact-info">{{trainer.phone_number}}</p>
             {% endfor %}

@@ -4,6 +4,7 @@
 }
 html {
   font-family: vazir-light;
+  overflow-x: hidden;
 }
 html :hover {
   cursor: default;
@@ -171,6 +172,11 @@ body {
   border: 2px solid #000000;
   padding: 4px;
 }
+.mm{
+  display: grid;
+  width: 200%;
+  grid-template-columns: 40% 60%;
+}
 
 /* footer styles */
 footer {
@@ -208,7 +214,9 @@ footer {
   background-color: #ef3f3e;
   color: #fff;
 }
-
+img{
+  max-width: 6rem;
+}
 /* add responsive styles */
 
 @media only screen and (max-width: 1100px) {

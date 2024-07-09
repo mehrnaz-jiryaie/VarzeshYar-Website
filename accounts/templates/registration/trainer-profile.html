@@ -75,12 +75,13 @@
         </select>
       </div>
       <div class="trainer-details">
-        <label for="detaile">توضیحات (حداکثر 250 کاراکتر)</label>
+        <label for="detaile">توضیحات (حداکثر 70 کاراکتر)</label>
         <textarea name="biography" cols="40" rows="5" id="biography" placeholder="درباره من..."
-          maxlength="250">{{ form.biography.value }}</textarea>
+          maxlength="70">{{ form.biography.value }}</textarea>
       </div>
       <div class="buttons">
         <button id="submit">ثبت</button>
+        <button type="reset">انصراف</button>
         <a href="{% url 'gym:home' %}">صفحه اصلی</a>
       </div>
     </form>

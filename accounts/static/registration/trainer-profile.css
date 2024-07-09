@@ -157,7 +157,10 @@ form{
 /* #city{ */
   /* padding-left: 10rem; */
 /* } */
-
+/* #city{ */
+  /* width: 60%; */
+  /* background-color: red; */
+/* } */
 a{
   text-decoration: none;
 }
