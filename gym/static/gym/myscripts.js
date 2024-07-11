@@ -33,13 +33,20 @@ function removeClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-function display_contact_info(num) {
-    var phone_numbr = document.getElementsByClassName("contact-info")[num].innerHTML;
-    document.getElementsByClassName("display-info")[num].innerHTML = phone_numbr;
-    document.getElementsByClassName("display-info")[num].classList.add("displayed-info");
-}
+// display trainer's contact information
 
+document.addEventListener("DOMContentLoaded", function() {
+    var displayButtons = document.getElementsByClassName("display-info");
 
+    for (var i = 0; i < displayButtons.length; i++) {
+        displayButtons[i].addEventListener("click", function(event) {
+            var button = event.target; 
+            var contactInfo = button.parentElement.nextElementSibling;
+            button.innerHTML = contactInfo.innerHTML;
+            button.classList.add("displayed-info");
+        });
+    }
+});
 
 
 function myFunction() {
