@@ -27,14 +27,14 @@
       </div>
       <div>
         {% if user.is_authenticated %} {{ user.username }} عزیز، خوش آمدید!
-          {% if user_type == 'trainer' %}
-            <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل</a>
-          {% elif user_type == 'account' %}
-            <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
-          {% endif %}
+        {% if user_type == 'trainer' %}
+        <a class="header_nav profile" href="{% url 'accounts:trainer_profile' %}">پروفایل</a>
+        {% elif user_type == 'account' %}
+        <a class="header_nav profile" href="{% url 'accounts:profile' %}">پروفایل</a>
+        {% endif %}
         {% else %}
-          <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
-          <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
+        <a class="header_nav profile" href="{% url 'accounts:trainer-login' %}">پنل مربیان</a>
+        <a class="header_nav profile" href="{% url 'accounts:athlete-login' %}">پنل ورزشکاران</a>
         {% endif %}
       </div>
     </div>
@@ -82,8 +82,8 @@
             <img src="../../static/gym/svg/profile2.png">
             <span>
               <h2>محدثه عبدی</h2>
-              <h4>رشته‌ ورزشی:    یوگا</h4>
-              <h4>استان:    تهران</h4>
+              <h4>رشته‌های ورزشی: حرکتی</h4>
+              <h4>استان: تهران</h4>
             </span>
           </span>
           <li>مربی بین‌المللی وینیاسایوگا، مربی یوگا، حرکات انعطافی و قدرتی</li>
@@ -97,8 +97,8 @@
             <img src="../../static/gym/svg/profile1.png">
             <span>
               <h2>داود جلیل پور</h2>
-              <h4>رشته‌ ورزشی:    بدنسازی</h4>
-              <h4>استان:    تهران</h4>
+              <h4>رشته‌های ورزشی: بدنسازی</h4>
+              <h4>استان: تهران</h4>
             </span>
           </span>
           <li>مربی دوومیدانی و درجه 3 بدنسازی فوتبال در تهران</li>
@@ -112,8 +112,8 @@
             <img src="../../static/gym/svg/profile4.jpg">
             <span>
               <h2>آیسودا اسفندیاری</h2>
-              <h4>رشته‌ ورزشی:     بدنسازی، تی آرایکس، فیتنس</h4>
-              <h4>استان:    اصفهان</h4>
+              <h4>رشته‌های ورزشی: بدنسازی</h4>
+              <h4>استان: اصفهان</h4>
             </span>
           </span>
           <li>دانشجوی ارشد تربیت بدنی در ایتالیا</li>
@@ -127,12 +127,12 @@
             <img src="../../static/gym/svg/profile3.png">
             <span>
               <h2>حسین مشرفی</h2>
-              <h4>رشته‌ ورزشی:    کاراته</h4>
-              <h4>استان:    تهران</h4>
+              <h4>رشته‌های ورزشی: رزمی</h4>
+              <h4>استان: تهران</h4>
             </span>
           </span>
           <!-- <li>مدرک مربی‌گری درجه 3 کاراته</li> -->
-          <li>دارای 10 سال سابقه مربیگری در رشته‌ مذکور</li>
+          <li>دارای 10 سال سابقه مربیگری در رشته کاراته </li>
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(3)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09918190912</p>
@@ -142,106 +142,327 @@
             <img src="../../static/gym/svg/profile5.jpeg">
             <span>
               <h2>احمد نعیمی</h2>
-              <h4>رشته‌ ورزشی:   والیبال</h4>
-              <h4>استان:   تهران</h4>
+              <h4>رشته‌های ورزشی: گروهی</h4>
+              <h4>استان: تهران</h4>
             </span>
           </span>
-          <!-- <li>مربی اسبق تیم ملی نوجوانان</li>y -->
-          <li>مدرک بین‌المللی سطح 2 والیبال</li>
+          <li>مربی اسبق تیم ملی والیبال نوجوانان</li>
+          <!-- <li>مدرک بین‌المللی سطح 2 والیبال</li> -->
           <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
               تماس</button></span>
           <p class="contact-info">09218915545</p>
         </div>
+        {% for trainer in trainers %}
+        {% if trainer.specialty == '1' %}
+        <div class="filterDiv bodybuilding">
+          <span class="trainer-name">
+            <img src="../../static/gym/svg/icons.png">
+            <span>
+              <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+              <h4>رشته‌ ورزشی: بدنسازی</h4>
+              {% if trainer.city == '1' %}
+              استان: تهران
+              {% elif trainer.city == '2' %}
+              استان: گیلان
+              {% elif trainer.city == '3' %}
+              استان: آذربایجان شرقی
+              {% elif trainer.city == '4' %}
+              استان: خوزستان
+              {% elif trainer.city == '5' %}
+              استان: فارس
+              {% elif trainer.city == '6' %}
+              استان: اصفهان
+              {% elif trainer.city == '7' %}
+              استان: خراسان رضوی
+              {% elif trainer.city == '8' %}
+              استان: قزوین
+              {% elif trainer.city == '9' %}
+              استان: سمنان
+              {% elif trainer.city == '10' %}
+              استان: قم
+              {% elif trainer.city == '11' %}
+              استان: مرکزی
+              {% elif trainer.city == '12' %}
+              استان: زنجان
+              {% elif trainer.city == '13' %}
+              استان: مازندران
+              {% elif trainer.city == '14' %}
+              استان: گلستان
+              {% elif trainer.city == '15' %}
+              استان: اردبیل
+              {% elif trainer.city == '16' %}
+              استان: آذربایجان غربی
+              {% elif trainer.city == '17' %}
+              استان: همدان
+              {% elif trainer.city == '18' %}
+              استان: کردستان
+              {% elif trainer.city == '19' %}
+              استان: کرمانشاه
+              {% elif trainer.city == '20' %}
+              استان: لرستان
+              {% elif trainer.city == '21' %}
+              استان: بوشهر
+              {% elif trainer.city == '22' %}
+              استان: کرمان
+              {% elif trainer.city == '23' %}
+              استان: هرمزگان
+              {% elif trainer.city == '24' %}
+              استان: چهارمحال و بختیاری
+              {% elif trainer.city == '25' %}
+              استان: یزد
+              {% elif trainer.city == '26' %}
+              استان: سیستان و بلوچستان
+              {% elif trainer.city == '27' %}
+              استان: ایلام
+              {% elif trainer.city == '28' %}
+              استان: کهگلویه و بویراحمد
+              {% elif trainer.city == '29' %}
+              استان: خراسان شمالی
+              {% elif trainer.city == '30' %}
+              استان: خراسان جنوبی
+              {% elif trainer.city == '31' %}
+              استان: البرز
+              {% endif %}
+            </span>
+          </span>
+          <li>{{trainer.biography}}</li>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+              تماس</button></span>
+          <p class="contact-info">{{trainer.phone_number}}</p>
+        </div>
+        {% elif trainer.specialty == '2' %}
+        <div class="filterDiv martial">
+          <span class="trainer-name">
+            <img src="../../static/gym/svg/icons.png">
+            <span>
+              <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+              <h4>رشته‌ ورزشی: رزمی</h4>
+              {% if trainer.city == '1' %}
+              استان: تهران
+              {% elif trainer.city == '2' %}
+              استان: گیلان
+              {% elif trainer.city == '3' %}
+              استان: آذربایجان شرقی
+              {% elif trainer.city == '4' %}
+              استان: خوزستان
+              {% elif trainer.city == '5' %}
+              استان: فارس
+              {% elif trainer.city == '6' %}
+              استان: اصفهان
+              {% elif trainer.city == '7' %}
+              استان: خراسان رضوی
+              {% elif trainer.city == '8' %}
+              استان: قزوین
+              {% elif trainer.city == '9' %}
+              استان: سمنان
+              {% elif trainer.city == '10' %}
+              استان: قم
+              {% elif trainer.city == '11' %}
+              استان: مرکزی
+              {% elif trainer.city == '12' %}
+              استان: زنجان
+              {% elif trainer.city == '13' %}
+              استان: مازندران
+              {% elif trainer.city == '14' %}
+              استان: گلستان
+              {% elif trainer.city == '15' %}
+              استان: اردبیل
+              {% elif trainer.city == '16' %}
+              استان: آذربایجان غربی
+              {% elif trainer.city == '17' %}
+              استان: همدان
+              {% elif trainer.city == '18' %}
+              استان: کردستان
+              {% elif trainer.city == '19' %}
+              استان: کرمانشاه
+              {% elif trainer.city == '20' %}
+              استان: لرستان
+              {% elif trainer.city == '21' %}
+              استان: بوشهر
+              {% elif trainer.city == '22' %}
+              استان: کرمان
+              {% elif trainer.city == '23' %}
+              استان: هرمزگان
+              {% elif trainer.city == '24' %}
+              استان: چهارمحال و بختیاری
+              {% elif trainer.city == '25' %}
+              استان: یزد
+              {% elif trainer.city == '26' %}
+              استان: سیستان و بلوچستان
+              {% elif trainer.city == '27' %}
+              استان: ایلام
+              {% elif trainer.city == '28' %}
+              استان: کهگلویه و بویراحمد
+              {% elif trainer.city == '29' %}
+              استان: خراسان شمالی
+              {% elif trainer.city == '30' %}
+              استان: خراسان جنوبی
+              {% elif trainer.city == '31' %}
+              استان: البرز
+              {% endif %}
+            </span>
+          </span>
+          <li>{{trainer.biography}}</li>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+              تماس</button></span>
+          <p class="contact-info">{{trainer.phone_number}}</p>
+        </div>
+        {% elif trainer.specialty == '3' %}
         <div class="filterDiv team">
           <span class="trainer-name">
-            {% for trainer in trainers %}
-                <img src="../../static/gym/svg/icons.png">
-                <span>
-                  <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
-                  <div class="mm">
-                  <h4>رشته‌ ورزشی: </h4>
-                  {% if trainer.specialty == '1' %}
-                    بدنسازی
-                  {% elif trainer.specialty == '2' %}
-                    رزمی                 
-                  {% elif trainer.specialty == '3' %}
-                    گروهی                  
-                  {% elif trainer.specialty == '4' %}
-                    حرکتی                  
-                  {% endif %}
-                  
-                  <h4>استان: </h4>
-                  {% if trainer.city == '1' %}
-                    تهران
-                  {% elif trainer.city == '2' %}
-                    گیلان
-                  {% elif trainer.city == '3' %}
-                    آذربایجان شرقی
-                  {% elif trainer.city == '4' %}
-                    خوزستان
-                  {% elif trainer.city == '5' %}
-                    فارس
-                  {% elif trainer.city == '6' %}
-                    اصفهان
-                  {% elif trainer.city == '7' %}
-                    خراسان رضوی
-                  {% elif trainer.city == '8' %}
-                    قزوین
-                  {% elif trainer.city == '9' %}
-                    سمنان
-                  {% elif trainer.city == '10' %}
-                    قم 
-                  {% elif trainer.city == '11' %}
-                    مرکزی
-                  {% elif trainer.city == '12' %}
-                    زنجان
-                  {% elif trainer.city == '13' %}
-                    مازندران
-                  {% elif trainer.city == '14' %}
-                    گلستان
-                  {% elif trainer.city == '15' %}
-                    اردبیل
-                  {% elif trainer.city == '16' %}
-                    آذربایجان غربی
-                  {% elif trainer.city == '17' %}
-                    همدان
-                  {% elif trainer.city == '18' %}
-                    کردستان
-                  {% elif trainer.city == '19' %}
-                    کرمانشاه
-                  {% elif trainer.city == '20' %}
-                    لرستان
-                  {% elif trainer.city == '21' %}
-                    بوشهر
-                  {% elif trainer.city == '22' %}
-                    کرمان
-                  {% elif trainer.city == '23' %}
-                    هرمزگان
-                  {% elif trainer.city == '24' %}
-                    چهارمحال و بختیاری 
-                  {% elif trainer.city == '25' %}
-                    یزد
-                  {% elif trainer.city == '26' %}
-                    سیستان و بلوچستان 
-                  {% elif trainer.city == '27' %}
-                    ایلام 
-                  {% elif trainer.city == '28' %}
-                    کهگلویه و بویراحمد
-                  {% elif trainer.city == '29' %}
-                    خراسان شمالی
-                  {% elif trainer.city == '30' %}
-                    خراسان جنوبی  
-                  {% elif trainer.city == '31' %}
-                    البرز
-                  {% endif %}
-                </div>
-                </span>
-              </span>
-              <li>{{trainer.biography}}</li>
-              <span class="info-btn"><button class="display-info" onclick="display_contact_info(5)">اطلاعات
-                  تماس</button></span>
-              <p class="contact-info">{{trainer.phone_number}}</p>
-            {% endfor %}
+            <img src="../../static/gym/svg/icons.png">
+            <span>
+              <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+              <h4>رشته‌ ورزشی: گروهی</h4>
+              {% if trainer.city == '1' %}
+              استان: تهران
+              {% elif trainer.city == '2' %}
+              استان: گیلان
+              {% elif trainer.city == '3' %}
+              استان: آذربایجان شرقی
+              {% elif trainer.city == '4' %}
+              استان: خوزستان
+              {% elif trainer.city == '5' %}
+              استان: فارس
+              {% elif trainer.city == '6' %}
+              استان: اصفهان
+              {% elif trainer.city == '7' %}
+              استان: خراسان رضوی
+              {% elif trainer.city == '8' %}
+              استان: قزوین
+              {% elif trainer.city == '9' %}
+              استان: سمنان
+              {% elif trainer.city == '10' %}
+              استان: قم
+              {% elif trainer.city == '11' %}
+              استان: مرکزی
+              {% elif trainer.city == '12' %}
+              استان: زنجان
+              {% elif trainer.city == '13' %}
+              استان: مازندران
+              {% elif trainer.city == '14' %}
+              استان: گلستان
+              {% elif trainer.city == '15' %}
+              استان: اردبیل
+              {% elif trainer.city == '16' %}
+              استان: آذربایجان غربی
+              {% elif trainer.city == '17' %}
+              استان: همدان
+              {% elif trainer.city == '18' %}
+              استان: کردستان
+              {% elif trainer.city == '19' %}
+              استان: کرمانشاه
+              {% elif trainer.city == '20' %}
+              استان: لرستان
+              {% elif trainer.city == '21' %}
+              استان: بوشهر
+              {% elif trainer.city == '22' %}
+              استان: کرمان
+              {% elif trainer.city == '23' %}
+              استان: هرمزگان
+              {% elif trainer.city == '24' %}
+              استان: چهارمحال و بختیاری
+              {% elif trainer.city == '25' %}
+              استان: یزد
+              {% elif trainer.city == '26' %}
+              استان: سیستان و بلوچستان
+              {% elif trainer.city == '27' %}
+              استان: ایلام
+              {% elif trainer.city == '28' %}
+              استان: کهگلویه و بویراحمد
+              {% elif trainer.city == '29' %}
+              استان: خراسان شمالی
+              {% elif trainer.city == '30' %}
+              استان: خراسان جنوبی
+              {% elif trainer.city == '31' %}
+              استان: البرز
+              {% endif %}
+            </span>
+          </span>
+          <li>{{trainer.biography}}</li>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+              تماس</button></span>
+          <p class="contact-info">{{trainer.phone_number}}</p>
+        </div>
+        {% elif trainer.specialty == '4' %}
+        <div class="filterDiv movement">
+          <span class="trainer-name">
+            <img src="../../static/gym/svg/icons.png">
+            <span>
+              <h2>{{trainer.first_name}} {{trainer.last_name}}</h2>
+              <h4>رشته‌ ورزشی: حرکتی</h4>
+              {% if trainer.city == '1' %}
+              استان: تهران
+              {% elif trainer.city == '2' %}
+              استان: گیلان
+              {% elif trainer.city == '3' %}
+              استان: آذربایجان شرقی
+              {% elif trainer.city == '4' %}
+              استان: خوزستان
+              {% elif trainer.city == '5' %}
+              استان: فارس
+              {% elif trainer.city == '6' %}
+              استان: اصفهان
+              {% elif trainer.city == '7' %}
+              استان: خراسان رضوی
+              {% elif trainer.city == '8' %}
+              استان: قزوین
+              {% elif trainer.city == '9' %}
+              استان: سمنان
+              {% elif trainer.city == '10' %}
+              استان: قم
+              {% elif trainer.city == '11' %}
+              استان: مرکزی
+              {% elif trainer.city == '12' %}
+              استان: زنجان
+              {% elif trainer.city == '13' %}
+              استان: مازندران
+              {% elif trainer.city == '14' %}
+              استان: گلستان
+              {% elif trainer.city == '15' %}
+              استان: اردبیل
+              {% elif trainer.city == '16' %}
+              استان: آذربایجان غربی
+              {% elif trainer.city == '17' %}
+              استان: همدان
+              {% elif trainer.city == '18' %}
+              استان: کردستان
+              {% elif trainer.city == '19' %}
+              استان: کرمانشاه
+              {% elif trainer.city == '20' %}
+              استان: لرستان
+              {% elif trainer.city == '21' %}
+              استان: بوشهر
+              {% elif trainer.city == '22' %}
+              استان: کرمان
+              {% elif trainer.city == '23' %}
+              استان: هرمزگان
+              {% elif trainer.city == '24' %}
+              استان: چهارمحال و بختیاری
+              {% elif trainer.city == '25' %}
+              استان: یزد
+              {% elif trainer.city == '26' %}
+              استان: سیستان و بلوچستان
+              {% elif trainer.city == '27' %}
+              استان: ایلام
+              {% elif trainer.city == '28' %}
+              استان: کهگلویه و بویراحمد
+              {% elif trainer.city == '29' %}
+              استان: خراسان شمالی
+              {% elif trainer.city == '30' %}
+              استان: خراسان جنوبی
+              {% elif trainer.city == '31' %}
+              استان: البرز
+              {% endif %}
+            </span>
+          </span>
+          <li>{{trainer.biography}}</li>
+          <span class="info-btn"><button class="display-info" onclick="display_contact_info(4)">اطلاعات
+              تماس</button></span>
+          <p class="contact-info">{{trainer.phone_number}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
         </div>
       </section>
     </section>

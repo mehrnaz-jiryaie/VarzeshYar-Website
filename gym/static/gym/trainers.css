@@ -4,7 +4,6 @@
 }
 html {
   font-family: vazir-light;
-  overflow-x: hidden;
 }
 html :hover {
   cursor: default;
@@ -113,7 +112,7 @@ body {
 .filterDiv {
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  height: 18rem;
   background-color: #f6f8fc;
   border-radius: 1rem;
   box-shadow: 0px 0px 5px 1px #eaeaea;
@@ -172,11 +171,6 @@ body {
   border: 2px solid #000000;
   padding: 4px;
 }
-.mm{
-  display: grid;
-  width: 200%;
-  grid-template-columns: 40% 60%;
-}
 
 /* footer styles */
 footer {
@@ -214,9 +208,7 @@ footer {
   background-color: #ef3f3e;
   color: #fff;
 }
-img{
-  max-width: 6rem;
-}
+
 /* add responsive styles */
 
 @media only screen and (max-width: 1100px) {
