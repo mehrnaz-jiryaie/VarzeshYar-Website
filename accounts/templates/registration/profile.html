@@ -48,7 +48,7 @@
                 </div>
                 <div class="input-box">
                     <label for="birth-date">تاریخ تولد:</label>
-                    <input type="date" name="birth_date" id="birth-date" value="{{ form.birth_date.value }}">
+                    <input type="date" name="birth_date" id="birth-date" value="{{ form.instance.birth_date|date:'Y-m-d' }}">
                 </div>
                 <div class="input-box">
                     <label>جنسیت:</label>
