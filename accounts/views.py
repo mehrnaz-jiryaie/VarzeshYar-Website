@@ -29,20 +29,6 @@ def register_trainer_account_view(request):
         form = TrainerRegisterForm()
     return render(request, 'registration/trainer-register.html', {'form': form})
 
-# def register_view(request):
-#     if request.method == 'POST':
-#         form = RegisterForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             return redirect('accounts:successful_registration')
-#         else:
-#             # Print form errors for debugging
-#             print("Form errors: ", form.errors)
-#     else:
-#         form = RegisterForm()
-#     return render(request, 'registration/register.html', {'form': form})
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -58,13 +44,14 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
 
-@login_required
+
+
 def successful_registration(request):
     """Successful registration page."""
     return render(request, 'registration/successful_registration.html')
 
 
-@login_required
+
 def profile_view(request):
     print("Profile view accessed")
     # user = request.user
@@ -85,7 +72,7 @@ def profile_view(request):
     return render(request, 'registration/profile.html', {'form': form})
 
 
-@login_required
+
 def physical_information_view(request):
     if request.method == 'POST':
         form = PhysicalInformationForm(request.POST, instance=request.user)
@@ -101,29 +88,10 @@ def physical_information_view(request):
     return render(request, 'registration/physical_information.html', {'form': form})
 
 
-@login_required
+
 def logout_view(request):
     logout(request)
     return redirect('gym:home')
-
-
-# def trainer_register_view(request):
-#     """Trainer registeration."""
-#     if request.method == 'POST':
-#         form = RegisterForm(request.POST)
-#         if form.is_valid():
-#             print('valid form')
-#             user = form.save()
-#             print('test form')
-#             login(request, user)
-#             print('login test')
-#             return redirect('accounts:successful_registration')
-#         else:
-#             # Print form errors for debugging
-#             print("Form errors: ", form.errors)
-#     else:
-#         form = RegisterForm()
-#     return render(request, 'registration/trainer-register.html', {'form': form})
 
 
 
@@ -141,7 +109,8 @@ def trainer_login_view(request):
         form = AuthenticationForm()
     return render(request, 'registration/trainer-login.html', {'form': form})
 
-@login_required
+
+
 def trainer_profile_view(request):
     if request.method == 'POST':
         form = TrainerProfileForm(request.POST, instance=request.user)
@@ -154,7 +123,7 @@ def trainer_profile_view(request):
     return render(request, 'registration/trainer-profile.html', {'form': form})
 
 
-@login_required
+
 def program_view(request):
     if request.method == 'POST':
         form = ProgramForm(request.POST, instance=request.user)
