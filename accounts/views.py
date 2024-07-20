@@ -7,14 +7,24 @@ from django.contrib.auth.forms import AuthenticationForm
 
 
 def register_account_view(request):
+    print('test1')
     if request.method == 'POST':
+        print('test2')
         form = AccountRegisterForm(request.POST)
+        print('test3')
         if form.is_valid():
+            print('test4')
             user = form.save()
+            print('test5')
             login(request, user, backend='accounts.backends.AccountBackend')
+            print('test6')
             return redirect('accounts:successful_registration')
+        else:
+            print(form.errors) 
     else:
+        print('test7')
         form = AccountRegisterForm()
+        print('test8')
     return render(request, 'registration/register.html', {'form': form})
 
 

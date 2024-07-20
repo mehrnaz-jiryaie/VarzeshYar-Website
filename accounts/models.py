@@ -37,9 +37,9 @@ class Account(AbstractUser):
            TrainerAccount.objects.filter(username=self.username).exclude(pk=self.pk).exists():
             raise ValidationError(
                 {'username': 'این نام کاربری قبلا ثبت شده است.'})
-        if Account.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists() or \
-           TrainerAccount.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists():
-            raise ValidationError({'phone_number': 'این شماره تلفن قبلا ثبت شده است.'})
+        # if Account.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists() or \
+        #    TrainerAccount.objects.filter(phone_number=self.phone_number).exclude(pk=self.pk).exists():
+        #     raise ValidationError({'phone_number': 'این شماره تلفن قبلا ثبت شده است.'})
 
     MALE = True
     FEMALE = False

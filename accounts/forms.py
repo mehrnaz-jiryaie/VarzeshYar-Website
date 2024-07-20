@@ -34,12 +34,12 @@ class AccountRegisterForm(UserCreationForm):
             'required': 'لطفا تایید رمز عبور را وارد کنید.',
         }
     )
-    phone_number = forms.CharField(
-        error_messages={
-            'required': 'لطفا نام کاربری خود را وارد کنید.',
-            'unique': 'این نام کاربری قبلا ثبت شده است.'
-        }
-    )
+    # phone_number = forms.CharField(
+    #     error_messages={
+    #         'required': 'لطفا نام کاربری خود را وارد کنید.',
+    #         'unique': 'این نام کاربری قبلا ثبت شده است.'
+    #     }
+    # )
 
     class Meta:
         model = Account
@@ -218,6 +218,12 @@ class LoginForm(AuthenticationForm):
 
 
 class ProfileForm(forms.ModelForm):
+    
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get('phone_number')
+        if TrainerAccount.objects.filter(phone_number=phone_number).exists():
+            raise forms.ValidationError("کاربری با این شماره تلفن وجود دارد، لطفا شماره دیگری را وارد کنید.")
+        return phone_number
     class Meta:
         model = Account
         fields = ('first_name', 'last_name', 'phone_number',
