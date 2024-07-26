@@ -95,7 +95,10 @@
             <input class="information-input" type="password" name="password2" id="password" required />
           </div>
         </div>
-        <button>ثبت‌نام</button>
+        <div class="register-btn">
+          <button>ثبت‌نام</button>
+          <a href="{% url 'gym:home' %}"> بازگشت</a>
+        </div>
         {% if form.password1.errors %}
         <span class="error">{{ form.password1.errors }}</span>
         {% endif %}

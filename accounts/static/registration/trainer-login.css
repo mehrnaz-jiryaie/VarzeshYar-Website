@@ -85,16 +85,17 @@ body {
 .buttons a{
   font-size: 1rem;
   padding: 10px;
-  padding-right: 19%;
+  /* padding-right: 19%; */
   box-sizing: border-box;
   border-radius: 10px;
+  text-align: center;
   border: none;
   text-decoration: none;
   background-color: #0097cf;
   color: white;
   font-family: vazir-light;
   cursor: pointer;
-  width: 48%;
+  width: 32%;
   justify-content: center;
   align-items: center;
 }
@@ -107,7 +108,7 @@ form button {
   color: white;
   font-family: vazir-light;
   cursor: pointer;
-  width: 48%;
+  width: 32%;
 }
 form button:hover {
   opacity: 0.8;
@@ -171,7 +172,7 @@ form h2 {
     font-size: 1rem;
     padding: 6px;
     border-radius: 10px;
-    width: 48%;
+    width: 32%;
   }
 }
 a:visited{

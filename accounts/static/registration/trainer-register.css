@@ -18,6 +18,36 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.register-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.register-btn button{
+    /* margin-top: 1rem; */
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0097cf;
+    width: 10rem;
+    color: white;
+    font-family: vazir-light;
+    cursor: pointer;
+}
+.register-btn a{
+    background-color: #ccc;
+    text-align: center;
+    width: 10rem;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
 .section-title {
   padding: 1rem 4rem;
   color: #01739d;
@@ -105,18 +135,7 @@ select {
 .box {
   font-size: 1.2rem;
 }
-form button {
-  margin-top: 1rem;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: #0097cf;
-  width: 20rem;
-  color: white;
-  font-family: vazir-light;
-  cursor: pointer;
-}
+
 form button:hover {
   opacity: 0.8;
 }

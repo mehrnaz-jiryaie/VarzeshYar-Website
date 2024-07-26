@@ -82,7 +82,7 @@ form button {
   color: white;
   font-family: vazir-light;
   cursor: pointer;
-  width: 48%;
+  width: 32%;
 }
 form button:hover {
   opacity: 0.8;
@@ -102,7 +102,8 @@ form h2 {
 .buttons a{
   font-size: 1rem;
   padding: 10px;
-  padding-right: 19%;
+  text-align: center;
+  /* padding-right: 19%; */
   border-radius: 10px;
   box-sizing: border-box;
   border: none;
@@ -110,7 +111,7 @@ form h2 {
   color: white;
   font-family: vazir-light;
   cursor: pointer;
-  width: 48%;
+  width: 32%;
 }
 .register-button {
   background-color: #c5d6de;
@@ -162,7 +163,7 @@ form h2 {
     font-size: 1rem;
     padding: 6px;
     border-radius: 10px;
-    width: 48%;
+    width: 32%;
   }
 }
 a:visited{
