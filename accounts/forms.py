@@ -91,7 +91,7 @@ class TrainerRegisterForm(UserCreationForm):
     phone_number = forms.CharField(
         error_messages={
             'required': 'لطفا نام کاربری خود را وارد کنید.',
-            'unique': 'این نام کاربری قبلا ثبت شده است.'
+            'unique': 'این شماره تلفن قبلا ثبت شده است.'
         }
     )
 
