@@ -12,6 +12,10 @@ This website is a project for completing a bachelor's degree at [Bu-Ali Sina Uni
 - [Python](https://www.python.org/downloads/) 3.12
 - Django 5
 ## Instructions
+Clone the repository on your computer :
+```bash
+git clone https://github.com/mehrnaz-jiryaie/VarzeshYar-Website.git
+```
 If you already have other versions of Python and Django installed on your computer, creating a virtual environment is recommended, then installing the requirements to avoid version conflicts.
 
 Create a virtual environment :
