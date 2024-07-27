@@ -13,6 +13,22 @@ This website is a project for completing a bachelor's degree at [Bu-Ali Sina Uni
 - Django 5
 ## Instructions
 If you already have other versions of Python and Django installed on your computer, creating a virtual environment first is recommended, then installing the requirements to avoid version conflicts.
+Create a virtual environment :
+```python
+python -m venv your-virtual-env-name
+```
+Activate your virtual environment :
+
+(for Linux)
+```bash
+source my_env/bin/activate
+```
+
+(for windows)
+```bash
+your-virtual-env-name\Scripts\activate
+```
+
 
 This project has a ```requirements.txt``` file that includes all Django packages required to run the code. These can be installed with the command :
 ``` python 
