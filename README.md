@@ -26,7 +26,7 @@ Activate your virtual environment :
 
 (for Linux)
 ```bash
-source my_env/bin/activate
+source your-virtual-env-name/bin/activate
 ```
 
 (for windows)
