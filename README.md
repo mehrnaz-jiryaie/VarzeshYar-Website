@@ -12,7 +12,7 @@ This website is a project for completing a bachelor's degree at [Bu-Ali Sina Uni
 - [Python](https://www.python.org/downloads/) 3.12
 - Django 5
 ## Instructions
-If you already have other versions of Python and Django installed on your computer, creating a virtual environment first is recommended, then installing the requirements to avoid version conflicts.
+If you already have other versions of Python and Django installed on your computer, creating a virtual environment is recommended, then installing the requirements to avoid version conflicts.
 Create a virtual environment :
 ```python
 python -m venv your-virtual-env-name
