@@ -13,6 +13,7 @@ This website is a project for completing a bachelor's degree at [Bu-Ali Sina Uni
 - Django 5
 ## Instructions
 If you already have other versions of Python and Django installed on your computer, creating a virtual environment is recommended, then installing the requirements to avoid version conflicts.
+
 Create a virtual environment :
 ```python
 python -m venv your-virtual-env-name
