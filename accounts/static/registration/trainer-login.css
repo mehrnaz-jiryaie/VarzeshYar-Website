@@ -155,7 +155,7 @@ form h2 {
     padding: 1rem 2.2rem;
   }
   .box form {
-    align-items: start;
+    /* align-items: start; */
     height: 20rem;
   }
   .input-box {
@@ -170,11 +170,19 @@ form h2 {
   }
   form button {
     font-size: 1rem;
-    padding: 6px;
+    padding: 4px;
+    /* height: 25px; */
     border-radius: 10px;
     width: 32%;
   }
-}
+  .info{
+    height: 15rem;
+    /* background-color: #0097cf; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+} 
 a:visited{
 	text-decoration: none;
 }

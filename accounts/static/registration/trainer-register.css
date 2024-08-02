@@ -176,6 +176,37 @@ form h2 {
     /* width: 52rem; */
     /* padding-bottom: 5rem; */
   }
+  #btn2{
+    /* background-color: red; */
+    width: 5rem;
+    height: 2rem;
+    /* font-size: 10px; */
+  }
+  .register-btn button{
+    font-size: 15px;
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #0097cf;
+    width: 5rem;
+    color: white;
+    font-family: vazir-light;
+    cursor: pointer;
+}
+.register-btn a{
+  margin-top: 10px;
+  text-align: center;
+    background-color: #ccc;
+    text-align: center;
+    width: 5rem;
+    height: 2rem;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
   .box {
     width: 90%;
     height: 48rem;
@@ -198,10 +229,10 @@ form h2 {
     width: 90%;
   }
   #city{
-    width: 96%;
+    width: 95%;
   }
   #specialty{
-    width: 96%;
+    width: 95%;
   }
   .box form {
     margin-top: 1rem;
