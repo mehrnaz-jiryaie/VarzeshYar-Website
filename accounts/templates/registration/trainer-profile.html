@@ -22,13 +22,13 @@
       <div class="information-inputs">
         <label for="firstname">نام</label>
         <input type="text" name="first_name" id="firstname" value="{{ form.first_name.value }}" maxlength="35" />
-        <br />
+        <!-- <br /> -->
         <label for="lastname">نام‌خانوادگی</label>
         <input type="text" name="last_name" id="lastname" value="{{ form.last_name.value }}" maxlength="35" />
         <label for="phonenumber">شماره تلفن</label>
         <input type="tel" name="phone_number" id="phonenumber" value="{{ form.phone_number.value|default_if_none:'' }}"
           placeholder="09xxxxxxxxx" maxlength="11" oninput="validatePhoneNumber(this)" />
-        <br />
+        <!-- <br /> -->
         <label for="email">ایمیل</label>
         <input type="email" name="email" id="email" value="{{ form.email.value }}" maxlength="320" />
         <label class="information" for="sport">رشته ورزشی</label>
@@ -38,7 +38,7 @@
           <option value="3" {% if form.specialty.value == '3' %}selected{% endif %}>گروهی</option>
           <option value="4" {% if form.specialty.value == '4' %}selected{% endif %}>حرکتی</option>
         </select>
-        <br />
+        <!-- <br /> -->
         <label class="information" for="city">استان</label>
         <select name="city" id="city">
           <option value="1" {% if form.city.value == '1' %}selected{% endif %}>تهران</option>
