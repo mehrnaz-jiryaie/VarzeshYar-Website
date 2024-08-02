@@ -31,11 +31,11 @@
           </div>
           <div class="input-box">
             <label class="information" for="name">نام</label>
-            <input class="information-input" type="text" name="first_name" id="first_name" value="{{form.first_name.value|default_if_none:''}}" required />
+            <input class="information-input" maxlength="35" type="text" name="first_name" style="direction: rtl;" id="first_name" value="{{form.first_name.value|default_if_none:''}}" required />
           </div>
           <div class="input-box">
             <label class="information" for="last-name">نام‌خانوادگی</label>
-            <input class="information-input" type="text" name="last_name" id="last_name" value="{{form.last_name.value|default_if_none:''}}" required />
+            <input class="information-input" maxlength="35" type="text" name="last_name" style="direction: rtl;" id="last_name" value="{{form.last_name.value|default_if_none:''}}" required />
           </div>
           <div class="input-box">
             <label class="information" for="phone">شماره تلفن</label>
@@ -88,11 +88,11 @@
           </div>
           <div class="input-box">
             <label class="information" for="password1">رمز عبور</label>
-            <input class="information-input" type="password" name="password1" id="password" required />
+            <input class="information-input" maxlength="320" type="password" name="password1" id="password" required />
           </div>
           <div class="input-box">
             <label class="information" for="password2">تایید رمز عبور</label>
-            <input class="information-input" type="password" name="password2" id="password" required />
+            <input class="information-input" maxlength="320" type="password" name="password2" id="password" required />
           </div>
         </div>
         <div class="register-btn">

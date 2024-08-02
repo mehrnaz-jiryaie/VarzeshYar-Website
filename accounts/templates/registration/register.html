@@ -23,19 +23,19 @@
         <div class="input-form">
           <div class="input-box">
             <label class="information" for="username">نام کاربری</label>
-            <input class="information-input" type="text" name="username" id="username" required />
+            <input class="information-input" maxlength="64" type="text" name="username" id="username" required />
           </div>
           <div class="input-box">
             <label class="information" for="email">ایمیل</label>
-            <input class="information-input" type="email" name="email" id="email" required />
+            <input class="information-input" maxlength="320" type="email" name="email" id="email" required />
           </div>
           <div class="input-box">
             <label class="information" for="password1">رمز عبور</label>
-            <input class="information-input" type="password" name="password1" id="password" required />
+            <input class="information-input" maxlength="128" type="password" name="password1" id="password" required />
           </div>
           <div class="input-box">
             <label class="information" for="password2">تایید رمز عبور</label>
-            <input class="information-input" type="password" name="password2" id="password" required />
+            <input class="information-input" maxlength="128" type="password" name="password2" id="password" required />
           </div>
           <button>ثبت‌نام</button>
           <a href="{% url 'gym:home' %}"> بازگشت</a>

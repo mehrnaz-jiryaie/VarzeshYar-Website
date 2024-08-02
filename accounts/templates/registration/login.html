@@ -22,14 +22,14 @@
                 <h2>ورود ورزشکار</h2>
                 <div class="input-box">
                     <label class="information" for="username">نام کاربری</label>
-                    <input class="information-input" type="text" name="username" id="username" required />
+                    <input class="information-input" maxlength="64" type="text" name="username" id="username" required />
                     {% if form.username.errors %}
                         <div class="error">{{ form.username.errors }}</div>
                     {% endif %}
                 </div>
                 <div class="input-box">
                     <label class="information" for="password">رمز عبور</label>
-                    <input class="information-input" type="password" name="password" id="password" required />
+                    <input class="information-input" maxlength="128" type="password" name="password" id="password" required />
                     {% if form.password.errors %}
                         <div class="error">{{ form.password.errors }}</div>
                     {% endif %}

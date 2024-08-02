@@ -27,12 +27,12 @@
                 <div class="input-box">
                     <label for="firstname">نام:</label>
                     <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" maxlength="35"/>
-                    <input type="text" name="first_name" id="firstname" value="{{ form.first_name.value }}">
+                    <input type="text" maxlength="35" name="first_name" id="firstname" value="{{ form.first_name.value }}">
                 </div>
                 <div class="input-box">
                     <label for="lastname">نام خانوادگی:</label>
                     <img class="input-icon" src="{% static '../static/registration/svg/user.svg' %}" alt="user icon" maxlength="35"/>
-                    <input type="text" name="last_name" id="lastname" value="{{ form.last_name.value }}">
+                    <input type="text" maxlength="35" name="last_name" id="lastname" value="{{ form.last_name.value }}">
                 </div>
                 <div class="input-box">
                     <label for="phone-number">شماره تلفن:</label>
