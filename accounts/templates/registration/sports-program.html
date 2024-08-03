@@ -28,11 +28,11 @@
               <div class="inp-container">
                 <div>
                   <label for="squat-repeat">تکرار</label>
-                  <input type="number" name="dumbbell_pair_squat_reps"  value="{{form.dumbbell_pair_squat_reps.value|default_if_none:''}}" />
+                  <input type="number" min="0" max="100" name="dumbbell_pair_squat_reps"  value="{{form.dumbbell_pair_squat_reps.value|default_if_none:''}}" />
                 </div>
                 <div>
                   <label for="squat-repeat">ست</label>
-                  <input type="number" name="dumbbell_pair_squat_sets"  value="{{form.dumbbell_pair_squat_sets.value|default_if_none:''}}" />
+                  <input type="number" min="0" max="100" name="dumbbell_pair_squat_sets"  value="{{form.dumbbell_pair_squat_sets.value|default_if_none:''}}" />
                 </div>
               </div>
             </div>
@@ -41,11 +41,11 @@
               <div class="inp-container">
                 <div>
                   <label for="frontleg-repeat">تکرار</label>
-                  <input type="number" name="front_thigh_reps" id="frontleg-repeat" value="{{form.front_thigh_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="front_thigh_reps" id="frontleg-repeat" value="{{form.front_thigh_reps.value}}"/>
                 </div>
                 <div>
                   <label for="frontleg-repeat">ست</label>
-                  <input type="number" name="front_thigh_sets" id="frontleg-set" value="{{form.front_thigh_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="front_thigh_sets" id="frontleg-set" value="{{form.front_thigh_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -54,11 +54,11 @@
               <div class="inp-container">
                 <div>
                   <label for="thigh-repeat">تکرار</label>
-                  <input type="number" name="outer_thigh_wire_reps" id="thigh-repeat" value="{{form.outer_thigh_wire_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="outer_thigh_wire_reps" id="thigh-repeat" value="{{form.outer_thigh_wire_reps.value}}"/>
                 </div>
                 <div>
                   <label for="thigh-repeat">ست</label>
-                  <input type="number" name="outer_thigh_wire_sets" id="thigh-set" value="{{from.outer_thigh_wire_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="outer_thigh_wire_sets" id="thigh-set" value="{{from.outer_thigh_wire_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -67,11 +67,11 @@
               <div class="inp-container">
                 <div>
                   <label for="thigh-repeat">تکرار</label>
-                  <input type="number" name="inside_the_thigh_wire_reps" id="thigh-repeat" value="{{form.inside_the_thigh_wire_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="inside_the_thigh_wire_reps" id="thigh-repeat" value="{{form.inside_the_thigh_wire_reps.value}}"/>
                 </div>
                 <div>
                   <label for="thigh-repeat">ست</label>
-                  <input type="number" name="inside_the_thigh_wire_sets" id="thigh-set" value="{{form.inside_the_thigh_wire_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="inside_the_thigh_wire_sets" id="thigh-set" value="{{form.inside_the_thigh_wire_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -80,11 +80,11 @@
               <div class="inp-container">
                 <div>
                   <label for="hiptrust-repeat">تکرار</label>
-                  <input type="number" name="seated_hip_trust_reps" id="hiptrust-repeat" value="{{from.seated_hip_trust_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="seated_hip_trust_reps" id="hiptrust-repeat" value="{{from.seated_hip_trust_reps.value}}"/>
                 </div>
                 <div>
                   <label for="hiptrust-repeat">ست</label>
-                  <input type="number" name="seated_hip_trust_sets" id="hiptrust-set" value="{{form.seated_hip_trust_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="seated_hip_trust_sets" id="hiptrust-set" value="{{form.seated_hip_trust_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -93,11 +93,11 @@
               <div class="inp-container">
                 <div>
                   <label for="leg-repeat">تکرار</label>
-                  <input type="number" name="standing_leg_reps" id="leg-repeat" value="{{form.standing_leg_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="standing_leg_reps" id="leg-repeat" value="{{form.standing_leg_reps.value}}"/>
                 </div>
                 <div>
                   <label for="leg-repeat">ست</label>
-                  <input type="number" name="standing_leg_sets" id="leg-set" value="{{form.standing_leg_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="standing_leg_sets" id="leg-set" value="{{form.standing_leg_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -106,11 +106,11 @@
               <div class="inp-container">
                 <div>
                   <label for="backtigh-repeat">تکرار</label>
-                  <input type="number" name="back_of_the_thigh_wired_reps" id="backtigh-repeat" value="{{form.back_of_the_thigh_wired_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="back_of_the_thigh_wired_reps" id="backtigh-repeat" value="{{form.back_of_the_thigh_wired_reps.value}}"/>
                 </div>
                 <div>
                   <label for="backtigh-repeat">ست</label>
-                  <input type="number" name="back_of_the_thigh_wired_sets" id="backtigh-set" value="{{form.back_of_the_thigh_wired_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="back_of_the_thigh_wired_sets" id="backtigh-set" value="{{form.back_of_the_thigh_wired_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -119,11 +119,11 @@
               <div class="inp-container">
                 <div>
                   <label for="kickback-repeat">تکرار</label>
-                  <input type="number" name="free_dumbbell_kickback_reps" id="kickback-repeat" value="{{form.free_dumbbell_kickback_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="free_dumbbell_kickback_reps" id="kickback-repeat" value="{{form.free_dumbbell_kickback_reps.value}}"/>
                 </div>
                 <div>
                   <label for="kickback-repeat">ست</label>
-                  <input type="number" name="free_dumbbell_kickback_sets" id="kickback-set" value="{{form.free_dumbbell_kickback_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="free_dumbbell_kickback_sets" id="kickback-set" value="{{form.free_dumbbell_kickback_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -132,11 +132,11 @@
               <div class="inp-container">
                 <div>
                   <label for="height-repeat">تکرار</label>
-                  <input type="number" name="hello_japanese_on_high_reps" id="height-repeat" value="{{form.hello_japanese_on_high_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="hello_japanese_on_high_reps" id="height-repeat" value="{{form.hello_japanese_on_high_reps.value}}"/>
                 </div>
                 <div>
                   <label for="height-repeat">ست</label>
-                  <input type="number" name="hello_japanese_on_high_sets" id="height-set" value="{{form.hello_japanese_on_high_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="hello_japanese_on_high_sets" id="height-set" value="{{form.hello_japanese_on_high_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -145,11 +145,11 @@
               <div class="inp-container">
                 <div>
                   <label for="fly-repeat">تکرار</label>
-                  <input type="number" name="fly_reps" id="fly-repeat" value="{{form.fly_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="fly_reps" id="fly-repeat" value="{{form.fly_reps.value}}"/>
                 </div>
                 <div>
                   <label for="fly-repeat">ست</label>
-                  <input type="number" name="fly_sets" id="fly-set" value="{{form.fly_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="fly_sets" id="fly-set" value="{{form.fly_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -158,11 +158,11 @@
               <div class="inp-container">
                 <div>
                   <label for="upperchest-repeat">تکرار</label>
-                  <input type="number" name="double_barbell_chest_reps" id="upperchest-repeat" value="{{form.double_barbell_chest_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="double_barbell_chest_reps" id="upperchest-repeat" value="{{form.double_barbell_chest_reps.value}}"/>
                 </div>
                 <div>
                   <label for="upperchest-repeat">ست</label>
-                  <input type="number" name="double_barbell_chest_sets" id="upperchest-set" value="{{form.double_barbell_chest_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="double_barbell_chest_sets" id="upperchest-set" value="{{form.double_barbell_chest_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -171,11 +171,11 @@
               <div class="inp-container">
                 <div>
                   <label for="chest1-repeat">تکرار</label>
-                  <input type="number" name="single_arm_chest_reps" id="chest1-repeat" value="{{form.single_arm_chest_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="single_arm_chest_reps" id="chest1-repeat" value="{{form.single_arm_chest_reps.value}}"/>
                 </div>
                 <div>
                   <label for="chest1-repeat">ست</label>
-                  <input type="number" name="single_arm_chest_sets" id="chest1-set" value="{{form.single_arm_chest_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="single_arm_chest_sets" id="chest1-set" value="{{form.single_arm_chest_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -184,11 +184,11 @@
               <div class="inp-container">
                 <div>
                   <label for="crossover-repeat">تکرار</label>
-                  <input type="number" name="cross_over_reps" id="crossover-repeat" value="{{form.cross_over_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="cross_over_reps" id="crossover-repeat" value="{{form.cross_over_reps.value}}"/>
                 </div>
                 <div>
                   <label for="crossover-repeat">ست</label>
-                  <input type="number" name="cross_over_sets" id="crossover-set" value="{{form.cross_over_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="cross_over_sets" id="crossover-set" value="{{form.cross_over_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -197,11 +197,11 @@
               <div class="inp-container">
                 <div>
                   <label for="chest2-repeat">تکرار</label>
-                  <input type="number" name="military_chest_on_the_upper_chest_reps" id="chest2-repeat" value="{{form.military_chest_on_the_upper_chest_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="military_chest_on_the_upper_chest_reps" id="chest2-repeat" value="{{form.military_chest_on_the_upper_chest_reps.value}}"/>
                 </div>
                 <div>
                   <label for="chest2-repeat">ست</label>
-                  <input type="number" name="military_chest_on_the_upper_chest_sets" id="chest2-set" value="{{form.military_chest_on_the_upper_chest_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="military_chest_on_the_upper_chest_sets" id="chest2-set" value="{{form.military_chest_on_the_upper_chest_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -210,11 +210,11 @@
               <div class="inp-container">
                 <div>
                   <label for="arm1-repeat">تکرار</label>
-                  <input type="number" name="triceps_wire_reps" id="arm1-repeat" value="{{form.triceps_wire_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="triceps_wire_reps" id="arm1-repeat" value="{{form.triceps_wire_reps.value}}"/>
                 </div>
                 <div>
                   <label for="arm1-repeat">ست</label>
-                  <input type="number" name="triceps_wire_sets" id="arm1-set" value="{{form.triceps_wire_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="triceps_wire_sets" id="arm1-set" value="{{form.triceps_wire_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -223,11 +223,11 @@
               <div class="inp-container">
                 <div>
                   <label for="arm2-repeat">تکرار</label>
-                  <input type="number" name="french_triceps_reps" id="arm2-repeat" value="{{form.french_triceps_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="french_triceps_reps" id="arm2-repeat" value="{{form.french_triceps_reps.value}}"/>
                 </div>
                 <div>
                   <label for="arm2-repeat">ست</label>
-                  <input type="number" name="french_triceps_sets" id="arm2-set" value="{{form.french_triceps_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="french_triceps_sets" id="arm2-set" value="{{form.french_triceps_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -236,11 +236,11 @@
               <div class="inp-container">
                 <div>
                   <label for="shoulder-repeat">تکرار</label>
-                  <input type="number" name="single_arm_dumbbell_shoulder_reps" id="shoulder-repeat" value="{{form.single_arm_dumbbell_shoulder_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="single_arm_dumbbell_shoulder_reps" id="shoulder-repeat" value="{{form.single_arm_dumbbell_shoulder_reps.value}}"/>
                 </div>
                 <div>
                   <label for="shoulder-repeat">ست</label>
-                  <input type="number" name="single_arm_dumbbell_shoulder_sets" id="shoulder-set" value="{{form.single_arm_dumbbell_shoulder_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="single_arm_dumbbell_shoulder_sets" id="shoulder-set" value="{{form.single_arm_dumbbell_shoulder_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -249,11 +249,11 @@
               <div class="inp-container">
                 <div>
                   <label for="shoulderfullbody-repeat">تکرار</label>
-                  <input type="number" name="full_body_barbell_shoulder_strap_reps" id="shoulderfullbody-repeat" value="{{form.full_body_barbell_shoulder_strap_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="full_body_barbell_shoulder_strap_reps" id="shoulderfullbody-repeat" value="{{form.full_body_barbell_shoulder_strap_reps.value}}"/>
                 </div>
                 <div>
                   <label for="shoulderfullbody-repeat">ست</label>
-                  <input type="number" name="full_body_barbell_shoulder_strap_sets" id="shoulderfullbody-set" value="{{form.full_body_barbell_shoulder_strap_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="full_body_barbell_shoulder_strap_sets" id="shoulderfullbody-set" value="{{form.full_body_barbell_shoulder_strap_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -262,11 +262,11 @@
               <div class="inp-container">
                 <div>
                   <label for="bend-repeat">تکرار</label>
-                  <input type="number" name="two_sided_bending_publication_reps" id="bend-repeat" value="{{form.two_sided_bending_publication_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="two_sided_bending_publication_reps" id="bend-repeat" value="{{form.two_sided_bending_publication_reps.value}}"/>
                 </div>
                 <div>
                   <label for="bend-repeat">ست</label>
-                  <input type="number" name="two_sided_bending_publication_sets" id="bend-set" value="{{form.two_sided_bending_publication_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="two_sided_bending_publication_sets" id="bend-set" value="{{form.two_sided_bending_publication_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -275,11 +275,11 @@
               <div class="inp-container">
                 <div>
                   <label for="boat-repeat">تکرار</label>
-                  <input type="number" name="hand_open_boat_reps" id="boat-repeat" value="{{form.hand_open_boat_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="hand_open_boat_reps" id="boat-repeat" value="{{form.hand_open_boat_reps.value}}"/>
                 </div>
                 <div>
                   <label for="boat-repeat">ست</label>
-                  <input type="number" name="hand_open_boat_sets" id="boat-set" value="{{form.hand_open_boat_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="hand_open_boat_sets" id="boat-set" value="{{form.hand_open_boat_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -288,11 +288,11 @@
               <div class="inp-container">
                 <div>
                   <label for="pullface-repeat">تکرار</label>
-                  <input type="number" name="pull_face_reps" id="pullface-repeat" value="{{form.pull_face_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="pull_face_reps" id="pullface-repeat" value="{{form.pull_face_reps.value}}"/>
                 </div>
                 <div>
                   <label for="pullface-repeat">ست</label>
-                  <input type="number" name="pull_face_sets" id="pullface-set" value="{{form.pull_face_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="pull_face_sets" id="pullface-set" value="{{form.pull_face_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -301,11 +301,11 @@
               <div class="inp-container">
                 <div>
                   <label for="flyback-repeat">تکرار</label>
-                  <input type="number" name="fly_back_reps" id="flyback-repeat" value="{{form.fly_back_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="fly_back_reps" id="flyback-repeat" value="{{form.fly_back_reps.value}}"/>
                 </div>
                 <div>
                   <label for="flyback-repeat">ست</label>
-                  <input type="number" name="fly_back_sets" id="flyback-set" value="{{form.fly_back_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="fly_back_sets" id="flyback-set" value="{{form.fly_back_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -314,11 +314,11 @@
               <div class="inp-container">
                 <div>
                   <label for="plunk-repeat">تکرار</label>
-                  <input type="number" name="plank_reps" id="plunk-repeat" value="{{form.plank_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="plank_reps" id="plunk-repeat" value="{{form.plank_reps.value}}"/>
                 </div>
                 <div>
                   <label for="plunk-repeat">ست</label>
-                  <input type="number" name="plank_sets" id="plunk-set" value="{{form.plank_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="plank_sets" id="plunk-set" value="{{form.plank_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -327,11 +327,11 @@
               <div class="inp-container">
                 <div>
                   <label for="russianrot-repeat">تکرار</label>
-                  <input type="number" name="russian_turn_reps" id="russianrot-repeat" value="{{form.russian_turn_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="russian_turn_reps" id="russianrot-repeat" value="{{form.russian_turn_reps.value}}"/>
                 </div>
                 <div>
                   <label for="russianrot-repeat">ست</label>
-                  <input type="number" name="russian_turn_sets" id="russianrot-set" value="{{form.russian_side_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="russian_turn_sets" id="russianrot-set" value="{{form.russian_side_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -340,11 +340,11 @@
               <div class="inp-container">
                 <div>
                   <label for="crunch-repeat">تکرار</label>
-                  <input type="number" name="crunch_reps" id="crunch-repeat" value="{{form.crunch_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="crunch_reps" id="crunch-repeat" value="{{form.crunch_reps.value}}"/>
                 </div>
                 <div>
                   <label for="crunch-repeat">ست</label>
-                  <input type="number" name="crunch_sets" id="crunch-set" value="{{form.crunch_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="crunch_sets" id="crunch-set" value="{{form.crunch_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -353,11 +353,11 @@
               <div class="inp-container">
                 <div>
                   <label for="brllyroll-repeat">تکرار</label>
-                  <input type="number" name="belly_roll_reps" id="bellyroll-repeat" value="{{form.belly_roll_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="belly_roll_reps" id="bellyroll-repeat" value="{{form.belly_roll_reps.value}}"/>
                 </div>
                 <div>
                   <label for="brllyroll-repeat">ست</label>
-                  <input type="number" name="belly_roll_sets" id="bellyroll-set" value="{{form.belly_roll_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="belly_roll_sets" id="bellyroll-set" value="{{form.belly_roll_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -366,11 +366,11 @@
               <div class="inp-container">
                 <div>
                   <label for="flank-repeat">تکرار</label>
-                  <input type="number" name="russian_side_reps" id="flank-repeat" value="{{form.russian_side_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="russian_side_reps" id="flank-repeat" value="{{form.russian_side_reps.value}}"/>
                 </div>
                 <div>
                   <label for="flank-repeat">ست</label>
-                  <input type="number" name="russian_side_sets" id="flank-set" value="{{form.russian_side_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="russian_side_sets" id="flank-set" value="{{form.russian_side_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -379,11 +379,11 @@
               <div class="inp-container">
                 <div>
                   <label for="mountainsto-repeat">تکرار</label>
-                  <input type="number" name="climber_reps" id="mountainsto-repeat" value="{{form.climber_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="climber_reps" id="mountainsto-repeat" value="{{form.climber_reps.value}}"/>
                 </div>
                 <div>
                   <label for="mountainsto-repeat">ست</label>
-                  <input type="number" name="climber_sets" id="mountainsto-set" value="{{form.climber_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="climber_sets" id="mountainsto-set" value="{{form.climber_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -392,11 +392,11 @@
               <div class="inp-container">
                 <div>
                   <label for="parallel-repeat">تکرار</label>
-                  <input type="number" name="parallel_abdomen_reps" id="parallel-repeat" value="{{form.parallel_abdomen_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="parallel_abdomen_reps" id="parallel-repeat" value="{{form.parallel_abdomen_reps.value}}"/>
                 </div>
                 <div>
                   <label for="parallel-repeat">ست</label>
-                  <input type="number" name="parallel_abdomen_sets" id="parallel-set" value="{{form.parallel_abdomen_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="parallel_abdomen_sets" id="parallel-set" value="{{form.parallel_abdomen_sets.value}}"/>
                 </div>
               </div>
             </div>
@@ -405,11 +405,11 @@
               <div class="inp-container">
                 <div>
                   <label for="The abdomen-repeat">تکرار</label>
-                  <input type="number" name="lower_abdomen_90_degrees_reps" id="The abdomen-repeat" value="{{form.lower_abdomen_90_degrees_reps.value}}"/>
+                  <input type="number" min="0" max="100" name="lower_abdomen_90_degrees_reps" id="The abdomen-repeat" value="{{form.lower_abdomen_90_degrees_reps.value}}"/>
                 </div>
                 <div>
                   <label for="The abdomen-repeat">ست</label>
-                  <input type="number" name="lower_abdomen_90_degrees_sets" id="The abdomen-set" value="{{form.lower_abdomen_90_degrees_sets.value}}"/>
+                  <input type="number" min="0" max="100" name="lower_abdomen_90_degrees_sets" id="The abdomen-set" value="{{form.lower_abdomen_90_degrees_sets.value}}"/>
                 </div>
               </div>
             </div>
