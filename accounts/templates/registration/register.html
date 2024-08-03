@@ -42,7 +42,7 @@
         </div>
 
       </form>
-      <!-- <div class="error-container"> -->
+      <div class="error-container">
         {% if form.username.errors %}
         <span class="error">{{ form.username.errors }}</span>
         {% endif %}
@@ -55,7 +55,7 @@
         {% if form.password2.errors %}
         <span class="error">{{ form.password2.errors }}</span>
         {% endif %}
-
+      </div>
     </div>
 
   </main>

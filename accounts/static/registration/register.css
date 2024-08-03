@@ -36,7 +36,7 @@ body {
   background-color: #ffffff;
   margin: 5rem auto;
   width: 33rem;
-  height: 27rem;
+  height: 29rem;
   padding: 1rem 2rem;
   padding-bottom: 2rem;
   border-radius: 1rem;
@@ -114,6 +114,8 @@ form h2 {
 }
 .error-container {
   margin-bottom: 1rem;
+  /* height: 10%; */
+  display: grid;
 }
 .error {
   color: red;
