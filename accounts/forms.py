@@ -9,31 +9,31 @@ class AccountRegisterForm(UserCreationForm):
     email = forms.EmailField(
         required=True,
         error_messages={
-            'required': 'لطفا ایمیل خود را وارد کنید.',
+            # 'required': 'لطفا ایمیل خود را وارد کنید.',
             'invalid': 'لطفا یک ایمیل معتبر وارد کنید.'
         }
     )
     username = forms.CharField(
         required=True,
         error_messages={
-            'required': 'لطفا نام کاربری خود را وارد کنید.',
+            # 'required': 'لطفا نام کاربری خود را وارد کنید.',
             'unique': 'این نام کاربری قبلا ثبت شده است.'
         }
     )
-    password1 = forms.CharField(
-        label='Password',
-        widget=forms.PasswordInput,
-        error_messages={
-            'required': 'لطفا رمز عبور خود را وارد کنید.',
-        }
-    )
-    password2 = forms.CharField(
-        label='Password confirmation',
-        widget=forms.PasswordInput,
-        error_messages={
-            'required': 'لطفا تایید رمز عبور را وارد کنید.',
-        }
-    )
+    # password1 = forms.CharField(
+    #     label='Password',
+    #     widget=forms.PasswordInput,
+    #     error_messages={
+    #         'required': 'لطفا رمز عبور خود را وارد کنید.',
+    #     }
+    # )
+    # password2 = forms.CharField(
+    #     label='Password confirmation',
+    #     widget=forms.PasswordInput,
+    #     error_messages={
+    #         'required': 'لطفا تایید رمز عبور را وارد کنید.',
+    #     }
+    # )
     # phone_number = forms.CharField(
     #     error_messages={
     #         'required': 'لطفا نام کاربری خود را وارد کنید.',
@@ -63,14 +63,14 @@ class TrainerRegisterForm(UserCreationForm):
     email = forms.EmailField(
         required=True,
         error_messages={
-            'required': 'لطفا ایمیل خود را وارد کنید.',
+            # 'required': 'لطفا ایمیل خود را وارد کنید.',
             'invalid': 'لطفا یک ایمیل معتبر وارد کنید.'
         }
     )
     username = forms.CharField(
         required=True,
         error_messages={
-            'required': 'لطفا نام کاربری خود را وارد کنید.',
+            # 'required': 'لطفا نام کاربری خود را وارد کنید.',
             'unique': 'این نام کاربری قبلا ثبت شده است.'
         }
     )
